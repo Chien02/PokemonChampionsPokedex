@@ -1,0 +1,7628 @@
+[
+  {
+    "id": 3,
+    "num": "#0003",
+    "name": "Venusaur",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "form": "",
+    "sprite": "3",
+    "abilities": {
+      "normal": [
+        "Overgrow"
+      ],
+      "hidden": [
+        "Chlorophyll"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 82,
+      "def": 83,
+      "spa": 100,
+      "spd": 100,
+      "spe": 80,
+      "total": 525
+    },
+    "movesKey": "venusaur"
+  },
+  {
+    "id": 3,
+    "num": "#0003",
+    "name": "Mega Venusaur",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "form": "Mega",
+    "sprite": "10033",
+    "abilities": {
+      "normal": [
+        "Thick Fat"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 100,
+      "def": 123,
+      "spa": 122,
+      "spd": 120,
+      "spe": 80,
+      "total": 625
+    },
+    "movesKey": "venusaur"
+  },
+  {
+    "id": 6,
+    "num": "#0006",
+    "name": "Charizard",
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "6",
+    "abilities": {
+      "normal": [
+        "Blaze"
+      ],
+      "hidden": [
+        "Solar Power"
+      ]
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 84,
+      "def": 78,
+      "spa": 109,
+      "spd": 85,
+      "spe": 100,
+      "total": 534
+    },
+    "movesKey": "charizard"
+  },
+  {
+    "id": 6,
+    "num": "#0006",
+    "name": "Mega Charizard X",
+    "types": [
+      "fire",
+      "dragon"
+    ],
+    "form": "Mega X",
+    "sprite": "10034",
+    "abilities": {
+      "normal": [
+        "Tough Claws"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 130,
+      "def": 111,
+      "spa": 130,
+      "spd": 85,
+      "spe": 100,
+      "total": 634
+    },
+    "movesKey": "charizard"
+  },
+  {
+    "id": 6,
+    "num": "#0006",
+    "name": "Mega Charizard Y",
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "form": "Mega Y",
+    "sprite": "10035",
+    "abilities": {
+      "normal": [
+        "Drought"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 104,
+      "def": 78,
+      "spa": 159,
+      "spd": 115,
+      "spe": 100,
+      "total": 634
+    },
+    "movesKey": "charizard"
+  },
+  {
+    "id": 9,
+    "num": "#0009",
+    "name": "Blastoise",
+    "types": [
+      "water"
+    ],
+    "form": "",
+    "sprite": "9",
+    "abilities": {
+      "normal": [
+        "Torrent"
+      ],
+      "hidden": [
+        "Rain Dish"
+      ]
+    },
+    "stats": {
+      "hp": 79,
+      "atk": 83,
+      "def": 100,
+      "spa": 85,
+      "spd": 105,
+      "spe": 78,
+      "total": 530
+    },
+    "movesKey": "blastoise"
+  },
+  {
+    "id": 9,
+    "num": "#0009",
+    "name": "Mega Blastoise",
+    "types": [
+      "water"
+    ],
+    "form": "Mega",
+    "sprite": "10036",
+    "abilities": {
+      "normal": [
+        "Mega Launcher"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 79,
+      "atk": 103,
+      "def": 120,
+      "spa": 135,
+      "spd": 115,
+      "spe": 78,
+      "total": 630
+    },
+    "movesKey": "blastoise"
+  },
+  {
+    "id": 15,
+    "num": "#0015",
+    "name": "Beedrill",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "form": "",
+    "sprite": "15",
+    "abilities": {
+      "normal": [
+        "Swarm"
+      ],
+      "hidden": [
+        "Sniper"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 90,
+      "def": 40,
+      "spa": 45,
+      "spd": 80,
+      "spe": 75,
+      "total": 395
+    },
+    "movesKey": "beedrill"
+  },
+  {
+    "id": 15,
+    "num": "#0015",
+    "name": "Mega Beedrill",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "form": "Mega",
+    "sprite": "10090",
+    "abilities": {
+      "normal": [
+        "Adaptability"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 150,
+      "def": 40,
+      "spa": 15,
+      "spd": 80,
+      "spe": 145,
+      "total": 495
+    },
+    "movesKey": "beedrill"
+  },
+  {
+    "id": 18,
+    "num": "#0018",
+    "name": "Pidgeot",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "18",
+    "abilities": {
+      "normal": [
+        "Keen Eye",
+        "Tangled Feet"
+      ],
+      "hidden": [
+        "Big Pecks"
+      ]
+    },
+    "stats": {
+      "hp": 83,
+      "atk": 80,
+      "def": 75,
+      "spa": 70,
+      "spd": 70,
+      "spe": 101,
+      "total": 479
+    },
+    "movesKey": "pidgeot"
+  },
+  {
+    "id": 18,
+    "num": "#0018",
+    "name": "Mega Pidgeot",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "form": "Mega",
+    "sprite": "10073",
+    "abilities": {
+      "normal": [
+        "No Guard"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 83,
+      "atk": 80,
+      "def": 80,
+      "spa": 135,
+      "spd": 80,
+      "spe": 121,
+      "total": 579
+    },
+    "movesKey": "pidgeot"
+  },
+  {
+    "id": 24,
+    "num": "#0024",
+    "name": "Arbok",
+    "types": [
+      "poison"
+    ],
+    "form": "",
+    "sprite": "24",
+    "abilities": {
+      "normal": [
+        "Intimidate",
+        "Shed Skin"
+      ],
+      "hidden": [
+        "Unnerve"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 95,
+      "def": 69,
+      "spa": 65,
+      "spd": 79,
+      "spe": 80,
+      "total": 448
+    },
+    "movesKey": "arbok"
+  },
+  {
+    "id": 25,
+    "num": "#0025",
+    "name": "Pikachu",
+    "types": [
+      "electric"
+    ],
+    "form": "",
+    "sprite": "25",
+    "abilities": {
+      "normal": [
+        "Static"
+      ],
+      "hidden": [
+        "Lightning Rod"
+      ]
+    },
+    "stats": {
+      "hp": 35,
+      "atk": 55,
+      "def": 40,
+      "spa": 50,
+      "spd": 50,
+      "spe": 90,
+      "total": 320
+    },
+    "movesKey": "pikachu"
+  },
+  {
+    "id": 26,
+    "num": "#0026",
+    "name": "Raichu",
+    "types": [
+      "electric"
+    ],
+    "form": "",
+    "sprite": "26",
+    "abilities": {
+      "normal": [
+        "Static"
+      ],
+      "hidden": [
+        "Lightning Rod"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 90,
+      "def": 55,
+      "spa": 90,
+      "spd": 80,
+      "spe": 110,
+      "total": 485
+    },
+    "movesKey": "raichu"
+  },
+  {
+    "id": 26,
+    "num": "#0026",
+    "name": "Raichu (Alolan Form)",
+    "types": [
+      "electric",
+      "psychic"
+    ],
+    "form": "Alolan Form",
+    "sprite": "10100",
+    "abilities": {
+      "normal": [
+        "Surge Surfer"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 85,
+      "def": 50,
+      "spa": 95,
+      "spd": 85,
+      "spe": 110,
+      "total": 485
+    },
+    "movesKey": "raichu"
+  },
+  {
+    "id": 36,
+    "num": "#0036",
+    "name": "Clefable",
+    "types": [
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "36",
+    "abilities": {
+      "normal": [
+        "Cute Charm",
+        "Magic Guard"
+      ],
+      "hidden": [
+        "Unaware"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 70,
+      "def": 73,
+      "spa": 95,
+      "spd": 90,
+      "spe": 60,
+      "total": 483
+    },
+    "movesKey": "clefable"
+  },
+  {
+    "id": 36,
+    "num": "#0036",
+    "name": "Mega Clefable",
+    "types": [
+      "fairy",
+      "flying"
+    ],
+    "form": "Mega",
+    "sprite": "36",
+    "abilities": {
+      "normal": [
+        "Magic Bounce"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 80,
+      "def": 93,
+      "spa": 135,
+      "spd": 110,
+      "spe": 70,
+      "total": 583
+    },
+    "movesKey": "clefable"
+  },
+  {
+    "id": 38,
+    "num": "#0038",
+    "name": "Ninetales",
+    "types": [
+      "fire"
+    ],
+    "form": "",
+    "sprite": "38",
+    "abilities": {
+      "normal": [
+        "Flash Fire"
+      ],
+      "hidden": [
+        "Drought"
+      ]
+    },
+    "stats": {
+      "hp": 73,
+      "atk": 76,
+      "def": 75,
+      "spa": 81,
+      "spd": 100,
+      "spe": 100,
+      "total": 505
+    },
+    "movesKey": "ninetales"
+  },
+  {
+    "id": 38,
+    "num": "#0038",
+    "name": "Ninetales (Alolan Form)",
+    "types": [
+      "ice",
+      "fairy"
+    ],
+    "form": "Alolan Form",
+    "sprite": "10104",
+    "abilities": {
+      "normal": [
+        "Snow Cloak"
+      ],
+      "hidden": [
+        "Snow Warning"
+      ]
+    },
+    "stats": {
+      "hp": 73,
+      "atk": 67,
+      "def": 75,
+      "spa": 81,
+      "spd": 100,
+      "spe": 109,
+      "total": 505
+    },
+    "movesKey": "ninetales"
+  },
+  {
+    "id": 59,
+    "num": "#0059",
+    "name": "Arcanine",
+    "types": [
+      "fire"
+    ],
+    "form": "",
+    "sprite": "59",
+    "abilities": {
+      "normal": [
+        "Intimidate",
+        "Flash Fire"
+      ],
+      "hidden": [
+        "Justified"
+      ]
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 110,
+      "def": 80,
+      "spa": 100,
+      "spd": 80,
+      "spe": 95,
+      "total": 555
+    },
+    "movesKey": "arcanine"
+  },
+  {
+    "id": 59,
+    "num": "#0059",
+    "name": "Arcanine (Hisuian Form)",
+    "types": [
+      "fire",
+      "rock"
+    ],
+    "form": "Hisuian Form",
+    "sprite": "10230",
+    "abilities": {
+      "normal": [
+        "Intimidate",
+        "Flash Fire"
+      ],
+      "hidden": [
+        "Rock Head"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 115,
+      "def": 80,
+      "spa": 95,
+      "spd": 80,
+      "spe": 90,
+      "total": 555
+    },
+    "movesKey": "arcanine"
+  },
+  {
+    "id": 65,
+    "num": "#0065",
+    "name": "Alakazam",
+    "types": [
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "65",
+    "abilities": {
+      "normal": [
+        "Synchronize",
+        "Inner Focus"
+      ],
+      "hidden": [
+        "Magic Guard"
+      ]
+    },
+    "stats": {
+      "hp": 55,
+      "atk": 50,
+      "def": 45,
+      "spa": 135,
+      "spd": 95,
+      "spe": 120,
+      "total": 500
+    },
+    "movesKey": "alakazam"
+  },
+  {
+    "id": 65,
+    "num": "#0065",
+    "name": "Mega Alakazam",
+    "types": [
+      "psychic"
+    ],
+    "form": "Mega",
+    "sprite": "10037",
+    "abilities": {
+      "normal": [
+        "Trace"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 55,
+      "atk": 50,
+      "def": 65,
+      "spa": 175,
+      "spd": 105,
+      "spe": 150,
+      "total": 600
+    },
+    "movesKey": "alakazam"
+  },
+  {
+    "id": 68,
+    "num": "#0068",
+    "name": "Machamp",
+    "types": [
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "68",
+    "abilities": {
+      "normal": [
+        "Guts",
+        "No Guard"
+      ],
+      "hidden": [
+        "Steadfast"
+      ]
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 130,
+      "def": 80,
+      "spa": 65,
+      "spd": 85,
+      "spe": 55,
+      "total": 505
+    },
+    "movesKey": "machamp"
+  },
+  {
+    "id": 71,
+    "num": "#0071",
+    "name": "Victreebel",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "form": "",
+    "sprite": "71",
+    "abilities": {
+      "normal": [
+        "Chlorophyll"
+      ],
+      "hidden": [
+        "Gluttony"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 105,
+      "def": 65,
+      "spa": 100,
+      "spd": 70,
+      "spe": 70,
+      "total": 490
+    },
+    "movesKey": "victreebel"
+  },
+  {
+    "id": 71,
+    "num": "#0071",
+    "name": "Mega Victreebel",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "form": "Mega",
+    "sprite": "71",
+    "abilities": {
+      "normal": [
+        "Innards Out"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 125,
+      "def": 85,
+      "spa": 135,
+      "spd": 95,
+      "spe": 70,
+      "total": 590
+    },
+    "movesKey": "victreebel"
+  },
+  {
+    "id": 80,
+    "num": "#0080",
+    "name": "Slowbro",
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "80",
+    "abilities": {
+      "normal": [
+        "Oblivious",
+        "Own Tempo"
+      ],
+      "hidden": [
+        "Regenerator"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 75,
+      "def": 110,
+      "spa": 100,
+      "spd": 80,
+      "spe": 30,
+      "total": 490
+    },
+    "movesKey": "slowbro"
+  },
+  {
+    "id": 80,
+    "num": "#0080",
+    "name": "Slowbro (Galarian Form)",
+    "types": [
+      "poison",
+      "psychic"
+    ],
+    "form": "Galarian Form",
+    "sprite": "10165",
+    "abilities": {
+      "normal": [
+        "Quick Draw",
+        "Own Tempo"
+      ],
+      "hidden": [
+        "Regenerator"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 100,
+      "def": 95,
+      "spa": 100,
+      "spd": 70,
+      "spe": 30,
+      "total": 490
+    },
+    "movesKey": "slowbro"
+  },
+  {
+    "id": 80,
+    "num": "#0080",
+    "name": "Mega Slowbro",
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "form": "Mega",
+    "sprite": "10071",
+    "abilities": {
+      "normal": [
+        "Shell Armor"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 75,
+      "def": 180,
+      "spa": 130,
+      "spd": 80,
+      "spe": 30,
+      "total": 590
+    },
+    "movesKey": "slowbro"
+  },
+  {
+    "id": 94,
+    "num": "#0094",
+    "name": "Gengar",
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "form": "",
+    "sprite": "94",
+    "abilities": {
+      "normal": [
+        "Cursed Body"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 65,
+      "def": 60,
+      "spa": 130,
+      "spd": 75,
+      "spe": 110,
+      "total": 500
+    },
+    "movesKey": "gengar"
+  },
+  {
+    "id": 94,
+    "num": "#0094",
+    "name": "Mega Gengar",
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "form": "Mega",
+    "sprite": "10038",
+    "abilities": {
+      "normal": [
+        "Shadow Tag"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 65,
+      "def": 80,
+      "spa": 170,
+      "spd": 95,
+      "spe": 130,
+      "total": 600
+    },
+    "movesKey": "gengar"
+  },
+  {
+    "id": 115,
+    "num": "#0115",
+    "name": "Kangaskhan",
+    "types": [
+      "normal"
+    ],
+    "form": "",
+    "sprite": "115",
+    "abilities": {
+      "normal": [
+        "Early Bird",
+        "Scrappy"
+      ],
+      "hidden": [
+        "Inner Focus"
+      ]
+    },
+    "stats": {
+      "hp": 105,
+      "atk": 95,
+      "def": 80,
+      "spa": 40,
+      "spd": 80,
+      "spe": 90,
+      "total": 490
+    },
+    "movesKey": "kangaskhan"
+  },
+  {
+    "id": 115,
+    "num": "#0115",
+    "name": "Mega Kangaskhan",
+    "types": [
+      "normal"
+    ],
+    "form": "Mega",
+    "sprite": "10039",
+    "abilities": {
+      "normal": [
+        "Parental Bond"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 105,
+      "atk": 125,
+      "def": 100,
+      "spa": 60,
+      "spd": 100,
+      "spe": 100,
+      "total": 590
+    },
+    "movesKey": "kangaskhan"
+  },
+  {
+    "id": 121,
+    "num": "#0121",
+    "name": "Starmie",
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "121",
+    "abilities": {
+      "normal": [
+        "Illuminate",
+        "Natural Cure"
+      ],
+      "hidden": [
+        "Analytic"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 75,
+      "def": 85,
+      "spa": 100,
+      "spd": 85,
+      "spe": 115,
+      "total": 520
+    },
+    "movesKey": "starmie"
+  },
+  {
+    "id": 121,
+    "num": "#0121",
+    "name": "Mega Starmie",
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "form": "Mega",
+    "sprite": "121",
+    "abilities": {
+      "normal": [
+        "Huge Power"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 100,
+      "def": 105,
+      "spa": 130,
+      "spd": 105,
+      "spe": 120,
+      "total": 620
+    },
+    "movesKey": "starmie"
+  },
+  {
+    "id": 127,
+    "num": "#0127",
+    "name": "Pinsir",
+    "types": [
+      "bug"
+    ],
+    "form": "",
+    "sprite": "127",
+    "abilities": {
+      "normal": [
+        "Hyper Cutter",
+        "Mold Breaker"
+      ],
+      "hidden": [
+        "Moxie"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 125,
+      "def": 100,
+      "spa": 55,
+      "spd": 70,
+      "spe": 85,
+      "total": 500
+    },
+    "movesKey": "pinsir"
+  },
+  {
+    "id": 127,
+    "num": "#0127",
+    "name": "Mega Pinsir",
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "form": "Mega",
+    "sprite": "10040",
+    "abilities": {
+      "normal": [
+        "Aerilate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 155,
+      "def": 120,
+      "spa": 65,
+      "spd": 90,
+      "spe": 105,
+      "total": 600
+    },
+    "movesKey": "pinsir"
+  },
+  {
+    "id": 128,
+    "num": "#0128",
+    "name": "Tauros",
+    "types": [
+      "normal"
+    ],
+    "form": "",
+    "sprite": "128",
+    "abilities": {
+      "normal": [
+        "Intimidate",
+        "Anger Point"
+      ],
+      "hidden": [
+        "Sheer Force"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 100,
+      "def": 95,
+      "spa": 40,
+      "spd": 70,
+      "spe": 110,
+      "total": 490
+    },
+    "movesKey": "tauros"
+  },
+  {
+    "id": 128,
+    "num": "#0128",
+    "name": "Tauros (Combat Breed)",
+    "types": [
+      "fighting"
+    ],
+    "form": "Paldean Form",
+    "sprite": "10250",
+    "abilities": {
+      "normal": [
+        "Intimidate",
+        "Anger Point"
+      ],
+      "hidden": [
+        "Cud Chew"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 105,
+      "spa": 30,
+      "spd": 70,
+      "spe": 100,
+      "total": 490
+    },
+    "movesKey": "tauros"
+  },
+  {
+    "id": 128,
+    "num": "#0128",
+    "name": "Tauros (Blaze Breed)",
+    "types": [
+      "fighting",
+      "fire"
+    ],
+    "form": "Paldean Form",
+    "sprite": "10251",
+    "abilities": {
+      "normal": [
+        "Intimidate",
+        "Anger Point"
+      ],
+      "hidden": [
+        "Cud Chew"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 105,
+      "spa": 30,
+      "spd": 70,
+      "spe": 100,
+      "total": 490
+    },
+    "movesKey": "tauros"
+  },
+  {
+    "id": 128,
+    "num": "#0128",
+    "name": "Tauros (Aqua Breed)",
+    "types": [
+      "fighting",
+      "water"
+    ],
+    "form": "Paldean Form",
+    "sprite": "10252",
+    "abilities": {
+      "normal": [
+        "Intimidate",
+        "Anger Point"
+      ],
+      "hidden": [
+        "Cud Chew"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 105,
+      "spa": 30,
+      "spd": 70,
+      "spe": 100,
+      "total": 490
+    },
+    "movesKey": "tauros"
+  },
+  {
+    "id": 130,
+    "num": "#0130",
+    "name": "Gyarados",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "130",
+    "abilities": {
+      "normal": [
+        "Intimidate"
+      ],
+      "hidden": [
+        "Moxie"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 125,
+      "def": 79,
+      "spa": 60,
+      "spd": 100,
+      "spe": 81,
+      "total": 540
+    },
+    "movesKey": "gyarados"
+  },
+  {
+    "id": 130,
+    "num": "#0130",
+    "name": "Mega Gyarados",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "form": "Mega",
+    "sprite": "10041",
+    "abilities": {
+      "normal": [
+        "Mold Breaker"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 155,
+      "def": 109,
+      "spa": 70,
+      "spd": 130,
+      "spe": 81,
+      "total": 640
+    },
+    "movesKey": "gyarados"
+  },
+  {
+    "id": 132,
+    "num": "#0132",
+    "name": "Ditto",
+    "types": [
+      "normal"
+    ],
+    "form": "",
+    "sprite": "132",
+    "abilities": {
+      "normal": [
+        "Limber"
+      ],
+      "hidden": [
+        "Imposter"
+      ]
+    },
+    "stats": {
+      "hp": 48,
+      "atk": 48,
+      "def": 48,
+      "spa": 48,
+      "spd": 48,
+      "spe": 48,
+      "total": 288
+    },
+    "movesKey": "ditto"
+  },
+  {
+    "id": 134,
+    "num": "#0134",
+    "name": "Vaporeon",
+    "types": [
+      "water"
+    ],
+    "form": "",
+    "sprite": "134",
+    "abilities": {
+      "normal": [
+        "Water Absorb"
+      ],
+      "hidden": [
+        "Hydration"
+      ]
+    },
+    "stats": {
+      "hp": 130,
+      "atk": 65,
+      "def": 60,
+      "spa": 110,
+      "spd": 95,
+      "spe": 65,
+      "total": 525
+    },
+    "movesKey": "vaporeon"
+  },
+  {
+    "id": 135,
+    "num": "#0135",
+    "name": "Jolteon",
+    "types": [
+      "electric"
+    ],
+    "form": "",
+    "sprite": "135",
+    "abilities": {
+      "normal": [
+        "Volt Absorb"
+      ],
+      "hidden": [
+        "Quick Feet"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 65,
+      "def": 60,
+      "spa": 110,
+      "spd": 95,
+      "spe": 130,
+      "total": 525
+    },
+    "movesKey": "jolteon"
+  },
+  {
+    "id": 136,
+    "num": "#0136",
+    "name": "Flareon",
+    "types": [
+      "fire"
+    ],
+    "form": "",
+    "sprite": "136",
+    "abilities": {
+      "normal": [
+        "Flash Fire"
+      ],
+      "hidden": [
+        "Guts"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 130,
+      "def": 60,
+      "spa": 95,
+      "spd": 110,
+      "spe": 65,
+      "total": 525
+    },
+    "movesKey": "flareon"
+  },
+  {
+    "id": 142,
+    "num": "#0142",
+    "name": "Aerodactyl",
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "142",
+    "abilities": {
+      "normal": [
+        "Rock Head",
+        "Pressure"
+      ],
+      "hidden": [
+        "Unnerve"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 105,
+      "def": 65,
+      "spa": 60,
+      "spd": 75,
+      "spe": 130,
+      "total": 515
+    },
+    "movesKey": "aerodactyl"
+  },
+  {
+    "id": 142,
+    "num": "#0142",
+    "name": "Mega Aerodactyl",
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "form": "Mega",
+    "sprite": "10042",
+    "abilities": {
+      "normal": [
+        "Tough Claws"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 135,
+      "def": 85,
+      "spa": 70,
+      "spd": 95,
+      "spe": 150,
+      "total": 615
+    },
+    "movesKey": "aerodactyl"
+  },
+  {
+    "id": 143,
+    "num": "#0143",
+    "name": "Snorlax",
+    "types": [
+      "normal"
+    ],
+    "form": "",
+    "sprite": "143",
+    "abilities": {
+      "normal": [
+        "Immunity",
+        "Thick Fat"
+      ],
+      "hidden": [
+        "Gluttony"
+      ]
+    },
+    "stats": {
+      "hp": 160,
+      "atk": 110,
+      "def": 65,
+      "spa": 65,
+      "spd": 110,
+      "spe": 30,
+      "total": 540
+    },
+    "movesKey": "snorlax"
+  },
+  {
+    "id": 149,
+    "num": "#0149",
+    "name": "Dragonite",
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "149",
+    "abilities": {
+      "normal": [
+        "Inner Focus"
+      ],
+      "hidden": [
+        "Multiscale"
+      ]
+    },
+    "stats": {
+      "hp": 91,
+      "atk": 134,
+      "def": 95,
+      "spa": 100,
+      "spd": 100,
+      "spe": 80,
+      "total": 600
+    },
+    "movesKey": "dragonite"
+  },
+  {
+    "id": 149,
+    "num": "#0149",
+    "name": "Mega Dragonite",
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "form": "Mega",
+    "sprite": "149",
+    "abilities": {
+      "normal": [
+        "Multiscale"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 91,
+      "atk": 124,
+      "def": 115,
+      "spa": 145,
+      "spd": 125,
+      "spe": 100,
+      "total": 700
+    },
+    "movesKey": "dragonite"
+  },
+  {
+    "id": 154,
+    "num": "#0154",
+    "name": "Meganium",
+    "types": [
+      "grass"
+    ],
+    "form": "",
+    "sprite": "154",
+    "abilities": {
+      "normal": [
+        "Overgrow"
+      ],
+      "hidden": [
+        "Leaf Guard"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 82,
+      "def": 100,
+      "spa": 83,
+      "spd": 100,
+      "spe": 80,
+      "total": 525
+    },
+    "movesKey": "meganium"
+  },
+  {
+    "id": 154,
+    "num": "#0154",
+    "name": "Mega Meganium",
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "form": "Mega",
+    "sprite": "154",
+    "abilities": {
+      "normal": [
+        "Mega Sol"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 92,
+      "def": 115,
+      "spa": 143,
+      "spd": 115,
+      "spe": 80,
+      "total": 625
+    },
+    "movesKey": "meganium"
+  },
+  {
+    "id": 157,
+    "num": "#0157",
+    "name": "Typhlosion",
+    "types": [
+      "fire"
+    ],
+    "form": "",
+    "sprite": "157",
+    "abilities": {
+      "normal": [
+        "Blaze"
+      ],
+      "hidden": [
+        "Flash Fire"
+      ]
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 84,
+      "def": 78,
+      "spa": 109,
+      "spd": 85,
+      "spe": 100,
+      "total": 534
+    },
+    "movesKey": "typhlosion"
+  },
+  {
+    "id": 157,
+    "num": "#0157",
+    "name": "Typhlosion (Hisuian Form)",
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "form": "Hisuian Form",
+    "sprite": "10233",
+    "abilities": {
+      "normal": [
+        "Blaze"
+      ],
+      "hidden": [
+        "Frisk"
+      ]
+    },
+    "stats": {
+      "hp": 73,
+      "atk": 84,
+      "def": 78,
+      "spa": 119,
+      "spd": 85,
+      "spe": 95,
+      "total": 534
+    },
+    "movesKey": "typhlosion"
+  },
+  {
+    "id": 160,
+    "num": "#0160",
+    "name": "Feraligatr",
+    "types": [
+      "water"
+    ],
+    "form": "",
+    "sprite": "160",
+    "abilities": {
+      "normal": [
+        "Torrent"
+      ],
+      "hidden": [
+        "Sheer Force"
+      ]
+    },
+    "stats": {
+      "hp": 85,
+      "atk": 105,
+      "def": 100,
+      "spa": 79,
+      "spd": 83,
+      "spe": 78,
+      "total": 530
+    },
+    "movesKey": "feraligatr"
+  },
+  {
+    "id": 160,
+    "num": "#0160",
+    "name": "Mega Feraligatr",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "form": "Mega",
+    "sprite": "160",
+    "abilities": {
+      "normal": [
+        "Dragonize"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 85,
+      "atk": 160,
+      "def": 125,
+      "spa": 89,
+      "spd": 93,
+      "spe": 78,
+      "total": 630
+    },
+    "movesKey": "feraligatr"
+  },
+  {
+    "id": 168,
+    "num": "#0168",
+    "name": "Ariados",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "form": "",
+    "sprite": "168",
+    "abilities": {
+      "normal": [
+        "Swarm",
+        "Insomnia"
+      ],
+      "hidden": [
+        "Sniper"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 90,
+      "def": 70,
+      "spa": 60,
+      "spd": 70,
+      "spe": 40,
+      "total": 400
+    },
+    "movesKey": "ariados"
+  },
+  {
+    "id": 181,
+    "num": "#0181",
+    "name": "Ampharos",
+    "types": [
+      "electric"
+    ],
+    "form": "",
+    "sprite": "181",
+    "abilities": {
+      "normal": [
+        "Static"
+      ],
+      "hidden": [
+        "Plus"
+      ]
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 75,
+      "def": 85,
+      "spa": 115,
+      "spd": 90,
+      "spe": 55,
+      "total": 510
+    },
+    "movesKey": "ampharos"
+  },
+  {
+    "id": 181,
+    "num": "#0181",
+    "name": "Mega Ampharos",
+    "types": [
+      "electric",
+      "dragon"
+    ],
+    "form": "Mega",
+    "sprite": "10045",
+    "abilities": {
+      "normal": [
+        "Mold Breaker"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 95,
+      "def": 105,
+      "spa": 165,
+      "spd": 110,
+      "spe": 45,
+      "total": 610
+    },
+    "movesKey": "ampharos"
+  },
+  {
+    "id": 184,
+    "num": "#0184",
+    "name": "Azumarill",
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "184",
+    "abilities": {
+      "normal": [
+        "Thick Fat",
+        "Huge Power"
+      ],
+      "hidden": [
+        "Sap Sipper"
+      ]
+    },
+    "stats": {
+      "hp": 100,
+      "atk": 50,
+      "def": 80,
+      "spa": 60,
+      "spd": 80,
+      "spe": 50,
+      "total": 420
+    },
+    "movesKey": "azumarill"
+  },
+  {
+    "id": 186,
+    "num": "#0186",
+    "name": "Politoed",
+    "types": [
+      "water"
+    ],
+    "form": "",
+    "sprite": "186",
+    "abilities": {
+      "normal": [
+        "Water Absorb",
+        "Damp"
+      ],
+      "hidden": [
+        "Drizzle"
+      ]
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 75,
+      "def": 75,
+      "spa": 90,
+      "spd": 100,
+      "spe": 70,
+      "total": 500
+    },
+    "movesKey": "politoed"
+  },
+  {
+    "id": 196,
+    "num": "#0196",
+    "name": "Espeon",
+    "types": [
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "196",
+    "abilities": {
+      "normal": [
+        "Synchronize"
+      ],
+      "hidden": [
+        "Magic Bounce"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 65,
+      "def": 60,
+      "spa": 130,
+      "spd": 95,
+      "spe": 110,
+      "total": 525
+    },
+    "movesKey": "espeon"
+  },
+  {
+    "id": 197,
+    "num": "#0197",
+    "name": "Umbreon",
+    "types": [
+      "dark"
+    ],
+    "form": "",
+    "sprite": "197",
+    "abilities": {
+      "normal": [
+        "Synchronize"
+      ],
+      "hidden": [
+        "Inner Focus"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 65,
+      "def": 110,
+      "spa": 60,
+      "spd": 130,
+      "spe": 65,
+      "total": 525
+    },
+    "movesKey": "umbreon"
+  },
+  {
+    "id": 199,
+    "num": "#0199",
+    "name": "Slowking",
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "199",
+    "abilities": {
+      "normal": [
+        "Oblivious",
+        "Own Tempo"
+      ],
+      "hidden": [
+        "Regenerator"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 75,
+      "def": 80,
+      "spa": 100,
+      "spd": 110,
+      "spe": 30,
+      "total": 490
+    },
+    "movesKey": "slowking"
+  },
+  {
+    "id": 199,
+    "num": "#0199",
+    "name": "Slowking (Galarian Form)",
+    "types": [
+      "poison",
+      "psychic"
+    ],
+    "form": "Galarian Form",
+    "sprite": "10172",
+    "abilities": {
+      "normal": [
+        "Curious Medicine",
+        "Own Tempo"
+      ],
+      "hidden": [
+        "Regenerator"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 65,
+      "def": 80,
+      "spa": 110,
+      "spd": 110,
+      "spe": 30,
+      "total": 490
+    },
+    "movesKey": "slowking"
+  },
+  {
+    "id": 205,
+    "num": "#0205",
+    "name": "Forretress",
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "form": "",
+    "sprite": "205",
+    "abilities": {
+      "normal": [
+        "Sturdy"
+      ],
+      "hidden": [
+        "Overcoat"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 90,
+      "def": 140,
+      "spa": 60,
+      "spd": 60,
+      "spe": 40,
+      "total": 465
+    },
+    "movesKey": "forretress"
+  },
+  {
+    "id": 208,
+    "num": "#0208",
+    "name": "Mega Steelix",
+    "types": [
+      "steel",
+      "ground"
+    ],
+    "form": "Mega",
+    "sprite": "10072",
+    "abilities": {
+      "normal": [
+        "Sand Force"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 125,
+      "def": 230,
+      "spa": 55,
+      "spd": 95,
+      "spe": 30,
+      "total": 610
+    },
+    "movesKey": "steelix"
+  },
+  {
+    "id": 212,
+    "num": "#0212",
+    "name": "Scizor",
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "form": "",
+    "sprite": "212",
+    "abilities": {
+      "normal": [
+        "Swarm",
+        "Technician"
+      ],
+      "hidden": [
+        "Light Metal"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 130,
+      "def": 100,
+      "spa": 55,
+      "spd": 80,
+      "spe": 65,
+      "total": 500
+    },
+    "movesKey": "scizor"
+  },
+  {
+    "id": 212,
+    "num": "#0212",
+    "name": "Mega Scizor",
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "form": "Mega",
+    "sprite": "10046",
+    "abilities": {
+      "normal": [
+        "Technician"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 150,
+      "def": 140,
+      "spa": 65,
+      "spd": 100,
+      "spe": 75,
+      "total": 600
+    },
+    "movesKey": "scizor"
+  },
+  {
+    "id": 214,
+    "num": "#0214",
+    "name": "Heracross",
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "214",
+    "abilities": {
+      "normal": [
+        "Swarm",
+        "Guts"
+      ],
+      "hidden": [
+        "Moxie"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 125,
+      "def": 75,
+      "spa": 40,
+      "spd": 95,
+      "spe": 85,
+      "total": 500
+    },
+    "movesKey": "heracross"
+  },
+  {
+    "id": 214,
+    "num": "#0214",
+    "name": "Mega Heracross",
+    "types": [
+      "bug",
+      "fighting"
+    ],
+    "form": "Mega",
+    "sprite": "10047",
+    "abilities": {
+      "normal": [
+        "Skill Link"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 185,
+      "def": 115,
+      "spa": 40,
+      "spd": 105,
+      "spe": 75,
+      "total": 600
+    },
+    "movesKey": "heracross"
+  },
+  {
+    "id": 227,
+    "num": "#0227",
+    "name": "Skarmory",
+    "types": [
+      "steel",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "227",
+    "abilities": {
+      "normal": [
+        "Keen Eye",
+        "Sturdy"
+      ],
+      "hidden": [
+        "Weak Armor"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 80,
+      "def": 140,
+      "spa": 40,
+      "spd": 70,
+      "spe": 70,
+      "total": 465
+    },
+    "movesKey": "skarmory"
+  },
+  {
+    "id": 227,
+    "num": "#0227",
+    "name": "Mega Skarmory",
+    "types": [
+      "steel",
+      "flying"
+    ],
+    "form": "Mega",
+    "sprite": "227",
+    "abilities": {
+      "normal": [
+        "Stalwart"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 140,
+      "def": 110,
+      "spa": 40,
+      "spd": 100,
+      "spe": 110,
+      "total": 565
+    },
+    "movesKey": "skarmory"
+  },
+  {
+    "id": 229,
+    "num": "#0229",
+    "name": "Houndoom",
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "form": "",
+    "sprite": "229",
+    "abilities": {
+      "normal": [
+        "Early Bird",
+        "Flash Fire"
+      ],
+      "hidden": [
+        "Unnerve"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 90,
+      "def": 50,
+      "spa": 110,
+      "spd": 80,
+      "spe": 95,
+      "total": 500
+    },
+    "movesKey": "houndoom"
+  },
+  {
+    "id": 229,
+    "num": "#0229",
+    "name": "Mega Houndoom",
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "form": "Mega",
+    "sprite": "10048",
+    "abilities": {
+      "normal": [
+        "Solar Power"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 90,
+      "def": 90,
+      "spa": 140,
+      "spd": 90,
+      "spe": 115,
+      "total": 600
+    },
+    "movesKey": "houndoom"
+  },
+  {
+    "id": 248,
+    "num": "#0248",
+    "name": "Tyranitar",
+    "types": [
+      "rock",
+      "dark"
+    ],
+    "form": "",
+    "sprite": "248",
+    "abilities": {
+      "normal": [
+        "Sand Stream"
+      ],
+      "hidden": [
+        "Unnerve"
+      ]
+    },
+    "stats": {
+      "hp": 100,
+      "atk": 134,
+      "def": 110,
+      "spa": 95,
+      "spd": 100,
+      "spe": 61,
+      "total": 600
+    },
+    "movesKey": "tyranitar"
+  },
+  {
+    "id": 248,
+    "num": "#0248",
+    "name": "Mega Tyranitar",
+    "types": [
+      "rock",
+      "dark"
+    ],
+    "form": "Mega",
+    "sprite": "10049",
+    "abilities": {
+      "normal": [
+        "Sand Stream"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 100,
+      "atk": 164,
+      "def": 150,
+      "spa": 95,
+      "spd": 120,
+      "spe": 71,
+      "total": 700
+    },
+    "movesKey": "tyranitar"
+  },
+  {
+    "id": 279,
+    "num": "#0279",
+    "name": "Pelipper",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "279",
+    "abilities": {
+      "normal": [
+        "Keen Eye",
+        "Drizzle"
+      ],
+      "hidden": [
+        "Rain Dish"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 50,
+      "def": 100,
+      "spa": 95,
+      "spd": 70,
+      "spe": 65,
+      "total": 440
+    },
+    "movesKey": "pelipper"
+  },
+  {
+    "id": 282,
+    "num": "#0282",
+    "name": "Gardevoir",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "282",
+    "abilities": {
+      "normal": [
+        "Synchronize",
+        "Trace"
+      ],
+      "hidden": [
+        "Telepathy"
+      ]
+    },
+    "stats": {
+      "hp": 68,
+      "atk": 65,
+      "def": 65,
+      "spa": 125,
+      "spd": 115,
+      "spe": 80,
+      "total": 518
+    },
+    "movesKey": "gardevoir"
+  },
+  {
+    "id": 282,
+    "num": "#0282",
+    "name": "Mega Gardevoir",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "form": "Mega",
+    "sprite": "10051",
+    "abilities": {
+      "normal": [
+        "Pixilate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 68,
+      "atk": 85,
+      "def": 65,
+      "spa": 165,
+      "spd": 135,
+      "spe": 100,
+      "total": 618
+    },
+    "movesKey": "gardevoir"
+  },
+  {
+    "id": 302,
+    "num": "#0302",
+    "name": "Sableye",
+    "types": [
+      "dark",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "302",
+    "abilities": {
+      "normal": [
+        "Keen Eye",
+        "Stall"
+      ],
+      "hidden": [
+        "Prankster"
+      ]
+    },
+    "stats": {
+      "hp": 50,
+      "atk": 75,
+      "def": 75,
+      "spa": 65,
+      "spd": 65,
+      "spe": 50,
+      "total": 380
+    },
+    "movesKey": "sableye"
+  },
+  {
+    "id": 302,
+    "num": "#0302",
+    "name": "Mega Sableye",
+    "types": [
+      "dark",
+      "ghost"
+    ],
+    "form": "Mega",
+    "sprite": "10066",
+    "abilities": {
+      "normal": [
+        "Magic Bounce"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 50,
+      "atk": 85,
+      "def": 125,
+      "spa": 85,
+      "spd": 115,
+      "spe": 20,
+      "total": 480
+    },
+    "movesKey": "sableye"
+  },
+  {
+    "id": 306,
+    "num": "#0306",
+    "name": "Aggron",
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "form": "",
+    "sprite": "306",
+    "abilities": {
+      "normal": [
+        "Sturdy",
+        "Rock Head"
+      ],
+      "hidden": [
+        "Heavy Metal"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 110,
+      "def": 180,
+      "spa": 60,
+      "spd": 60,
+      "spe": 50,
+      "total": 530
+    },
+    "movesKey": "aggron"
+  },
+  {
+    "id": 306,
+    "num": "#0306",
+    "name": "Mega Aggron",
+    "types": [
+      "steel"
+    ],
+    "form": "Mega",
+    "sprite": "10053",
+    "abilities": {
+      "normal": [
+        "Filter"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 140,
+      "def": 230,
+      "spa": 60,
+      "spd": 80,
+      "spe": 50,
+      "total": 630
+    },
+    "movesKey": "aggron"
+  },
+  {
+    "id": 308,
+    "num": "#0308",
+    "name": "Medicham",
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "308",
+    "abilities": {
+      "normal": [
+        "Pure Power"
+      ],
+      "hidden": [
+        "Telepathy"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 60,
+      "def": 75,
+      "spa": 60,
+      "spd": 75,
+      "spe": 80,
+      "total": 410
+    },
+    "movesKey": "medicham"
+  },
+  {
+    "id": 308,
+    "num": "#0308",
+    "name": "Mega Medicham",
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "form": "Mega",
+    "sprite": "10054",
+    "abilities": {
+      "normal": [
+        "Pure Power"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 100,
+      "def": 85,
+      "spa": 80,
+      "spd": 85,
+      "spe": 100,
+      "total": 510
+    },
+    "movesKey": "medicham"
+  },
+  {
+    "id": 310,
+    "num": "#0310",
+    "name": "Manectric",
+    "types": [
+      "electric"
+    ],
+    "form": "",
+    "sprite": "310",
+    "abilities": {
+      "normal": [
+        "Static",
+        "Lightning Rod"
+      ],
+      "hidden": [
+        "Minus"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 75,
+      "def": 60,
+      "spa": 105,
+      "spd": 60,
+      "spe": 105,
+      "total": 475
+    },
+    "movesKey": "manectric"
+  },
+  {
+    "id": 310,
+    "num": "#0310",
+    "name": "Mega Manectric",
+    "types": [
+      "electric"
+    ],
+    "form": "Mega",
+    "sprite": "10055",
+    "abilities": {
+      "normal": [
+        "Intimidate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 75,
+      "def": 80,
+      "spa": 135,
+      "spd": 80,
+      "spe": 135,
+      "total": 575
+    },
+    "movesKey": "manectric"
+  },
+  {
+    "id": 319,
+    "num": "#0319",
+    "name": "Sharpedo",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "form": "",
+    "sprite": "319",
+    "abilities": {
+      "normal": [
+        "Rough Skin"
+      ],
+      "hidden": [
+        "Speed Boost"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 120,
+      "def": 40,
+      "spa": 95,
+      "spd": 40,
+      "spe": 95,
+      "total": 460
+    },
+    "movesKey": "sharpedo"
+  },
+  {
+    "id": 319,
+    "num": "#0319",
+    "name": "Mega Sharpedo",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "form": "Mega",
+    "sprite": "10070",
+    "abilities": {
+      "normal": [
+        "Strong Jaw"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 140,
+      "def": 70,
+      "spa": 110,
+      "spd": 65,
+      "spe": 105,
+      "total": 560
+    },
+    "movesKey": "sharpedo"
+  },
+  {
+    "id": 323,
+    "num": "#0323",
+    "name": "Camerupt",
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "form": "",
+    "sprite": "323",
+    "abilities": {
+      "normal": [
+        "Magma Armor",
+        "Solid Rock"
+      ],
+      "hidden": [
+        "Anger Point"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 100,
+      "def": 70,
+      "spa": 105,
+      "spd": 75,
+      "spe": 40,
+      "total": 460
+    },
+    "movesKey": "camerupt"
+  },
+  {
+    "id": 323,
+    "num": "#0323",
+    "name": "Mega Camerupt",
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "form": "Mega",
+    "sprite": "10087",
+    "abilities": {
+      "normal": [
+        "Sheer Force"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 120,
+      "def": 100,
+      "spa": 145,
+      "spd": 105,
+      "spe": 20,
+      "total": 560
+    },
+    "movesKey": "camerupt"
+  },
+  {
+    "id": 324,
+    "num": "#0324",
+    "name": "Torkoal",
+    "types": [
+      "fire"
+    ],
+    "form": "",
+    "sprite": "324",
+    "abilities": {
+      "normal": [
+        "White Smoke",
+        "Drought"
+      ],
+      "hidden": [
+        "Shell Armor"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 85,
+      "def": 140,
+      "spa": 85,
+      "spd": 70,
+      "spe": 20,
+      "total": 470
+    },
+    "movesKey": "torkoal"
+  },
+  {
+    "id": 334,
+    "num": "#0334",
+    "name": "Altaria",
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "334",
+    "abilities": {
+      "normal": [
+        "Natural Cure"
+      ],
+      "hidden": [
+        "Cloud Nine"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 70,
+      "def": 90,
+      "spa": 70,
+      "spd": 105,
+      "spe": 80,
+      "total": 490
+    },
+    "movesKey": "altaria"
+  },
+  {
+    "id": 334,
+    "num": "#0334",
+    "name": "Mega Altaria",
+    "types": [
+      "dragon",
+      "fairy"
+    ],
+    "form": "Mega",
+    "sprite": "10067",
+    "abilities": {
+      "normal": [
+        "Pixilate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 110,
+      "spa": 110,
+      "spd": 105,
+      "spe": 80,
+      "total": 590
+    },
+    "movesKey": "altaria"
+  },
+  {
+    "id": 350,
+    "num": "#0350",
+    "name": "Milotic",
+    "types": [
+      "water"
+    ],
+    "form": "",
+    "sprite": "350",
+    "abilities": {
+      "normal": [
+        "Marvel Scale",
+        "Competitive"
+      ],
+      "hidden": [
+        "Cute Charm"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 60,
+      "def": 79,
+      "spa": 100,
+      "spd": 125,
+      "spe": 81,
+      "total": 540
+    },
+    "movesKey": "milotic"
+  },
+  {
+    "id": 351,
+    "num": "#0351",
+    "name": "Castform",
+    "types": [
+      "normal"
+    ],
+    "form": "",
+    "sprite": "351",
+    "abilities": {
+      "normal": [
+        "Forecast"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 70,
+      "def": 70,
+      "spa": 70,
+      "spd": 70,
+      "spe": 70,
+      "total": 420
+    },
+    "movesKey": "castform"
+  },
+  {
+    "id": 354,
+    "num": "#0354",
+    "name": "Banette",
+    "types": [
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "354",
+    "abilities": {
+      "normal": [
+        "Insomnia",
+        "Frisk"
+      ],
+      "hidden": [
+        "Cursed Body"
+      ]
+    },
+    "stats": {
+      "hp": 64,
+      "atk": 115,
+      "def": 65,
+      "spa": 83,
+      "spd": 63,
+      "spe": 65,
+      "total": 455
+    },
+    "movesKey": "banette"
+  },
+  {
+    "id": 354,
+    "num": "#0354",
+    "name": "Mega Banette",
+    "types": [
+      "ghost"
+    ],
+    "form": "Mega",
+    "sprite": "10056",
+    "abilities": {
+      "normal": [
+        "Prankster"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 64,
+      "atk": 165,
+      "def": 75,
+      "spa": 93,
+      "spd": 83,
+      "spe": 75,
+      "total": 555
+    },
+    "movesKey": "banette"
+  },
+  {
+    "id": 358,
+    "num": "#0358",
+    "name": "Chimecho",
+    "types": [
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "358",
+    "abilities": {
+      "normal": [
+        "Levitate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 50,
+      "def": 80,
+      "spa": 95,
+      "spd": 90,
+      "spe": 65,
+      "total": 455
+    },
+    "movesKey": "chimecho"
+  },
+  {
+    "id": 358,
+    "num": "#0358",
+    "name": "Mega Chimecho",
+    "types": [
+      "psychic",
+      "steel"
+    ],
+    "form": "Mega",
+    "sprite": "358",
+    "abilities": {
+      "normal": [
+        "Levitate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 50,
+      "def": 110,
+      "spa": 135,
+      "spd": 120,
+      "spe": 65,
+      "total": 555
+    },
+    "movesKey": "chimecho"
+  },
+  {
+    "id": 359,
+    "num": "#0359",
+    "name": "Absol",
+    "types": [
+      "dark"
+    ],
+    "form": "",
+    "sprite": "359",
+    "abilities": {
+      "normal": [
+        "Pressure",
+        "Super Luck"
+      ],
+      "hidden": [
+        "Justified"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 130,
+      "def": 60,
+      "spa": 75,
+      "spd": 60,
+      "spe": 75,
+      "total": 465
+    },
+    "movesKey": "absol"
+  },
+  {
+    "id": 359,
+    "num": "#0359",
+    "name": "Mega Absol",
+    "types": [
+      "dark"
+    ],
+    "form": "Mega",
+    "sprite": "10057",
+    "abilities": {
+      "normal": [
+        "Magic Bounce"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 150,
+      "def": 60,
+      "spa": 115,
+      "spd": 60,
+      "spe": 115,
+      "total": 565
+    },
+    "movesKey": "absol"
+  },
+  {
+    "id": 362,
+    "num": "#0362",
+    "name": "Glalie",
+    "types": [
+      "ice"
+    ],
+    "form": "",
+    "sprite": "362",
+    "abilities": {
+      "normal": [
+        "Inner Focus",
+        "Ice Body"
+      ],
+      "hidden": [
+        "Moody"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 80,
+      "def": 80,
+      "spa": 80,
+      "spd": 80,
+      "spe": 80,
+      "total": 480
+    },
+    "movesKey": "glalie"
+  },
+  {
+    "id": 362,
+    "num": "#0362",
+    "name": "Mega Glalie",
+    "types": [
+      "ice"
+    ],
+    "form": "Mega",
+    "sprite": "10074",
+    "abilities": {
+      "normal": [
+        "Refrigerate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 80,
+      "spa": 120,
+      "spd": 80,
+      "spe": 100,
+      "total": 580
+    },
+    "movesKey": "glalie"
+  },
+  {
+    "id": 389,
+    "num": "#0389",
+    "name": "Torterra",
+    "types": [
+      "grass",
+      "ground"
+    ],
+    "form": "",
+    "sprite": "389",
+    "abilities": {
+      "normal": [
+        "Overgrow"
+      ],
+      "hidden": [
+        "Shell Armor"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 109,
+      "def": 105,
+      "spa": 75,
+      "spd": 85,
+      "spe": 56,
+      "total": 525
+    },
+    "movesKey": "torterra"
+  },
+  {
+    "id": 392,
+    "num": "#0392",
+    "name": "Infernape",
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "392",
+    "abilities": {
+      "normal": [
+        "Blaze"
+      ],
+      "hidden": [
+        "Iron Fist"
+      ]
+    },
+    "stats": {
+      "hp": 76,
+      "atk": 104,
+      "def": 71,
+      "spa": 104,
+      "spd": 71,
+      "spe": 108,
+      "total": 534
+    },
+    "movesKey": "infernape"
+  },
+  {
+    "id": 395,
+    "num": "#0395",
+    "name": "Empoleon",
+    "types": [
+      "water",
+      "steel"
+    ],
+    "form": "",
+    "sprite": "395",
+    "abilities": {
+      "normal": [
+        "Torrent"
+      ],
+      "hidden": [
+        "Competitive"
+      ]
+    },
+    "stats": {
+      "hp": 84,
+      "atk": 86,
+      "def": 88,
+      "spa": 111,
+      "spd": 101,
+      "spe": 60,
+      "total": 530
+    },
+    "movesKey": "empoleon"
+  },
+  {
+    "id": 405,
+    "num": "#0405",
+    "name": "Luxray",
+    "types": [
+      "electric"
+    ],
+    "form": "",
+    "sprite": "405",
+    "abilities": {
+      "normal": [
+        "Rivalry",
+        "Intimidate"
+      ],
+      "hidden": [
+        "Guts"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 79,
+      "spa": 95,
+      "spd": 79,
+      "spe": 70,
+      "total": 523
+    },
+    "movesKey": "luxray"
+  },
+  {
+    "id": 407,
+    "num": "#0407",
+    "name": "Roserade",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "form": "",
+    "sprite": "407",
+    "abilities": {
+      "normal": [
+        "Natural Cure",
+        "Poison Point"
+      ],
+      "hidden": [
+        "Technician"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 70,
+      "def": 65,
+      "spa": 125,
+      "spd": 105,
+      "spe": 90,
+      "total": 515
+    },
+    "movesKey": "roserade"
+  },
+  {
+    "id": 409,
+    "num": "#0409",
+    "name": "Rampardos",
+    "types": [
+      "rock"
+    ],
+    "form": "",
+    "sprite": "409",
+    "abilities": {
+      "normal": [
+        "Mold Breaker"
+      ],
+      "hidden": [
+        "Sheer Force"
+      ]
+    },
+    "stats": {
+      "hp": 97,
+      "atk": 165,
+      "def": 60,
+      "spa": 65,
+      "spd": 50,
+      "spe": 58,
+      "total": 495
+    },
+    "movesKey": "rampardos"
+  },
+  {
+    "id": 411,
+    "num": "#0411",
+    "name": "Bastiodon",
+    "types": [
+      "rock",
+      "steel"
+    ],
+    "form": "",
+    "sprite": "411",
+    "abilities": {
+      "normal": [
+        "Sturdy"
+      ],
+      "hidden": [
+        "Soundproof"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 52,
+      "def": 168,
+      "spa": 47,
+      "spd": 138,
+      "spe": 30,
+      "total": 495
+    },
+    "movesKey": "bastiodon"
+  },
+  {
+    "id": 428,
+    "num": "#0428",
+    "name": "Lopunny",
+    "types": [
+      "normal"
+    ],
+    "form": "",
+    "sprite": "428",
+    "abilities": {
+      "normal": [
+        "Cute Charm",
+        "Klutz"
+      ],
+      "hidden": [
+        "Limber"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 76,
+      "def": 84,
+      "spa": 54,
+      "spd": 96,
+      "spe": 105,
+      "total": 480
+    },
+    "movesKey": "lopunny"
+  },
+  {
+    "id": 428,
+    "num": "#0428",
+    "name": "Mega Lopunny",
+    "types": [
+      "normal",
+      "fighting"
+    ],
+    "form": "Mega",
+    "sprite": "10088",
+    "abilities": {
+      "normal": [
+        "Scrappy"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 136,
+      "def": 94,
+      "spa": 54,
+      "spd": 96,
+      "spe": 135,
+      "total": 580
+    },
+    "movesKey": "lopunny"
+  },
+  {
+    "id": 442,
+    "num": "#0442",
+    "name": "Spiritomb",
+    "types": [
+      "ghost",
+      "dark"
+    ],
+    "form": "",
+    "sprite": "442",
+    "abilities": {
+      "normal": [
+        "Pressure"
+      ],
+      "hidden": [
+        "Infiltrator"
+      ]
+    },
+    "stats": {
+      "hp": 50,
+      "atk": 92,
+      "def": 108,
+      "spa": 92,
+      "spd": 108,
+      "spe": 35,
+      "total": 485
+    },
+    "movesKey": "spiritomb"
+  },
+  {
+    "id": 445,
+    "num": "#0445",
+    "name": "Garchomp",
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "form": "",
+    "sprite": "445",
+    "abilities": {
+      "normal": [
+        "Sand Veil"
+      ],
+      "hidden": [
+        "Rough Skin"
+      ]
+    },
+    "stats": {
+      "hp": 108,
+      "atk": 130,
+      "def": 95,
+      "spa": 80,
+      "spd": 85,
+      "spe": 102,
+      "total": 600
+    },
+    "movesKey": "garchomp"
+  },
+  {
+    "id": 445,
+    "num": "#0445",
+    "name": "Mega Garchomp",
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "form": "Mega",
+    "sprite": "10058",
+    "abilities": {
+      "normal": [
+        "Sand Force"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 108,
+      "atk": 170,
+      "def": 115,
+      "spa": 120,
+      "spd": 95,
+      "spe": 92,
+      "total": 700
+    },
+    "movesKey": "garchomp"
+  },
+  {
+    "id": 448,
+    "num": "#0448",
+    "name": "Lucario",
+    "types": [
+      "fighting",
+      "steel"
+    ],
+    "form": "",
+    "sprite": "448",
+    "abilities": {
+      "normal": [
+        "Steadfast",
+        "Inner Focus"
+      ],
+      "hidden": [
+        "Justified"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 110,
+      "def": 70,
+      "spa": 115,
+      "spd": 70,
+      "spe": 90,
+      "total": 525
+    },
+    "movesKey": "lucario"
+  },
+  {
+    "id": 448,
+    "num": "#0448",
+    "name": "Mega Lucario",
+    "types": [
+      "fighting",
+      "steel"
+    ],
+    "form": "Mega",
+    "sprite": "10059",
+    "abilities": {
+      "normal": [
+        "Adaptability"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 145,
+      "def": 88,
+      "spa": 140,
+      "spd": 70,
+      "spe": 112,
+      "total": 625
+    },
+    "movesKey": "lucario"
+  },
+  {
+    "id": 450,
+    "num": "#0450",
+    "name": "Hippowdon",
+    "types": [
+      "ground"
+    ],
+    "form": "",
+    "sprite": "450",
+    "abilities": {
+      "normal": [
+        "Sand Stream"
+      ],
+      "hidden": [
+        "Sand Force"
+      ]
+    },
+    "stats": {
+      "hp": 108,
+      "atk": 112,
+      "def": 118,
+      "spa": 68,
+      "spd": 72,
+      "spe": 47,
+      "total": 525
+    },
+    "movesKey": "hippowdon"
+  },
+  {
+    "id": 454,
+    "num": "#0454",
+    "name": "Toxicroak",
+    "types": [
+      "poison",
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "454",
+    "abilities": {
+      "normal": [
+        "Anticipation",
+        "Dry Skin"
+      ],
+      "hidden": [
+        "Poison Touch"
+      ]
+    },
+    "stats": {
+      "hp": 83,
+      "atk": 106,
+      "def": 65,
+      "spa": 86,
+      "spd": 65,
+      "spe": 85,
+      "total": 490
+    },
+    "movesKey": "toxicroak"
+  },
+  {
+    "id": 460,
+    "num": "#0460",
+    "name": "Abomasnow",
+    "types": [
+      "grass",
+      "ice"
+    ],
+    "form": "",
+    "sprite": "460",
+    "abilities": {
+      "normal": [
+        "Snow Warning"
+      ],
+      "hidden": [
+        "Soundproof"
+      ]
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 92,
+      "def": 75,
+      "spa": 92,
+      "spd": 85,
+      "spe": 60,
+      "total": 494
+    },
+    "movesKey": "abomasnow"
+  },
+  {
+    "id": 460,
+    "num": "#0460",
+    "name": "Mega Abomasnow",
+    "types": [
+      "grass",
+      "ice"
+    ],
+    "form": "Mega",
+    "sprite": "10060",
+    "abilities": {
+      "normal": [
+        "Snow Warning"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 132,
+      "def": 105,
+      "spa": 132,
+      "spd": 105,
+      "spe": 30,
+      "total": 594
+    },
+    "movesKey": "abomasnow"
+  },
+  {
+    "id": 461,
+    "num": "#0461",
+    "name": "Weavile",
+    "types": [
+      "dark",
+      "ice"
+    ],
+    "form": "",
+    "sprite": "461",
+    "abilities": {
+      "normal": [
+        "Pressure"
+      ],
+      "hidden": [
+        "Pickpocket"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 120,
+      "def": 65,
+      "spa": 45,
+      "spd": 85,
+      "spe": 125,
+      "total": 510
+    },
+    "movesKey": "weavile"
+  },
+  {
+    "id": 464,
+    "num": "#0464",
+    "name": "Rhyperior",
+    "types": [
+      "ground",
+      "rock"
+    ],
+    "form": "",
+    "sprite": "464",
+    "abilities": {
+      "normal": [
+        "Lightning Rod",
+        "Solid Rock"
+      ],
+      "hidden": [
+        "Reckless"
+      ]
+    },
+    "stats": {
+      "hp": 115,
+      "atk": 140,
+      "def": 130,
+      "spa": 55,
+      "spd": 55,
+      "spe": 40,
+      "total": 535
+    },
+    "movesKey": "rhyperior"
+  },
+  {
+    "id": 470,
+    "num": "#0470",
+    "name": "Leafeon",
+    "types": [
+      "grass"
+    ],
+    "form": "",
+    "sprite": "470",
+    "abilities": {
+      "normal": [
+        "Leaf Guard"
+      ],
+      "hidden": [
+        "Chlorophyll"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 110,
+      "def": 130,
+      "spa": 60,
+      "spd": 65,
+      "spe": 95,
+      "total": 525
+    },
+    "movesKey": "leafeon"
+  },
+  {
+    "id": 471,
+    "num": "#0471",
+    "name": "Glaceon",
+    "types": [
+      "ice"
+    ],
+    "form": "",
+    "sprite": "471",
+    "abilities": {
+      "normal": [
+        "Snow Cloak"
+      ],
+      "hidden": [
+        "Ice Body"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 60,
+      "def": 110,
+      "spa": 130,
+      "spd": 95,
+      "spe": 65,
+      "total": 525
+    },
+    "movesKey": "glaceon"
+  },
+  {
+    "id": 472,
+    "num": "#0472",
+    "name": "Gliscor",
+    "types": [
+      "ground",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "472",
+    "abilities": {
+      "normal": [
+        "Hyper Cutter",
+        "Sand Veil"
+      ],
+      "hidden": [
+        "Poison Heal"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 95,
+      "def": 125,
+      "spa": 45,
+      "spd": 75,
+      "spe": 95,
+      "total": 510
+    },
+    "movesKey": "gliscor"
+  },
+  {
+    "id": 473,
+    "num": "#0473",
+    "name": "Mamoswine",
+    "types": [
+      "ice",
+      "ground"
+    ],
+    "form": "",
+    "sprite": "473",
+    "abilities": {
+      "normal": [
+        "Oblivious",
+        "Snow Cloak"
+      ],
+      "hidden": [
+        "Thick Fat"
+      ]
+    },
+    "stats": {
+      "hp": 110,
+      "atk": 130,
+      "def": 80,
+      "spa": 70,
+      "spd": 60,
+      "spe": 80,
+      "total": 530
+    },
+    "movesKey": "mamoswine"
+  },
+  {
+    "id": 475,
+    "num": "#0475",
+    "name": "Gallade",
+    "types": [
+      "psychic",
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "475",
+    "abilities": {
+      "normal": [
+        "Steadfast",
+        "Sharpness"
+      ],
+      "hidden": [
+        "Justified"
+      ]
+    },
+    "stats": {
+      "hp": 68,
+      "atk": 125,
+      "def": 65,
+      "spa": 65,
+      "spd": 115,
+      "spe": 80,
+      "total": 518
+    },
+    "movesKey": "gallade"
+  },
+  {
+    "id": 475,
+    "num": "#0475",
+    "name": "Mega Gallade",
+    "types": [
+      "psychic",
+      "fighting"
+    ],
+    "form": "Mega",
+    "sprite": "10068",
+    "abilities": {
+      "normal": [
+        "Inner Focus"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 68,
+      "atk": 165,
+      "def": 95,
+      "spa": 65,
+      "spd": 115,
+      "spe": 110,
+      "total": 618
+    },
+    "movesKey": "gallade"
+  },
+  {
+    "id": 478,
+    "num": "#0478",
+    "name": "Froslass",
+    "types": [
+      "ice",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "478",
+    "abilities": {
+      "normal": [
+        "Snow Cloak"
+      ],
+      "hidden": [
+        "Cursed Body"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 80,
+      "def": 70,
+      "spa": 80,
+      "spd": 70,
+      "spe": 110,
+      "total": 480
+    },
+    "movesKey": "froslass"
+  },
+  {
+    "id": 478,
+    "num": "#0478",
+    "name": "Mega Froslass",
+    "types": [
+      "ice",
+      "ghost"
+    ],
+    "form": "Mega",
+    "sprite": "478",
+    "abilities": {
+      "normal": [
+        "Snow Warning"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 80,
+      "def": 70,
+      "spa": 140,
+      "spd": 100,
+      "spe": 120,
+      "total": 580
+    },
+    "movesKey": "froslass"
+  },
+  {
+    "id": 479,
+    "num": "#0479",
+    "name": "Rotom (Normal)",
+    "types": [
+      "electric",
+      "ghost"
+    ],
+    "form": "Rotom Form",
+    "sprite": "479",
+    "abilities": {
+      "normal": [
+        "Levitate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 50,
+      "atk": 50,
+      "def": 77,
+      "spa": 95,
+      "spd": 77,
+      "spe": 91,
+      "total": 440
+    },
+    "movesKey": "rotom"
+  },
+  {
+    "id": 479,
+    "num": "#0479",
+    "name": "Rotom (Heat)",
+    "types": [
+      "electric",
+      "fire"
+    ],
+    "form": "Rotom Form",
+    "sprite": "10008",
+    "abilities": {
+      "normal": [
+        "Levitate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 50,
+      "atk": 65,
+      "def": 107,
+      "spa": 105,
+      "spd": 107,
+      "spe": 86,
+      "total": 520
+    },
+    "movesKey": "rotom"
+  },
+  {
+    "id": 479,
+    "num": "#0479",
+    "name": "Rotom (Wash)",
+    "types": [
+      "electric",
+      "water"
+    ],
+    "form": "Rotom Form",
+    "sprite": "10009",
+    "abilities": {
+      "normal": [
+        "Levitate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 50,
+      "atk": 65,
+      "def": 107,
+      "spa": 105,
+      "spd": 107,
+      "spe": 86,
+      "total": 520
+    },
+    "movesKey": "rotom"
+  },
+  {
+    "id": 479,
+    "num": "#0479",
+    "name": "Rotom (Frost)",
+    "types": [
+      "electric",
+      "ice"
+    ],
+    "form": "Rotom Form",
+    "sprite": "10010",
+    "abilities": {
+      "normal": [
+        "Levitate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 50,
+      "atk": 65,
+      "def": 107,
+      "spa": 105,
+      "spd": 107,
+      "spe": 86,
+      "total": 520
+    },
+    "movesKey": "rotom"
+  },
+  {
+    "id": 479,
+    "num": "#0479",
+    "name": "Rotom (Fan)",
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "form": "Rotom Form",
+    "sprite": "10011",
+    "abilities": {
+      "normal": [
+        "Levitate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 50,
+      "atk": 65,
+      "def": 107,
+      "spa": 105,
+      "spd": 107,
+      "spe": 86,
+      "total": 520
+    },
+    "movesKey": "rotom"
+  },
+  {
+    "id": 479,
+    "num": "#0479",
+    "name": "Rotom (Mow)",
+    "types": [
+      "electric",
+      "grass"
+    ],
+    "form": "Rotom Form",
+    "sprite": "10012",
+    "abilities": {
+      "normal": [
+        "Levitate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 50,
+      "atk": 65,
+      "def": 107,
+      "spa": 105,
+      "spd": 107,
+      "spe": 86,
+      "total": 520
+    },
+    "movesKey": "rotom"
+  },
+  {
+    "id": 497,
+    "num": "#0497",
+    "name": "Serperior",
+    "types": [
+      "grass"
+    ],
+    "form": "",
+    "sprite": "497",
+    "abilities": {
+      "normal": [
+        "Overgrow"
+      ],
+      "hidden": [
+        "Contrary"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 75,
+      "def": 95,
+      "spa": 75,
+      "spd": 95,
+      "spe": 113,
+      "total": 528
+    },
+    "movesKey": "serperior"
+  },
+  {
+    "id": 500,
+    "num": "#0500",
+    "name": "Emboar",
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "500",
+    "abilities": {
+      "normal": [
+        "Blaze"
+      ],
+      "hidden": [
+        "Reckless"
+      ]
+    },
+    "stats": {
+      "hp": 110,
+      "atk": 123,
+      "def": 65,
+      "spa": 100,
+      "spd": 65,
+      "spe": 65,
+      "total": 528
+    },
+    "movesKey": "emboar"
+  },
+  {
+    "id": 500,
+    "num": "#0500",
+    "name": "Mega Emboar",
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "form": "Mega",
+    "sprite": "500",
+    "abilities": {
+      "normal": [
+        "Mold Breaker"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 110,
+      "atk": 148,
+      "def": 75,
+      "spa": 110,
+      "spd": 110,
+      "spe": 75,
+      "total": 628
+    },
+    "movesKey": "emboar"
+  },
+  {
+    "id": 503,
+    "num": "#0503",
+    "name": "Samurott",
+    "types": [
+      "water"
+    ],
+    "form": "",
+    "sprite": "503",
+    "abilities": {
+      "normal": [
+        "Torrent"
+      ],
+      "hidden": [
+        "Shell Armor"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 100,
+      "def": 85,
+      "spa": 108,
+      "spd": 70,
+      "spe": 70,
+      "total": 528
+    },
+    "movesKey": "samurott"
+  },
+  {
+    "id": 503,
+    "num": "#0503",
+    "name": "Samurott (Hisuian Form)",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "form": "Hisuian Form",
+    "sprite": "10236",
+    "abilities": {
+      "normal": [
+        "Torrent"
+      ],
+      "hidden": [
+        "Sharpness"
+      ]
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 108,
+      "def": 80,
+      "spa": 100,
+      "spd": 65,
+      "spe": 85,
+      "total": 528
+    },
+    "movesKey": "samurott"
+  },
+  {
+    "id": 505,
+    "num": "#0505",
+    "name": "Watchog",
+    "types": [
+      "normal"
+    ],
+    "form": "",
+    "sprite": "505",
+    "abilities": {
+      "normal": [
+        "Illuminate",
+        "Keen Eye"
+      ],
+      "hidden": [
+        "Analytic"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 85,
+      "def": 69,
+      "spa": 60,
+      "spd": 69,
+      "spe": 77,
+      "total": 420
+    },
+    "movesKey": "watchog"
+  },
+  {
+    "id": 510,
+    "num": "#0510",
+    "name": "Liepard",
+    "types": [
+      "dark"
+    ],
+    "form": "",
+    "sprite": "510",
+    "abilities": {
+      "normal": [
+        "Limber",
+        "Unburden"
+      ],
+      "hidden": [
+        "Prankster"
+      ]
+    },
+    "stats": {
+      "hp": 64,
+      "atk": 88,
+      "def": 50,
+      "spa": 88,
+      "spd": 50,
+      "spe": 106,
+      "total": 446
+    },
+    "movesKey": "liepard"
+  },
+  {
+    "id": 512,
+    "num": "#0512",
+    "name": "Simisage",
+    "types": [
+      "grass"
+    ],
+    "form": "",
+    "sprite": "512",
+    "abilities": {
+      "normal": [
+        "Gluttony"
+      ],
+      "hidden": [
+        "Overgrow"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 63,
+      "spa": 98,
+      "spd": 63,
+      "spe": 101,
+      "total": 498
+    },
+    "movesKey": "simisage"
+  },
+  {
+    "id": 514,
+    "num": "#0514",
+    "name": "Simisear",
+    "types": [
+      "fire"
+    ],
+    "form": "",
+    "sprite": "514",
+    "abilities": {
+      "normal": [
+        "Gluttony"
+      ],
+      "hidden": [
+        "Blaze"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 63,
+      "spa": 98,
+      "spd": 63,
+      "spe": 101,
+      "total": 498
+    },
+    "movesKey": "simisear"
+  },
+  {
+    "id": 516,
+    "num": "#0516",
+    "name": "Simipour",
+    "types": [
+      "water"
+    ],
+    "form": "",
+    "sprite": "516",
+    "abilities": {
+      "normal": [
+        "Gluttony"
+      ],
+      "hidden": [
+        "Torrent"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 98,
+      "def": 63,
+      "spa": 98,
+      "spd": 63,
+      "spe": 101,
+      "total": 498
+    },
+    "movesKey": "simipour"
+  },
+  {
+    "id": 530,
+    "num": "#0530",
+    "name": "Excadrill",
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "form": "",
+    "sprite": "530",
+    "abilities": {
+      "normal": [
+        "Sand Rush",
+        "Sand Force"
+      ],
+      "hidden": [
+        "Mold Breaker"
+      ]
+    },
+    "stats": {
+      "hp": 110,
+      "atk": 135,
+      "def": 60,
+      "spa": 50,
+      "spd": 65,
+      "spe": 88,
+      "total": 508
+    },
+    "movesKey": "excadrill"
+  },
+  {
+    "id": 530,
+    "num": "#0530",
+    "name": "Mega Excadrill",
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "form": "Mega",
+    "sprite": "530",
+    "abilities": {
+      "normal": [
+        "Piercing Drill"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 110,
+      "atk": 165,
+      "def": 100,
+      "spa": 65,
+      "spd": 65,
+      "spe": 103,
+      "total": 608
+    },
+    "movesKey": "excadrill"
+  },
+  {
+    "id": 531,
+    "num": "#0531",
+    "name": "Audino",
+    "types": [
+      "normal"
+    ],
+    "form": "",
+    "sprite": "531",
+    "abilities": {
+      "normal": [
+        "Healer",
+        "Regenerator"
+      ],
+      "hidden": [
+        "Klutz"
+      ]
+    },
+    "stats": {
+      "hp": 103,
+      "atk": 60,
+      "def": 86,
+      "spa": 60,
+      "spd": 86,
+      "spe": 50,
+      "total": 445
+    },
+    "movesKey": "audino"
+  },
+  {
+    "id": 531,
+    "num": "#0531",
+    "name": "Mega Audino",
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "form": "Mega",
+    "sprite": "10069",
+    "abilities": {
+      "normal": [
+        "Healer"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 103,
+      "atk": 60,
+      "def": 126,
+      "spa": 80,
+      "spd": 126,
+      "spe": 50,
+      "total": 545
+    },
+    "movesKey": "audino"
+  },
+  {
+    "id": 534,
+    "num": "#0534",
+    "name": "Conkeldurr",
+    "types": [
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "534",
+    "abilities": {
+      "normal": [
+        "Guts",
+        "Sheer Force"
+      ],
+      "hidden": [
+        "Iron Fist"
+      ]
+    },
+    "stats": {
+      "hp": 105,
+      "atk": 140,
+      "def": 95,
+      "spa": 55,
+      "spd": 65,
+      "spe": 45,
+      "total": 505
+    },
+    "movesKey": "conkeldurr"
+  },
+  {
+    "id": 547,
+    "num": "#0547",
+    "name": "Whimsicott",
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "547",
+    "abilities": {
+      "normal": [
+        "Prankster",
+        "Infiltrator"
+      ],
+      "hidden": [
+        "Chlorophyll"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 67,
+      "def": 85,
+      "spa": 77,
+      "spd": 75,
+      "spe": 116,
+      "total": 480
+    },
+    "movesKey": "whimsicott"
+  },
+  {
+    "id": 553,
+    "num": "#0553",
+    "name": "Krookodile",
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "form": "",
+    "sprite": "553",
+    "abilities": {
+      "normal": [
+        "Intimidate",
+        "Moxie"
+      ],
+      "hidden": [
+        "Anger Point"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 117,
+      "def": 80,
+      "spa": 65,
+      "spd": 70,
+      "spe": 92,
+      "total": 519
+    },
+    "movesKey": "krookodile"
+  },
+  {
+    "id": 563,
+    "num": "#0563",
+    "name": "Cofagrigus",
+    "types": [
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "563",
+    "abilities": {
+      "normal": [
+        "Mummy"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 58,
+      "atk": 50,
+      "def": 145,
+      "spa": 95,
+      "spd": 105,
+      "spe": 30,
+      "total": 483
+    },
+    "movesKey": "cofagrigus"
+  },
+  {
+    "id": 569,
+    "num": "#0569",
+    "name": "Garbodor",
+    "types": [
+      "poison"
+    ],
+    "form": "",
+    "sprite": "569",
+    "abilities": {
+      "normal": [
+        "Stench",
+        "Weak Armor"
+      ],
+      "hidden": [
+        "Aftermath"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 95,
+      "def": 82,
+      "spa": 60,
+      "spd": 82,
+      "spe": 75,
+      "total": 474
+    },
+    "movesKey": "garbodor"
+  },
+  {
+    "id": 571,
+    "num": "#0571",
+    "name": "Zoroark",
+    "types": [
+      "dark"
+    ],
+    "form": "",
+    "sprite": "571",
+    "abilities": {
+      "normal": [
+        "Illusion"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 105,
+      "def": 60,
+      "spa": 120,
+      "spd": 60,
+      "spe": 105,
+      "total": 510
+    },
+    "movesKey": "zoroark"
+  },
+  {
+    "id": 571,
+    "num": "#0571",
+    "name": "Zoroark (Hisuian Form)",
+    "types": [
+      "normal",
+      "ghost"
+    ],
+    "form": "Hisuian Form",
+    "sprite": "10239",
+    "abilities": {
+      "normal": [
+        "Illusion"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 55,
+      "atk": 100,
+      "def": 60,
+      "spa": 125,
+      "spd": 60,
+      "spe": 110,
+      "total": 510
+    },
+    "movesKey": "zoroark"
+  },
+  {
+    "id": 579,
+    "num": "#0579",
+    "name": "Reuniclus",
+    "types": [
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "579",
+    "abilities": {
+      "normal": [
+        "Overcoat",
+        "Magic Guard"
+      ],
+      "hidden": [
+        "Regenerator"
+      ]
+    },
+    "stats": {
+      "hp": 110,
+      "atk": 65,
+      "def": 75,
+      "spa": 125,
+      "spd": 85,
+      "spe": 30,
+      "total": 490
+    },
+    "movesKey": "reuniclus"
+  },
+  {
+    "id": 584,
+    "num": "#0584",
+    "name": "Vanilluxe",
+    "types": [
+      "ice"
+    ],
+    "form": "",
+    "sprite": "584",
+    "abilities": {
+      "normal": [
+        "Ice Body",
+        "Snow Warning"
+      ],
+      "hidden": [
+        "Weak Armor"
+      ]
+    },
+    "stats": {
+      "hp": 71,
+      "atk": 95,
+      "def": 85,
+      "spa": 110,
+      "spd": 95,
+      "spe": 79,
+      "total": 535
+    },
+    "movesKey": "vanilluxe"
+  },
+  {
+    "id": 587,
+    "num": "#0587",
+    "name": "Emolga",
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "587",
+    "abilities": {
+      "normal": [
+        "Static"
+      ],
+      "hidden": [
+        "Motor Drive"
+      ]
+    },
+    "stats": {
+      "hp": 55,
+      "atk": 75,
+      "def": 60,
+      "spa": 75,
+      "spd": 60,
+      "spe": 103,
+      "total": 428
+    },
+    "movesKey": "emolga"
+  },
+  {
+    "id": 609,
+    "num": "#0609",
+    "name": "Chandelure",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "form": "",
+    "sprite": "609",
+    "abilities": {
+      "normal": [
+        "Flash Fire",
+        "Flame Body"
+      ],
+      "hidden": [
+        "Infiltrator"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 55,
+      "def": 90,
+      "spa": 145,
+      "spd": 90,
+      "spe": 80,
+      "total": 520
+    },
+    "movesKey": "chandelure"
+  },
+  {
+    "id": 609,
+    "num": "#0609",
+    "name": "Mega Chandelure",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "form": "Mega",
+    "sprite": "609",
+    "abilities": {
+      "normal": [
+        "Infiltrator"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 75,
+      "def": 110,
+      "spa": 175,
+      "spd": 110,
+      "spe": 90,
+      "total": 620
+    },
+    "movesKey": "chandelure"
+  },
+  {
+    "id": 614,
+    "num": "#0614",
+    "name": "Beartic",
+    "types": [
+      "ice"
+    ],
+    "form": "",
+    "sprite": "614",
+    "abilities": {
+      "normal": [
+        "Snow Cloak",
+        "Slush Rush"
+      ],
+      "hidden": [
+        "Swift Swim"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 130,
+      "def": 80,
+      "spa": 70,
+      "spd": 80,
+      "spe": 50,
+      "total": 505
+    },
+    "movesKey": "beartic"
+  },
+  {
+    "id": 618,
+    "num": "#0618",
+    "name": "Stunfisk",
+    "types": [
+      "ground",
+      "electric"
+    ],
+    "form": "",
+    "sprite": "618",
+    "abilities": {
+      "normal": [
+        "Static",
+        "Limber"
+      ],
+      "hidden": [
+        "Sand Veil"
+      ]
+    },
+    "stats": {
+      "hp": 109,
+      "atk": 66,
+      "def": 84,
+      "spa": 81,
+      "spd": 99,
+      "spe": 32,
+      "total": 471
+    },
+    "movesKey": "stunfisk"
+  },
+  {
+    "id": 618,
+    "num": "#0618",
+    "name": "Stunfisk (Galarian Form)",
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "form": "Galarian Form",
+    "sprite": "10180",
+    "abilities": {
+      "normal": [
+        "Mimicry"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 109,
+      "atk": 81,
+      "def": 99,
+      "spa": 66,
+      "spd": 84,
+      "spe": 32,
+      "total": 471
+    },
+    "movesKey": "stunfisk"
+  },
+  {
+    "id": 623,
+    "num": "#0623",
+    "name": "Golurk",
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "623",
+    "abilities": {
+      "normal": [
+        "Iron Fist",
+        "Klutz"
+      ],
+      "hidden": [
+        "No Guard"
+      ]
+    },
+    "stats": {
+      "hp": 89,
+      "atk": 124,
+      "def": 80,
+      "spa": 55,
+      "spd": 80,
+      "spe": 55,
+      "total": 483
+    },
+    "movesKey": "golurk"
+  },
+  {
+    "id": 623,
+    "num": "#0623",
+    "name": "Mega Golurk",
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "form": "Mega",
+    "sprite": "623",
+    "abilities": {
+      "normal": [
+        "Unseen Fist"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 89,
+      "atk": 159,
+      "def": 105,
+      "spa": 70,
+      "spd": 105,
+      "spe": 55,
+      "total": 583
+    },
+    "movesKey": "golurk"
+  },
+  {
+    "id": 635,
+    "num": "#0635",
+    "name": "Hydreigon",
+    "types": [
+      "dark",
+      "dragon"
+    ],
+    "form": "",
+    "sprite": "635",
+    "abilities": {
+      "normal": [
+        "Levitate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 92,
+      "atk": 105,
+      "def": 90,
+      "spa": 125,
+      "spd": 90,
+      "spe": 98,
+      "total": 600
+    },
+    "movesKey": "hydreigon"
+  },
+  {
+    "id": 637,
+    "num": "#0637",
+    "name": "Volcarona",
+    "types": [
+      "bug",
+      "fire"
+    ],
+    "form": "",
+    "sprite": "637",
+    "abilities": {
+      "normal": [
+        "Flame Body"
+      ],
+      "hidden": [
+        "Swarm"
+      ]
+    },
+    "stats": {
+      "hp": 85,
+      "atk": 60,
+      "def": 65,
+      "spa": 135,
+      "spd": 105,
+      "spe": 100,
+      "total": 550
+    },
+    "movesKey": "volcarona"
+  },
+  {
+    "id": 652,
+    "num": "#0652",
+    "name": "Chesnaught",
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "652",
+    "abilities": {
+      "normal": [
+        "Overgrow"
+      ],
+      "hidden": [
+        "Bulletproof"
+      ]
+    },
+    "stats": {
+      "hp": 88,
+      "atk": 107,
+      "def": 122,
+      "spa": 74,
+      "spd": 75,
+      "spe": 64,
+      "total": 530
+    },
+    "movesKey": "chesnaught"
+  },
+  {
+    "id": 652,
+    "num": "#0652",
+    "name": "Mega Chesnaught",
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "form": "Mega",
+    "sprite": "652",
+    "abilities": {
+      "normal": [
+        "Bulletproof"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 88,
+      "atk": 137,
+      "def": 172,
+      "spa": 74,
+      "spd": 115,
+      "spe": 44,
+      "total": 630
+    },
+    "movesKey": "chesnaught"
+  },
+  {
+    "id": 655,
+    "num": "#0655",
+    "name": "Delphox",
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "655",
+    "abilities": {
+      "normal": [
+        "Blaze"
+      ],
+      "hidden": [
+        "Magician"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 69,
+      "def": 72,
+      "spa": 114,
+      "spd": 100,
+      "spe": 104,
+      "total": 534
+    },
+    "movesKey": "delphox"
+  },
+  {
+    "id": 655,
+    "num": "#0655",
+    "name": "Mega Delphox",
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "form": "Mega",
+    "sprite": "655",
+    "abilities": {
+      "normal": [
+        "Levitate"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 69,
+      "def": 72,
+      "spa": 159,
+      "spd": 125,
+      "spe": 134,
+      "total": 634
+    },
+    "movesKey": "delphox"
+  },
+  {
+    "id": 658,
+    "num": "#0658",
+    "name": "Greninja",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "form": "",
+    "sprite": "658",
+    "abilities": {
+      "normal": [
+        "Torrent"
+      ],
+      "hidden": [
+        "Protean"
+      ]
+    },
+    "stats": {
+      "hp": 72,
+      "atk": 95,
+      "def": 67,
+      "spa": 103,
+      "spd": 71,
+      "spe": 122,
+      "total": 530
+    },
+    "movesKey": "greninja"
+  },
+  {
+    "id": 658,
+    "num": "#0658",
+    "name": "Mega Greninja",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "form": "Mega",
+    "sprite": "658",
+    "abilities": {
+      "normal": [
+        "Protean"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 72,
+      "atk": 125,
+      "def": 77,
+      "spa": 133,
+      "spd": 81,
+      "spe": 142,
+      "total": 630
+    },
+    "movesKey": "greninja"
+  },
+  {
+    "id": 660,
+    "num": "#0660",
+    "name": "Diggersby",
+    "types": [
+      "normal",
+      "ground"
+    ],
+    "form": "",
+    "sprite": "660",
+    "abilities": {
+      "normal": [
+        "Pickup",
+        "Cheek Pouch"
+      ],
+      "hidden": [
+        "Huge Power"
+      ]
+    },
+    "stats": {
+      "hp": 85,
+      "atk": 56,
+      "def": 77,
+      "spa": 50,
+      "spd": 77,
+      "spe": 78,
+      "total": 423
+    },
+    "movesKey": "diggersby"
+  },
+  {
+    "id": 663,
+    "num": "#0663",
+    "name": "Talonflame",
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "663",
+    "abilities": {
+      "normal": [
+        "Flame Body"
+      ],
+      "hidden": [
+        "Gale Wings"
+      ]
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 81,
+      "def": 71,
+      "spa": 74,
+      "spd": 69,
+      "spe": 126,
+      "total": 499
+    },
+    "movesKey": "talonflame"
+  },
+  {
+    "id": 666,
+    "num": "#0666",
+    "name": "Vivillon",
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "666",
+    "abilities": {
+      "normal": [
+        "Shield Dust",
+        "Compoundeyes"
+      ],
+      "hidden": [
+        "Friend Guard"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 52,
+      "def": 50,
+      "spa": 90,
+      "spd": 50,
+      "spe": 89,
+      "total": 411
+    },
+    "movesKey": "vivillon"
+  },
+  {
+    "id": 670,
+    "num": "#0670",
+    "name": "Floette (Eternal Flower)",
+    "types": [
+      "fairy"
+    ],
+    "form": "Special Form",
+    "sprite": "10061",
+    "abilities": {
+      "normal": [
+        "Flower Veil"
+      ],
+      "hidden": [
+        "Symbiosis"
+      ]
+    },
+    "stats": {
+      "hp": 54,
+      "atk": 45,
+      "def": 47,
+      "spa": 75,
+      "spd": 98,
+      "spe": 52,
+      "total": 371
+    },
+    "movesKey": "floette"
+  },
+  {
+    "id": 670,
+    "num": "#0670",
+    "name": "Mega Floette",
+    "types": [
+      "fairy"
+    ],
+    "form": "Mega",
+    "sprite": "670",
+    "abilities": {
+      "normal": [
+        "Fairy Aura"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 74,
+      "atk": 85,
+      "def": 87,
+      "spa": 155,
+      "spd": 148,
+      "spe": 102,
+      "total": 651
+    },
+    "movesKey": "floette"
+  },
+  {
+    "id": 671,
+    "num": "#0671",
+    "name": "Florges",
+    "types": [
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "671",
+    "abilities": {
+      "normal": [
+        "Flower Veil"
+      ],
+      "hidden": [
+        "Symbiosis"
+      ]
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 65,
+      "def": 68,
+      "spa": 112,
+      "spd": 154,
+      "spe": 75,
+      "total": 552
+    },
+    "movesKey": "florges"
+  },
+  {
+    "id": 675,
+    "num": "#0675",
+    "name": "Pangoro",
+    "types": [
+      "fighting",
+      "dark"
+    ],
+    "form": "",
+    "sprite": "675",
+    "abilities": {
+      "normal": [
+        "Iron Fist",
+        "Mold Breaker"
+      ],
+      "hidden": [
+        "Scrappy"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 124,
+      "def": 78,
+      "spa": 69,
+      "spd": 71,
+      "spe": 58,
+      "total": 495
+    },
+    "movesKey": "pangoro"
+  },
+  {
+    "id": 676,
+    "num": "#0676",
+    "name": "Furfrou",
+    "types": [
+      "normal"
+    ],
+    "form": "",
+    "sprite": "676",
+    "abilities": {
+      "normal": [
+        "Fur Coat"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 80,
+      "def": 60,
+      "spa": 65,
+      "spd": 90,
+      "spe": 102,
+      "total": 472
+    },
+    "movesKey": "furfrou"
+  },
+  {
+    "id": 678,
+    "num": "#0678",
+    "name": "Meowstic (Male)",
+    "types": [
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "678",
+    "abilities": {
+      "normal": [
+        "Keen Eye",
+        "Infiltrator"
+      ],
+      "hidden": [
+        "Prankster"
+      ]
+    },
+    "stats": {
+      "hp": 74,
+      "atk": 48,
+      "def": 76,
+      "spa": 83,
+      "spd": 81,
+      "spe": 104,
+      "total": 466
+    },
+    "movesKey": "meowstic"
+  },
+  {
+    "id": 678,
+    "num": "#0678",
+    "name": "Meowstic (Female)",
+    "types": [
+      "psychic"
+    ],
+    "form": "Gender Form",
+    "sprite": "10025",
+    "abilities": {
+      "normal": [
+        "Keen Eye",
+        "Infiltrator"
+      ],
+      "hidden": [
+        "Competitive"
+      ]
+    },
+    "stats": {
+      "hp": 74,
+      "atk": 48,
+      "def": 76,
+      "spa": 83,
+      "spd": 81,
+      "spe": 104,
+      "total": 466
+    },
+    "movesKey": "meowstic"
+  },
+  {
+    "id": 678,
+    "num": "#0678",
+    "name": "Mega Meowstic",
+    "types": [
+      "psychic"
+    ],
+    "form": "Mega",
+    "sprite": "678",
+    "abilities": {
+      "normal": [
+        "Trace"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 74,
+      "atk": 48,
+      "def": 76,
+      "spa": 143,
+      "spd": 101,
+      "spe": 124,
+      "total": 566
+    },
+    "movesKey": "meowstic"
+  },
+  {
+    "id": 681,
+    "num": "#0681",
+    "name": "Aegislash (Shield)",
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "681",
+    "abilities": {
+      "normal": [
+        "Stance Change"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 50,
+      "def": 140,
+      "spa": 50,
+      "spd": 140,
+      "spe": 60,
+      "total": 500
+    },
+    "movesKey": "aegislash"
+  },
+  {
+    "id": 683,
+    "num": "#0683",
+    "name": "Aromatisse",
+    "types": [
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "683",
+    "abilities": {
+      "normal": [
+        "Healer"
+      ],
+      "hidden": [
+        "Aroma Veil"
+      ]
+    },
+    "stats": {
+      "hp": 101,
+      "atk": 72,
+      "def": 72,
+      "spa": 99,
+      "spd": 89,
+      "spe": 29,
+      "total": 462
+    },
+    "movesKey": "aromatisse"
+  },
+  {
+    "id": 685,
+    "num": "#0685",
+    "name": "Slurpuff",
+    "types": [
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "685",
+    "abilities": {
+      "normal": [
+        "Sweet Veil"
+      ],
+      "hidden": [
+        "Unburden"
+      ]
+    },
+    "stats": {
+      "hp": 82,
+      "atk": 80,
+      "def": 86,
+      "spa": 85,
+      "spd": 75,
+      "spe": 72,
+      "total": 480
+    },
+    "movesKey": "slurpuff"
+  },
+  {
+    "id": 693,
+    "num": "#0693",
+    "name": "Clawitzer",
+    "types": [
+      "water"
+    ],
+    "form": "",
+    "sprite": "693",
+    "abilities": {
+      "normal": [
+        "Mega Launcher"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 71,
+      "atk": 73,
+      "def": 88,
+      "spa": 120,
+      "spd": 89,
+      "spe": 59,
+      "total": 500
+    },
+    "movesKey": "clawitzer"
+  },
+  {
+    "id": 695,
+    "num": "#0695",
+    "name": "Heliolisk",
+    "types": [
+      "electric",
+      "normal"
+    ],
+    "form": "",
+    "sprite": "695",
+    "abilities": {
+      "normal": [
+        "Dry Skin",
+        "Sand Veil"
+      ],
+      "hidden": [
+        "Solar Power"
+      ]
+    },
+    "stats": {
+      "hp": 62,
+      "atk": 55,
+      "def": 52,
+      "spa": 109,
+      "spd": 94,
+      "spe": 109,
+      "total": 481
+    },
+    "movesKey": "heliolisk"
+  },
+  {
+    "id": 697,
+    "num": "#0697",
+    "name": "Tyrantrum",
+    "types": [
+      "rock",
+      "dragon"
+    ],
+    "form": "",
+    "sprite": "697",
+    "abilities": {
+      "normal": [
+        "Strong Jaw"
+      ],
+      "hidden": [
+        "Rock Head"
+      ]
+    },
+    "stats": {
+      "hp": 82,
+      "atk": 121,
+      "def": 119,
+      "spa": 69,
+      "spd": 59,
+      "spe": 71,
+      "total": 521
+    },
+    "movesKey": "tyrantrum"
+  },
+  {
+    "id": 699,
+    "num": "#0699",
+    "name": "Aurorus",
+    "types": [
+      "rock",
+      "ice"
+    ],
+    "form": "",
+    "sprite": "699",
+    "abilities": {
+      "normal": [
+        "Refrigerate"
+      ],
+      "hidden": [
+        "Snow Warning"
+      ]
+    },
+    "stats": {
+      "hp": 123,
+      "atk": 77,
+      "def": 72,
+      "spa": 99,
+      "spd": 92,
+      "spe": 58,
+      "total": 521
+    },
+    "movesKey": "aurorus"
+  },
+  {
+    "id": 700,
+    "num": "#0700",
+    "name": "Sylveon",
+    "types": [
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "700",
+    "abilities": {
+      "normal": [
+        "Cute Charm"
+      ],
+      "hidden": [
+        "Pixilate"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 65,
+      "def": 65,
+      "spa": 110,
+      "spd": 130,
+      "spe": 60,
+      "total": 525
+    },
+    "movesKey": "sylveon"
+  },
+  {
+    "id": 701,
+    "num": "#0701",
+    "name": "Hawlucha",
+    "types": [
+      "fighting",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "701",
+    "abilities": {
+      "normal": [
+        "Limber",
+        "Unburden"
+      ],
+      "hidden": [
+        "Mold Breaker"
+      ]
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 92,
+      "def": 75,
+      "spa": 74,
+      "spd": 63,
+      "spe": 118,
+      "total": 500
+    },
+    "movesKey": "hawlucha"
+  },
+  {
+    "id": 701,
+    "num": "#0701",
+    "name": "Mega Hawlucha",
+    "types": [
+      "fighting",
+      "flying"
+    ],
+    "form": "Mega",
+    "sprite": "701",
+    "abilities": {
+      "normal": [
+        "No Guard"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 137,
+      "def": 100,
+      "spa": 74,
+      "spd": 93,
+      "spe": 118,
+      "total": 600
+    },
+    "movesKey": "hawlucha"
+  },
+  {
+    "id": 702,
+    "num": "#0702",
+    "name": "Dedenne",
+    "types": [
+      "electric",
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "702",
+    "abilities": {
+      "normal": [
+        "Cheek Pouch",
+        "Pickup"
+      ],
+      "hidden": [
+        "Plus"
+      ]
+    },
+    "stats": {
+      "hp": 67,
+      "atk": 58,
+      "def": 57,
+      "spa": 81,
+      "spd": 67,
+      "spe": 101,
+      "total": 431
+    },
+    "movesKey": "dedenne"
+  },
+  {
+    "id": 706,
+    "num": "#0706",
+    "name": "Goodra",
+    "types": [
+      "dragon"
+    ],
+    "form": "",
+    "sprite": "706",
+    "abilities": {
+      "normal": [
+        "Sap Sipper",
+        "Hydration"
+      ],
+      "hidden": [
+        "Gooey"
+      ]
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 100,
+      "def": 70,
+      "spa": 110,
+      "spd": 150,
+      "spe": 80,
+      "total": 600
+    },
+    "movesKey": "goodra"
+  },
+  {
+    "id": 706,
+    "num": "#0706",
+    "name": "Goodra (Hisuian Form)",
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "form": "Hisuian Form",
+    "sprite": "10242",
+    "abilities": {
+      "normal": [
+        "Sap Sipper",
+        "Shell Armor"
+      ],
+      "hidden": [
+        "Gooey"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 100,
+      "def": 100,
+      "spa": 110,
+      "spd": 150,
+      "spe": 60,
+      "total": 600
+    },
+    "movesKey": "goodra"
+  },
+  {
+    "id": 707,
+    "num": "#0707",
+    "name": "Klefki",
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "707",
+    "abilities": {
+      "normal": [
+        "Prankster"
+      ],
+      "hidden": [
+        "Magician"
+      ]
+    },
+    "stats": {
+      "hp": 57,
+      "atk": 80,
+      "def": 91,
+      "spa": 80,
+      "spd": 87,
+      "spe": 75,
+      "total": 470
+    },
+    "movesKey": "klefki"
+  },
+  {
+    "id": 709,
+    "num": "#0709",
+    "name": "Trevenant",
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "form": "",
+    "sprite": "709",
+    "abilities": {
+      "normal": [
+        "Natural Cure",
+        "Frisk"
+      ],
+      "hidden": [
+        "Harvest"
+      ]
+    },
+    "stats": {
+      "hp": 85,
+      "atk": 110,
+      "def": 76,
+      "spa": 65,
+      "spd": 82,
+      "spe": 56,
+      "total": 474
+    },
+    "movesKey": "trevenant"
+  },
+  {
+    "id": 711,
+    "num": "#0711",
+    "name": "Gourgeist",
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "form": "",
+    "sprite": "711",
+    "abilities": {
+      "normal": [
+        "Pickup",
+        "Frisk"
+      ],
+      "hidden": [
+        "Insomnia"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 90,
+      "def": 122,
+      "spa": 58,
+      "spd": 75,
+      "spe": 84,
+      "total": 494
+    },
+    "movesKey": "gourgeist"
+  },
+  {
+    "id": 713,
+    "num": "#0713",
+    "name": "Avalugg",
+    "types": [
+      "ice"
+    ],
+    "form": "",
+    "sprite": "713",
+    "abilities": {
+      "normal": [
+        "Own Tempo",
+        "Ice Body"
+      ],
+      "hidden": [
+        "Sturdy"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 117,
+      "def": 184,
+      "spa": 44,
+      "spd": 46,
+      "spe": 28,
+      "total": 514
+    },
+    "movesKey": "avalugg"
+  },
+  {
+    "id": 713,
+    "num": "#0713",
+    "name": "Avalugg (Hisuian Form)",
+    "types": [
+      "ice",
+      "rock"
+    ],
+    "form": "Hisuian Form",
+    "sprite": "10243",
+    "abilities": {
+      "normal": [
+        "Strong Jaw",
+        "Ice Body"
+      ],
+      "hidden": [
+        "Sturdy"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 127,
+      "def": 184,
+      "spa": 34,
+      "spd": 36,
+      "spe": 38,
+      "total": 514
+    },
+    "movesKey": "avalugg"
+  },
+  {
+    "id": 715,
+    "num": "#0715",
+    "name": "Noivern",
+    "types": [
+      "flying",
+      "dragon"
+    ],
+    "form": "",
+    "sprite": "715",
+    "abilities": {
+      "normal": [
+        "Frisk",
+        "Infiltrator"
+      ],
+      "hidden": [
+        "Telepathy"
+      ]
+    },
+    "stats": {
+      "hp": 85,
+      "atk": 70,
+      "def": 80,
+      "spa": 97,
+      "spd": 80,
+      "spe": 123,
+      "total": 535
+    },
+    "movesKey": "noivern"
+  },
+  {
+    "id": 724,
+    "num": "#0724",
+    "name": "Decidueye",
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "724",
+    "abilities": {
+      "normal": [
+        "Overgrow"
+      ],
+      "hidden": [
+        "Long Reach"
+      ]
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 107,
+      "def": 75,
+      "spa": 100,
+      "spd": 100,
+      "spe": 70,
+      "total": 530
+    },
+    "movesKey": "decidueye"
+  },
+  {
+    "id": 724,
+    "num": "#0724",
+    "name": "Decidueye (Hisuian Form)",
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "form": "Hisuian Form",
+    "sprite": "10244",
+    "abilities": {
+      "normal": [
+        "Overgrow"
+      ],
+      "hidden": [
+        "Scrappy"
+      ]
+    },
+    "stats": {
+      "hp": 88,
+      "atk": 112,
+      "def": 80,
+      "spa": 95,
+      "spd": 95,
+      "spe": 60,
+      "total": 530
+    },
+    "movesKey": "decidueye"
+  },
+  {
+    "id": 727,
+    "num": "#0727",
+    "name": "Incineroar",
+    "types": [
+      "fire",
+      "dark"
+    ],
+    "form": "",
+    "sprite": "727",
+    "abilities": {
+      "normal": [
+        "Blaze"
+      ],
+      "hidden": [
+        "Intimidate"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 115,
+      "def": 90,
+      "spa": 80,
+      "spd": 90,
+      "spe": 60,
+      "total": 530
+    },
+    "movesKey": "incineroar"
+  },
+  {
+    "id": 730,
+    "num": "#0730",
+    "name": "Primarina",
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "730",
+    "abilities": {
+      "normal": [
+        "Torrent"
+      ],
+      "hidden": [
+        "Liquid Voice"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 74,
+      "def": 74,
+      "spa": 126,
+      "spd": 116,
+      "spe": 60,
+      "total": 530
+    },
+    "movesKey": "primarina"
+  },
+  {
+    "id": 733,
+    "num": "#0733",
+    "name": "Toucannon",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "form": "",
+    "sprite": "733",
+    "abilities": {
+      "normal": [
+        "Keen Eye",
+        "Skill Link"
+      ],
+      "hidden": [
+        "Sheer Force"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 120,
+      "def": 75,
+      "spa": 75,
+      "spd": 75,
+      "spe": 60,
+      "total": 485
+    },
+    "movesKey": "toucannon"
+  },
+  {
+    "id": 740,
+    "num": "#0740",
+    "name": "Crabominable",
+    "types": [
+      "fighting",
+      "ice"
+    ],
+    "form": "",
+    "sprite": "740",
+    "abilities": {
+      "normal": [
+        "Hyper Cutter",
+        "Iron Fist"
+      ],
+      "hidden": [
+        "Anger Point"
+      ]
+    },
+    "stats": {
+      "hp": 97,
+      "atk": 132,
+      "def": 77,
+      "spa": 62,
+      "spd": 67,
+      "spe": 43,
+      "total": 478
+    },
+    "movesKey": "crabominable"
+  },
+  {
+    "id": 740,
+    "num": "#0740",
+    "name": "Mega Crabominable",
+    "types": [
+      "fighting",
+      "ice"
+    ],
+    "form": "Mega",
+    "sprite": "740",
+    "abilities": {
+      "normal": [
+        "Iron Fist"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 97,
+      "atk": 157,
+      "def": 122,
+      "spa": 62,
+      "spd": 107,
+      "spe": 33,
+      "total": 578
+    },
+    "movesKey": "crabominable"
+  },
+  {
+    "id": 745,
+    "num": "#0745",
+    "name": "Lycanroc (Midday)",
+    "types": [
+      "rock"
+    ],
+    "form": "",
+    "sprite": "745",
+    "abilities": {
+      "normal": [
+        "Keen Eye",
+        "Sand Rush"
+      ],
+      "hidden": [
+        "Steadfast"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 115,
+      "def": 65,
+      "spa": 55,
+      "spd": 65,
+      "spe": 112,
+      "total": 487
+    },
+    "movesKey": "lycanroc"
+  },
+  {
+    "id": 745,
+    "num": "#0745",
+    "name": "Lycanroc (Midnight)",
+    "types": [
+      "rock"
+    ],
+    "form": "Form Shift",
+    "sprite": "10126",
+    "abilities": {
+      "normal": [
+        "Keen Eye",
+        "Vital Spirit"
+      ],
+      "hidden": [
+        "No Guard"
+      ]
+    },
+    "stats": {
+      "hp": 85,
+      "atk": 115,
+      "def": 75,
+      "spa": 55,
+      "spd": 75,
+      "spe": 82,
+      "total": 487
+    },
+    "movesKey": "lycanroc"
+  },
+  {
+    "id": 745,
+    "num": "#0745",
+    "name": "Lycanroc (Dusk)",
+    "types": [
+      "rock"
+    ],
+    "form": "Form Shift",
+    "sprite": "10152",
+    "abilities": {
+      "normal": [
+        "Tough Claws"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 117,
+      "def": 65,
+      "spa": 55,
+      "spd": 65,
+      "spe": 110,
+      "total": 487
+    },
+    "movesKey": "lycanroc"
+  },
+  {
+    "id": 748,
+    "num": "#0748",
+    "name": "Toxapex",
+    "types": [
+      "poison",
+      "water"
+    ],
+    "form": "",
+    "sprite": "748",
+    "abilities": {
+      "normal": [
+        "Merciless",
+        "Limber"
+      ],
+      "hidden": [
+        "Regenerator"
+      ]
+    },
+    "stats": {
+      "hp": 50,
+      "atk": 63,
+      "def": 152,
+      "spa": 53,
+      "spd": 142,
+      "spe": 35,
+      "total": 495
+    },
+    "movesKey": "toxapex"
+  },
+  {
+    "id": 750,
+    "num": "#0750",
+    "name": "Mudsdale",
+    "types": [
+      "ground"
+    ],
+    "form": "",
+    "sprite": "750",
+    "abilities": {
+      "normal": [
+        "Own Tempo",
+        "Stamina"
+      ],
+      "hidden": [
+        "Inner Focus"
+      ]
+    },
+    "stats": {
+      "hp": 100,
+      "atk": 125,
+      "def": 100,
+      "spa": 55,
+      "spd": 85,
+      "spe": 35,
+      "total": 500
+    },
+    "movesKey": "mudsdale"
+  },
+  {
+    "id": 752,
+    "num": "#0752",
+    "name": "Araquanid",
+    "types": [
+      "water",
+      "bug"
+    ],
+    "form": "",
+    "sprite": "752",
+    "abilities": {
+      "normal": [
+        "Water Bubble"
+      ],
+      "hidden": [
+        "Water Absorb"
+      ]
+    },
+    "stats": {
+      "hp": 68,
+      "atk": 70,
+      "def": 92,
+      "spa": 50,
+      "spd": 132,
+      "spe": 42,
+      "total": 454
+    },
+    "movesKey": "araquanid"
+  },
+  {
+    "id": 758,
+    "num": "#0758",
+    "name": "Salazzle",
+    "types": [
+      "poison",
+      "fire"
+    ],
+    "form": "",
+    "sprite": "758",
+    "abilities": {
+      "normal": [
+        "Corrosion"
+      ],
+      "hidden": [
+        "Oblivious"
+      ]
+    },
+    "stats": {
+      "hp": 68,
+      "atk": 64,
+      "def": 60,
+      "spa": 111,
+      "spd": 60,
+      "spe": 117,
+      "total": 480
+    },
+    "movesKey": "salazzle"
+  },
+  {
+    "id": 763,
+    "num": "#0763",
+    "name": "Tsareena",
+    "types": [
+      "grass"
+    ],
+    "form": "",
+    "sprite": "763",
+    "abilities": {
+      "normal": [
+        "Leaf Guard",
+        "Queenly Majesty"
+      ],
+      "hidden": [
+        "Sweet Veil"
+      ]
+    },
+    "stats": {
+      "hp": 72,
+      "atk": 120,
+      "def": 98,
+      "spa": 50,
+      "spd": 98,
+      "spe": 72,
+      "total": 510
+    },
+    "movesKey": "tsareena"
+  },
+  {
+    "id": 765,
+    "num": "#0765",
+    "name": "Oranguru",
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "765",
+    "abilities": {
+      "normal": [
+        "Inner Focus",
+        "Telepathy"
+      ],
+      "hidden": [
+        "Symbiosis"
+      ]
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 60,
+      "def": 80,
+      "spa": 90,
+      "spd": 110,
+      "spe": 60,
+      "total": 490
+    },
+    "movesKey": "oranguru"
+  },
+  {
+    "id": 766,
+    "num": "#0766",
+    "name": "Passimian",
+    "types": [
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "766",
+    "abilities": {
+      "normal": [
+        "Receiver"
+      ],
+      "hidden": [
+        "Defiant"
+      ]
+    },
+    "stats": {
+      "hp": 100,
+      "atk": 120,
+      "def": 90,
+      "spa": 40,
+      "spd": 60,
+      "spe": 80,
+      "total": 490
+    },
+    "movesKey": "passimian"
+  },
+  {
+    "id": 778,
+    "num": "#0778",
+    "name": "Mimikyu",
+    "types": [
+      "ghost",
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "778",
+    "abilities": {
+      "normal": [
+        "Disguise"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 55,
+      "atk": 90,
+      "def": 80,
+      "spa": 50,
+      "spd": 105,
+      "spe": 96,
+      "total": 476
+    },
+    "movesKey": "mimikyu"
+  },
+  {
+    "id": 780,
+    "num": "#0780",
+    "name": "Drampa",
+    "types": [
+      "normal",
+      "dragon"
+    ],
+    "form": "",
+    "sprite": "780",
+    "abilities": {
+      "normal": [
+        "Berserk",
+        "Sap Sipper"
+      ],
+      "hidden": [
+        "Cloud Nine"
+      ]
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 60,
+      "def": 85,
+      "spa": 135,
+      "spd": 91,
+      "spe": 36,
+      "total": 485
+    },
+    "movesKey": "drampa"
+  },
+  {
+    "id": 780,
+    "num": "#0780",
+    "name": "Mega Drampa",
+    "types": [
+      "normal",
+      "dragon"
+    ],
+    "form": "Mega",
+    "sprite": "780",
+    "abilities": {
+      "normal": [
+        "Berserk"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 78,
+      "atk": 85,
+      "def": 110,
+      "spa": 160,
+      "spd": 116,
+      "spe": 36,
+      "total": 585
+    },
+    "movesKey": "drampa"
+  },
+  {
+    "id": 784,
+    "num": "#0784",
+    "name": "Kommo-o",
+    "types": [
+      "dragon",
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "784",
+    "abilities": {
+      "normal": [
+        "Bulletproof",
+        "Soundproof"
+      ],
+      "hidden": [
+        "Overcoat"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 110,
+      "def": 125,
+      "spa": 100,
+      "spd": 105,
+      "spe": 85,
+      "total": 600
+    },
+    "movesKey": "kommo-o"
+  },
+  {
+    "id": 823,
+    "num": "#0823",
+    "name": "Corviknight",
+    "types": [
+      "flying",
+      "steel"
+    ],
+    "form": "",
+    "sprite": "823",
+    "abilities": {
+      "normal": [
+        "Pressure",
+        "Unnerve"
+      ],
+      "hidden": [
+        "Mirror Armor"
+      ]
+    },
+    "stats": {
+      "hp": 98,
+      "atk": 87,
+      "def": 105,
+      "spa": 53,
+      "spd": 85,
+      "spe": 67,
+      "total": 495
+    },
+    "movesKey": "corviknight"
+  },
+  {
+    "id": 841,
+    "num": "#0841",
+    "name": "Flapple",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "form": "",
+    "sprite": "841",
+    "abilities": {
+      "normal": [
+        "Ripen",
+        "Gluttony"
+      ],
+      "hidden": [
+        "Hustle"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 110,
+      "def": 80,
+      "spa": 95,
+      "spd": 60,
+      "spe": 70,
+      "total": 485
+    },
+    "movesKey": "flapple"
+  },
+  {
+    "id": 842,
+    "num": "#0842",
+    "name": "Appletun",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "form": "",
+    "sprite": "842",
+    "abilities": {
+      "normal": [
+        "Ripen",
+        "Gluttony"
+      ],
+      "hidden": [
+        "Thick Fat"
+      ]
+    },
+    "stats": {
+      "hp": 110,
+      "atk": 85,
+      "def": 80,
+      "spa": 100,
+      "spd": 80,
+      "spe": 30,
+      "total": 485
+    },
+    "movesKey": "appletun"
+  },
+  {
+    "id": 844,
+    "num": "#0844",
+    "name": "Sandaconda",
+    "types": [
+      "ground"
+    ],
+    "form": "",
+    "sprite": "844",
+    "abilities": {
+      "normal": [
+        "Sand Spit",
+        "Shed Skin"
+      ],
+      "hidden": [
+        "Sand Veil"
+      ]
+    },
+    "stats": {
+      "hp": 72,
+      "atk": 107,
+      "def": 125,
+      "spa": 65,
+      "spd": 70,
+      "spe": 71,
+      "total": 510
+    },
+    "movesKey": "sandaconda"
+  },
+  {
+    "id": 855,
+    "num": "#0855",
+    "name": "Polteageist",
+    "types": [
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "855",
+    "abilities": {
+      "normal": [
+        "Weak Armor"
+      ],
+      "hidden": [
+        "Cursed Body"
+      ]
+    },
+    "stats": {
+      "hp": 60,
+      "atk": 65,
+      "def": 65,
+      "spa": 134,
+      "spd": 114,
+      "spe": 70,
+      "total": 508
+    },
+    "movesKey": "polteageist"
+  },
+  {
+    "id": 858,
+    "num": "#0858",
+    "name": "Hatterene",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "858",
+    "abilities": {
+      "normal": [
+        "Healer",
+        "Anticipation"
+      ],
+      "hidden": [
+        "Magic Bounce"
+      ]
+    },
+    "stats": {
+      "hp": 57,
+      "atk": 90,
+      "def": 95,
+      "spa": 136,
+      "spd": 103,
+      "spe": 29,
+      "total": 510
+    },
+    "movesKey": "hatterene"
+  },
+  {
+    "id": 866,
+    "num": "#0866",
+    "name": "Mr. Rime",
+    "types": [
+      "ice",
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "866",
+    "abilities": {
+      "normal": [
+        "Tangled Feet",
+        "Screen Cleaner"
+      ],
+      "hidden": [
+        "Ice Body"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 85,
+      "def": 75,
+      "spa": 110,
+      "spd": 100,
+      "spe": 70,
+      "total": 520
+    },
+    "movesKey": "mr-rime"
+  },
+  {
+    "id": 867,
+    "num": "#0867",
+    "name": "Runerigus",
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "867",
+    "abilities": {
+      "normal": [
+        "Wandering Spirit"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 58,
+      "atk": 95,
+      "def": 145,
+      "spa": 50,
+      "spd": 105,
+      "spe": 30,
+      "total": 483
+    },
+    "movesKey": "runerigus"
+  },
+  {
+    "id": 869,
+    "num": "#0869",
+    "name": "Alcremie",
+    "types": [
+      "fairy"
+    ],
+    "form": "",
+    "sprite": "869",
+    "abilities": {
+      "normal": [
+        "Sweet Veil"
+      ],
+      "hidden": [
+        "Aroma Veil"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 60,
+      "def": 75,
+      "spa": 110,
+      "spd": 121,
+      "spe": 64,
+      "total": 495
+    },
+    "movesKey": "alcremie"
+  },
+  {
+    "id": 877,
+    "num": "#0877",
+    "name": "Morpeko",
+    "types": [
+      "electric",
+      "dark"
+    ],
+    "form": "",
+    "sprite": "877",
+    "abilities": {
+      "normal": [
+        "Hunger Switch"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 58,
+      "atk": 95,
+      "def": 58,
+      "spa": 70,
+      "spd": 58,
+      "spe": 97,
+      "total": 436
+    },
+    "movesKey": "morpeko"
+  },
+  {
+    "id": 887,
+    "num": "#0887",
+    "name": "Dragapult",
+    "types": [
+      "dragon",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "887",
+    "abilities": {
+      "normal": [
+        "Clear Body",
+        "Infiltrator"
+      ],
+      "hidden": [
+        "Cursed Body"
+      ]
+    },
+    "stats": {
+      "hp": 88,
+      "atk": 120,
+      "def": 75,
+      "spa": 100,
+      "spd": 75,
+      "spe": 142,
+      "total": 600
+    },
+    "movesKey": "dragapult"
+  },
+  {
+    "id": 899,
+    "num": "#0899",
+    "name": "Wyrdeer",
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "899",
+    "abilities": {
+      "normal": [
+        "Intimidate",
+        "Frisk"
+      ],
+      "hidden": [
+        "Sap Sipper"
+      ]
+    },
+    "stats": {
+      "hp": 103,
+      "atk": 105,
+      "def": 72,
+      "spa": 105,
+      "spd": 75,
+      "spe": 65,
+      "total": 525
+    },
+    "movesKey": "wyrdeer"
+  },
+  {
+    "id": 900,
+    "num": "#0900",
+    "name": "Kleavor",
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "form": "",
+    "sprite": "900",
+    "abilities": {
+      "normal": [
+        "Swarm",
+        "Sheer Force"
+      ],
+      "hidden": [
+        "Sharpness"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 135,
+      "def": 95,
+      "spa": 45,
+      "spd": 70,
+      "spe": 85,
+      "total": 500
+    },
+    "movesKey": "kleavor"
+  },
+  {
+    "id": 902,
+    "num": "#0902",
+    "name": "Basculegion (Male)",
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "902",
+    "abilities": {
+      "normal": [
+        "Swift Swim",
+        "Adaptability"
+      ],
+      "hidden": [
+        "Mold Breaker"
+      ]
+    },
+    "stats": {
+      "hp": 120,
+      "atk": 112,
+      "def": 65,
+      "spa": 80,
+      "spd": 75,
+      "spe": 78,
+      "total": 530
+    },
+    "movesKey": "basculegion"
+  },
+  {
+    "id": 902,
+    "num": "#0902",
+    "name": "Basculegion (Female)",
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "form": "Gender Form",
+    "sprite": "10248",
+    "abilities": {
+      "normal": [
+        "Swift Swim",
+        "Adaptability"
+      ],
+      "hidden": [
+        "Mold Breaker"
+      ]
+    },
+    "stats": {
+      "hp": 120,
+      "atk": 92,
+      "def": 65,
+      "spa": 100,
+      "spd": 75,
+      "spe": 78,
+      "total": 530
+    },
+    "movesKey": "basculegion"
+  },
+  {
+    "id": 903,
+    "num": "#0903",
+    "name": "Sneasler",
+    "types": [
+      "fighting",
+      "poison"
+    ],
+    "form": "",
+    "sprite": "903",
+    "abilities": {
+      "normal": [
+        "Pressure",
+        "Unburden"
+      ],
+      "hidden": [
+        "Poison Touch"
+      ]
+    },
+    "stats": {
+      "hp": 80,
+      "atk": 130,
+      "def": 60,
+      "spa": 40,
+      "spd": 80,
+      "spe": 120,
+      "total": 510
+    },
+    "movesKey": "sneasler"
+  },
+  {
+    "id": 908,
+    "num": "#0908",
+    "name": "Meowscarada",
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "form": "",
+    "sprite": "908",
+    "abilities": {
+      "normal": [
+        "Overgrow"
+      ],
+      "hidden": [
+        "Protean"
+      ]
+    },
+    "stats": {
+      "hp": 76,
+      "atk": 110,
+      "def": 70,
+      "spa": 81,
+      "spd": 70,
+      "spe": 123,
+      "total": 530
+    },
+    "movesKey": "meowscarada"
+  },
+  {
+    "id": 911,
+    "num": "#0911",
+    "name": "Skeledirge",
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "911",
+    "abilities": {
+      "normal": [
+        "Blaze"
+      ],
+      "hidden": [
+        "Unaware"
+      ]
+    },
+    "stats": {
+      "hp": 104,
+      "atk": 75,
+      "def": 100,
+      "spa": 110,
+      "spd": 75,
+      "spe": 66,
+      "total": 530
+    },
+    "movesKey": "skeledirge"
+  },
+  {
+    "id": 914,
+    "num": "#0914",
+    "name": "Quaquaval",
+    "types": [
+      "water",
+      "fighting"
+    ],
+    "form": "",
+    "sprite": "914",
+    "abilities": {
+      "normal": [
+        "Torrent"
+      ],
+      "hidden": [
+        "Moxie"
+      ]
+    },
+    "stats": {
+      "hp": 85,
+      "atk": 120,
+      "def": 80,
+      "spa": 85,
+      "spd": 75,
+      "spe": 85,
+      "total": 530
+    },
+    "movesKey": "quaquaval"
+  },
+  {
+    "id": 925,
+    "num": "#0925",
+    "name": "Maushold",
+    "types": [
+      "normal"
+    ],
+    "form": "",
+    "sprite": "925",
+    "abilities": {
+      "normal": [
+        "Friend Guard",
+        "Cheek Pouch"
+      ],
+      "hidden": [
+        "Technician"
+      ]
+    },
+    "stats": {
+      "hp": 74,
+      "atk": 75,
+      "def": 70,
+      "spa": 65,
+      "spd": 75,
+      "spe": 111,
+      "total": 470
+    },
+    "movesKey": "maushold"
+  },
+  {
+    "id": 934,
+    "num": "#0934",
+    "name": "Garganacl",
+    "types": [
+      "rock"
+    ],
+    "form": "",
+    "sprite": "934",
+    "abilities": {
+      "normal": [
+        "Purifying Salt",
+        "Sturdy"
+      ],
+      "hidden": [
+        "Clear Body"
+      ]
+    },
+    "stats": {
+      "hp": 100,
+      "atk": 100,
+      "def": 130,
+      "spa": 45,
+      "spd": 90,
+      "spe": 35,
+      "total": 500
+    },
+    "movesKey": "garganacl"
+  },
+  {
+    "id": 936,
+    "num": "#0936",
+    "name": "Armarouge",
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "936",
+    "abilities": {
+      "normal": [
+        "Flash Fire"
+      ],
+      "hidden": [
+        "Weak Armor"
+      ]
+    },
+    "stats": {
+      "hp": 85,
+      "atk": 60,
+      "def": 100,
+      "spa": 125,
+      "spd": 80,
+      "spe": 75,
+      "total": 525
+    },
+    "movesKey": "armarouge"
+  },
+  {
+    "id": 937,
+    "num": "#0937",
+    "name": "Ceruledge",
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "937",
+    "abilities": {
+      "normal": [
+        "Flash Fire"
+      ],
+      "hidden": [
+        "Weak Armor"
+      ]
+    },
+    "stats": {
+      "hp": 75,
+      "atk": 125,
+      "def": 80,
+      "spa": 60,
+      "spd": 100,
+      "spe": 85,
+      "total": 525
+    },
+    "movesKey": "ceruledge"
+  },
+  {
+    "id": 939,
+    "num": "#0939",
+    "name": "Bellibolt",
+    "types": [
+      "electric"
+    ],
+    "form": "",
+    "sprite": "939",
+    "abilities": {
+      "normal": [
+        "Electromorphosis",
+        "Static"
+      ],
+      "hidden": [
+        "Damp"
+      ]
+    },
+    "stats": {
+      "hp": 109,
+      "atk": 64,
+      "def": 91,
+      "spa": 103,
+      "spd": 83,
+      "spe": 45,
+      "total": 495
+    },
+    "movesKey": "bellibolt"
+  },
+  {
+    "id": 952,
+    "num": "#0952",
+    "name": "Scovillain",
+    "types": [
+      "grass",
+      "fire"
+    ],
+    "form": "",
+    "sprite": "952",
+    "abilities": {
+      "normal": [
+        "Chlorophyll",
+        "Insomnia"
+      ],
+      "hidden": [
+        "Moody"
+      ]
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 108,
+      "def": 65,
+      "spa": 108,
+      "spd": 65,
+      "spe": 75,
+      "total": 486
+    },
+    "movesKey": "scovillain"
+  },
+  {
+    "id": 952,
+    "num": "#0952",
+    "name": "Mega Scovillain",
+    "types": [
+      "grass",
+      "fire"
+    ],
+    "form": "Mega",
+    "sprite": "952",
+    "abilities": {
+      "normal": [
+        "Spicy Spray"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 65,
+      "atk": 138,
+      "def": 85,
+      "spa": 138,
+      "spd": 85,
+      "spe": 75,
+      "total": 586
+    },
+    "movesKey": "scovillain"
+  },
+  {
+    "id": 956,
+    "num": "#0956",
+    "name": "Espathra",
+    "types": [
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "956",
+    "abilities": {
+      "normal": [
+        "Opportunist",
+        "Frisk"
+      ],
+      "hidden": [
+        "Speed Boost"
+      ]
+    },
+    "stats": {
+      "hp": 95,
+      "atk": 60,
+      "def": 60,
+      "spa": 101,
+      "spd": 60,
+      "spe": 105,
+      "total": 481
+    },
+    "movesKey": "espathra"
+  },
+  {
+    "id": 959,
+    "num": "#0959",
+    "name": "Tinkaton",
+    "types": [
+      "fairy",
+      "steel"
+    ],
+    "form": "",
+    "sprite": "959",
+    "abilities": {
+      "normal": [
+        "Mold Breaker",
+        "Own Tempo"
+      ],
+      "hidden": [
+        "Pickpocket"
+      ]
+    },
+    "stats": {
+      "hp": 85,
+      "atk": 75,
+      "def": 77,
+      "spa": 70,
+      "spd": 105,
+      "spe": 94,
+      "total": 506
+    },
+    "movesKey": "tinkaton"
+  },
+  {
+    "id": 964,
+    "num": "#0964",
+    "name": "Palafin",
+    "types": [
+      "water"
+    ],
+    "form": "",
+    "sprite": "964",
+    "abilities": {
+      "normal": [
+        "Zero to Hero"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 100,
+      "atk": 70,
+      "def": 72,
+      "spa": 53,
+      "spd": 62,
+      "spe": 100,
+      "total": 457
+    },
+    "movesKey": "palafin"
+  },
+  {
+    "id": 968,
+    "num": "#0968",
+    "name": "Orthworm",
+    "types": [
+      "steel"
+    ],
+    "form": "",
+    "sprite": "968",
+    "abilities": {
+      "normal": [
+        "Earth Eater"
+      ],
+      "hidden": [
+        "Sand Veil"
+      ]
+    },
+    "stats": {
+      "hp": 70,
+      "atk": 85,
+      "def": 145,
+      "spa": 60,
+      "spd": 55,
+      "spe": 65,
+      "total": 480
+    },
+    "movesKey": "orthworm"
+  },
+  {
+    "id": 970,
+    "num": "#0970",
+    "name": "Glimmora",
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "form": "",
+    "sprite": "970",
+    "abilities": {
+      "normal": [
+        "Toxic Debris"
+      ],
+      "hidden": [
+        "Corrosion"
+      ]
+    },
+    "stats": {
+      "hp": 83,
+      "atk": 55,
+      "def": 90,
+      "spa": 130,
+      "spd": 81,
+      "spe": 86,
+      "total": 525
+    },
+    "movesKey": "glimmora"
+  },
+  {
+    "id": 970,
+    "num": "#0970",
+    "name": "Mega Glimmora",
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "form": "Mega",
+    "sprite": "970",
+    "abilities": {
+      "normal": [
+        "Adaptability"
+      ],
+      "hidden": []
+    },
+    "stats": {
+      "hp": 83,
+      "atk": 90,
+      "def": 105,
+      "spa": 150,
+      "spd": 96,
+      "spe": 101,
+      "total": 625
+    },
+    "movesKey": "glimmora"
+  },
+  {
+    "id": 981,
+    "num": "#0981",
+    "name": "Farigiraf",
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "form": "",
+    "sprite": "981",
+    "abilities": {
+      "normal": [
+        "Cud Chew",
+        "Armor Tail"
+      ],
+      "hidden": [
+        "Sap Sipper"
+      ]
+    },
+    "stats": {
+      "hp": 120,
+      "atk": 90,
+      "def": 70,
+      "spa": 110,
+      "spd": 70,
+      "spe": 60,
+      "total": 520
+    },
+    "movesKey": "farigiraf"
+  },
+  {
+    "id": 983,
+    "num": "#0983",
+    "name": "Kingambit",
+    "types": [
+      "dark",
+      "steel"
+    ],
+    "form": "",
+    "sprite": "983",
+    "abilities": {
+      "normal": [
+        "Defiant",
+        "Supreme Overlord"
+      ],
+      "hidden": [
+        "Pressure"
+      ]
+    },
+    "stats": {
+      "hp": 100,
+      "atk": 135,
+      "def": 120,
+      "spa": 60,
+      "spd": 85,
+      "spe": 50,
+      "total": 550
+    },
+    "movesKey": "kingambit"
+  },
+  {
+    "id": 1013,
+    "num": "#1013",
+    "name": "Sinistcha",
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "form": "",
+    "sprite": "1013",
+    "abilities": {
+      "normal": [
+        "Hospitality"
+      ],
+      "hidden": [
+        "Heatproof"
+      ]
+    },
+    "stats": {
+      "hp": 71,
+      "atk": 60,
+      "def": 106,
+      "spa": 121,
+      "spd": 80,
+      "spe": 70,
+      "total": 508
+    },
+    "movesKey": "sinistcha"
+  },
+  {
+    "id": 1018,
+    "num": "#1018",
+    "name": "Archaludon",
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "form": "",
+    "sprite": "1018",
+    "abilities": {
+      "normal": [
+        "Stamina",
+        "Sturdy"
+      ],
+      "hidden": [
+        "Stalwart"
+      ]
+    },
+    "stats": {
+      "hp": 90,
+      "atk": 105,
+      "def": 130,
+      "spa": 125,
+      "spd": 65,
+      "spe": 85,
+      "total": 600
+    },
+    "movesKey": "archaludon"
+  },
+  {
+    "id": 1019,
+    "num": "#1019",
+    "name": "Hydrapple",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "form": "",
+    "sprite": "1019",
+    "abilities": {
+      "normal": [
+        "Supersweet Syrup",
+        "Regenerator"
+      ],
+      "hidden": [
+        "Sticky Hold"
+      ]
+    },
+    "stats": {
+      "hp": 106,
+      "atk": 80,
+      "def": 110,
+      "spa": 120,
+      "spd": 80,
+      "spe": 44,
+      "total": 540
+    },
+    "movesKey": "hydrapple"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "pokemon-champions-pokedex",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "scrape:moves": "node scripts/scrape-pokemondb-moves.mjs",
+    "validate:data": "node scripts/validate-data.mjs"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}
