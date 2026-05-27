@@ -118,55 +118,55 @@ function renderShell() {
 
         <section class="search-filter-panel" aria-label="Pokedex controls">
           <div class="control-item">
-            <label for="searchBar">Tim kiem ten loai</label>
-            <input type="search" id="searchBar" placeholder="Nhap ten Pokemon..." autocomplete="off" />
+            <label for="searchBar">Tìm kiếm tên loài</label>
+            <input type="search" id="searchBar" placeholder="Nhập tên Pokemon..." autocomplete="off" />
           </div>
           <div class="control-item">
-            <label for="filterType">Bo loc he</label>
+            <label for="filterType">Bộ lọc hệ</label>
             <select id="filterType">
-              <option value="all">Tat ca he</option>
+              <option value="all">Tất cả hệ</option>
               ${typeOptions.map((type) => `<option value="${type}">${type}</option>`).join("")}
             </select>
           </div>
           <div class="control-item">
-            <label for="filterMega">Bo loc Mega Evolution</label>
+            <label for="filterMega">Bộ lọc Mega Evolution</label>
             <select id="filterMega">
-              <option value="all">Tat ca Pokemon</option>
-              <option value="mega-only">Chi Mega Evolution</option>
+              <option value="all">Tất cả Pokemon</option>
+              <option value="mega-only">Chỉ Mega Evolution</option>
             </select>
           </div>
           <div class="control-item">
-            <label for="sortOrder">Sap xep National Dex</label>
+            <label for="sortOrder">Sắp xếp National Dex</label>
             <select id="sortOrder">
-              <option value="asc">Tang dan (#0001 -> ...)</option>
-              <option value="desc">Giam dan (... -> #0001)</option>
+              <option value="asc">Tăng dần (#0001 -> ...)</option>
+              <option value="desc">Giảm dần (... -> #0001)</option>
             </select>
           </div>
-          <div class="counter-box" id="pokedexCounter">Dang tai du lieu...</div>
+          <div class="counter-box" id="pokedexCounter">Đang tải dữ liệu...</div>
         </section>
 
         <div class="table-responsive">
           <table class="pokedex-table">
             <thead>
               <tr>
-                <th rowspan="2" class="column-toggle" aria-label="Mo moves"></th>
-                <th rowspan="2" class="column-ndex">So NDex</th>
+                <th rowspan="2" class="column-toggle" aria-label="Mở moves"></th>
+                <th rowspan="2" class="column-ndex">Số NDex</th>
                 <th rowspan="2" class="column-sprite">Sprite</th>
-                <th rowspan="2" class="column-name">Ten Pokemon / Phan dang</th>
-                <th rowspan="2" class="column-types">He</th>
-                <th colspan="2" class="group-header">Dac tinh</th>
+                <th rowspan="2" class="column-name">Tên Pokemon / Phân dạng</th>
+                <th rowspan="2" class="column-types">Hệ</th>
+                <th colspan="2" class="group-header">Đặc tính</th>
                 <th colspan="7" class="group-header">Stats</th>
               </tr>
               <tr>
-                <th class="column-ability">Thuong</th>
-                <th class="column-ability">An</th>
+                <th class="column-ability">Thường</th>
+                <th class="column-ability">Ẩn</th>
                 ${renderStatHeader("hp", "HP")}
                 ${renderStatHeader("atk", "Atk")}
                 ${renderStatHeader("def", "Def")}
                 ${renderStatHeader("spa", "SpA")}
                 ${renderStatHeader("spd", "SpD")}
                 ${renderStatHeader("spe", "Spe")}
-                ${renderStatHeader("total", "Tong")}
+                ${renderStatHeader("total", "Tổng")}
               </tr>
             </thead>
             <tbody id="pokedexEngineBody"></tbody>
@@ -334,7 +334,7 @@ function renderTable() {
 
   updateSortIndicators();
   tbody.innerHTML = filteredPokemon.map(renderPokemonRows).join("");
-  document.querySelector("#pokedexCounter").textContent = `Ket qua: Dang hien thi ${filteredPokemon.length} / ${pokemonData.length} Pokemon hop le`;
+  document.querySelector("#pokedexCounter").textContent = `Kết quả: Đang hiển thị ${filteredPokemon.length} / ${pokemonData.length} Pokemon hợp lệ`;
 
   tbody.querySelectorAll("[data-expand-row]").forEach((button) => {
     button.addEventListener("click", (event) => {
@@ -430,7 +430,7 @@ function renderPokemonRows(pokemon) {
   const rowKey = getRowKey(pokemon);
   const isExpanded = state.expandedRowKey === rowKey;
   const spriteUrl = buildPokeApiSpriteUrl(pokemon.sprite);
-  const expandLabel = isExpanded ? "Dong moves" : "Mo moves";
+  const expandLabel = isExpanded ? "Đóng moves" : "Mở moves";
 
   const pokemonRow = `
     <tr class="pokemon-row ${isExpanded ? "is-expanded" : ""}" data-row-key="${rowKey}">
