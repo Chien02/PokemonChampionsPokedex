@@ -33,6 +33,15 @@ const moveGroups = [
   ["egg", "Egg"],
 ];
 
+const heroPokemon = [
+  { name: "Mega Charizard X", sprite: "10034", className: "hero-card-large" },
+  { name: "Gengar", sprite: "94", className: "hero-card-offset" },
+  { name: "Lucario", sprite: "448", className: "hero-card-low" },
+  { name: "Meowscarada", sprite: "908", className: "hero-card-thin" },
+];
+
+const marquees = ["Pokemon Champions", "Gen IX", "Moves DB", "Mega Index", "PokeAPI Art", "Stats Engine"];
+
 const state = {
   query: "",
   type: "all",
@@ -69,70 +78,100 @@ function isMegaPokemon(pokemon) {
 function renderShell() {
   const uniqueSpeciesCount = new Set(pokemonData.map((pokemon) => pokemon.id)).size;
   const megaCount = pokemonData.filter(isMegaPokemon).length;
+  const moveKeyCount = new Set(pokemonData.map((pokemon) => pokemon.movesKey)).size;
+  const formCount = pokemonData.filter((pokemon) => pokemon.form).length;
 
   app.innerHTML = `
     <main class="pokedex-container">
-      <header class="page-header">
-        <h1>Pokemon Champions Roster</h1>
-        <p>Pokedex data engine - ${uniqueSpeciesCount} core species and ${megaCount} Mega Evolution forms</p>
+      <header class="hero-section" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <span class="eyebrow">Pokemon Champions / Pokedex Studio</span>
+          <h1 id="heroTitle">Battle data built like a <span>midnight lab.</span></h1>
+          <p>Browse Champions stats, abilities, forms, and Gen 9 Scarlet/Violet moves in a sharp dark interface tuned for fast comparison.</p>
+        </div>
+        <div class="hero-art-grid" aria-label="Featured Pokemon artwork">
+          ${heroPokemon.map(renderHeroArtwork).join("")}
+        </div>
       </header>
 
-      <section class="search-filter-panel" aria-label="Pokedex controls">
-        <div class="control-item">
-          <label for="searchBar">Tim kiem ten loai</label>
-          <input type="search" id="searchBar" placeholder="Nhap ten Pokemon..." autocomplete="off" />
+      <section class="marquee-band" aria-label="Data sources and features">
+        <div class="marquee-track">
+          ${renderMarqueeSet()}
+          ${renderMarqueeSet()}
         </div>
-        <div class="control-item">
-          <label for="filterType">Bo loc he</label>
-          <select id="filterType">
-            <option value="all">Tat ca he</option>
-            ${typeOptions.map((type) => `<option value="${type}">${type}</option>`).join("")}
-          </select>
-        </div>
-        <div class="control-item">
-          <label for="filterMega">Bo loc Mega Evolution</label>
-          <select id="filterMega">
-            <option value="all">Tat ca Pokemon</option>
-            <option value="mega-only">Chi Mega Evolution</option>
-          </select>
-        </div>
-        <div class="control-item">
-          <label for="sortOrder">Sap xep National Dex</label>
-          <select id="sortOrder">
-            <option value="asc">Tang dan (#0001 -> ...)</option>
-            <option value="desc">Giam dan (... -> #0001)</option>
-          </select>
-        </div>
-        <div class="counter-box" id="pokedexCounter">Dang tai du lieu...</div>
       </section>
 
-      <div class="table-responsive">
-        <table class="pokedex-table">
-          <thead>
-            <tr>
-              <th rowspan="2" class="column-toggle" aria-label="Mo moves"></th>
-              <th rowspan="2" class="column-ndex">So NDex</th>
-              <th rowspan="2" class="column-sprite">Sprite</th>
-              <th rowspan="2" class="column-name">Ten Pokemon / Phan dang</th>
-              <th rowspan="2" class="column-types">He</th>
-              <th colspan="2" class="group-header">Dac tinh</th>
-              <th colspan="7" class="group-header">Stats</th>
-            </tr>
-            <tr>
-              <th class="column-ability">Thuong</th>
-              <th class="column-ability">An</th>
-              ${renderStatHeader("hp", "HP")}
-              ${renderStatHeader("atk", "Atk")}
-              ${renderStatHeader("def", "Def")}
-              ${renderStatHeader("spa", "SpA")}
-              ${renderStatHeader("spd", "SpD")}
-              ${renderStatHeader("spe", "Spe")}
-              ${renderStatHeader("total", "Tong")}
-            </tr>
-          </thead>
-          <tbody id="pokedexEngineBody"></tbody>
-        </table>
-      </div>
+      <section class="system-grid" aria-label="Pokedex system statistics">
+        ${renderSystemMetric("Species", uniqueSpeciesCount)}
+        ${renderSystemMetric("Rows", pokemonData.length)}
+        ${renderSystemMetric("Forms", formCount)}
+        ${renderSystemMetric("Mega", megaCount)}
+        ${renderSystemMetric("Move Sets", moveKeyCount)}
+      </section>
+
+      <section class="workspace-section" aria-labelledby="workspaceTitle">
+        <div class="section-heading">
+          <span class="eyebrow">Live database</span>
+          <h2 id="workspaceTitle">Champions Works</h2>
+        </div>
+
+        <section class="search-filter-panel" aria-label="Pokedex controls">
+          <div class="control-item">
+            <label for="searchBar">Tim kiem ten loai</label>
+            <input type="search" id="searchBar" placeholder="Nhap ten Pokemon..." autocomplete="off" />
+          </div>
+          <div class="control-item">
+            <label for="filterType">Bo loc he</label>
+            <select id="filterType">
+              <option value="all">Tat ca he</option>
+              ${typeOptions.map((type) => `<option value="${type}">${type}</option>`).join("")}
+            </select>
+          </div>
+          <div class="control-item">
+            <label for="filterMega">Bo loc Mega Evolution</label>
+            <select id="filterMega">
+              <option value="all">Tat ca Pokemon</option>
+              <option value="mega-only">Chi Mega Evolution</option>
+            </select>
+          </div>
+          <div class="control-item">
+            <label for="sortOrder">Sap xep National Dex</label>
+            <select id="sortOrder">
+              <option value="asc">Tang dan (#0001 -> ...)</option>
+              <option value="desc">Giam dan (... -> #0001)</option>
+            </select>
+          </div>
+          <div class="counter-box" id="pokedexCounter">Dang tai du lieu...</div>
+        </section>
+
+        <div class="table-responsive">
+          <table class="pokedex-table">
+            <thead>
+              <tr>
+                <th rowspan="2" class="column-toggle" aria-label="Mo moves"></th>
+                <th rowspan="2" class="column-ndex">So NDex</th>
+                <th rowspan="2" class="column-sprite">Sprite</th>
+                <th rowspan="2" class="column-name">Ten Pokemon / Phan dang</th>
+                <th rowspan="2" class="column-types">He</th>
+                <th colspan="2" class="group-header">Dac tinh</th>
+                <th colspan="7" class="group-header">Stats</th>
+              </tr>
+              <tr>
+                <th class="column-ability">Thuong</th>
+                <th class="column-ability">An</th>
+                ${renderStatHeader("hp", "HP")}
+                ${renderStatHeader("atk", "Atk")}
+                ${renderStatHeader("def", "Def")}
+                ${renderStatHeader("spa", "SpA")}
+                ${renderStatHeader("spd", "SpD")}
+                ${renderStatHeader("spe", "Spe")}
+                ${renderStatHeader("total", "Tong")}
+              </tr>
+            </thead>
+            <tbody id="pokedexEngineBody"></tbody>
+          </table>
+        </div>
+      </section>
     </main>
   `;
 
@@ -160,6 +199,30 @@ function renderShell() {
   document.querySelectorAll("[data-sort-key]").forEach((button) => {
     button.addEventListener("click", () => setStatSort(button.dataset.sortKey));
   });
+}
+
+function renderHeroArtwork(item) {
+  const spriteUrl = buildPokeApiSpriteUrl(item.sprite);
+
+  return `
+    <figure class="hero-art-card ${item.className}">
+      <img src="${spriteUrl}" alt="${escapeHtml(item.name)}" loading="lazy" />
+      <figcaption>${escapeHtml(item.name)}</figcaption>
+    </figure>
+  `;
+}
+
+function renderMarqueeSet() {
+  return marquees.map((label) => `<span>${label}</span>`).join("");
+}
+
+function renderSystemMetric(label, value) {
+  return `
+    <div class="system-metric">
+      <span>${label}</span>
+      <strong>${value}</strong>
+    </div>
+  `;
 }
 
 function renderStatHeader(key, label) {
@@ -242,7 +305,7 @@ function applyCurrentSort(targetData) {
 function updateSortIndicators() {
   document.querySelectorAll("[data-sort-indicator]").forEach((indicator) => {
     const isActive = state.statSort.key === indicator.dataset.sortIndicator;
-    indicator.textContent = isActive ? (state.statSort.direction === "asc" ? " ▲" : " ▼") : "";
+    indicator.textContent = isActive ? (state.statSort.direction === "asc" ? " +" : " -") : "";
   });
 }
 
@@ -299,7 +362,7 @@ function renderPokemonRows(pokemon) {
     <tr class="pokemon-row ${isExpanded ? "is-expanded" : ""}" data-row-key="${rowKey}">
       <td class="toggle-cell">
         <button type="button" class="expand-button" data-expand-row="${rowKey}" aria-expanded="${isExpanded}" aria-label="${expandLabel} for ${escapeHtml(pokemon.name)}">
-          ${isExpanded ? "−" : "+"}
+          ${isExpanded ? "-" : "+"}
         </button>
       </td>
       <td class="ndex-cell">${escapeHtml(pokemon.num)}</td>
