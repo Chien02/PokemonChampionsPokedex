@@ -51,6 +51,7 @@ const state = {
     key: null,
     direction: null,
   },
+  moveSort: [],
   expandedRowKey: null,
 };
 
@@ -345,11 +346,84 @@ function renderTable() {
   tbody.querySelectorAll("[data-row-key]").forEach((row) => {
     row.addEventListener("click", () => toggleExpandedRow(row.dataset.rowKey));
   });
+
+  tbody.querySelectorAll("[data-move-sort-key]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      setMoveSort(button.dataset.moveSortKey);
+    });
+  });
 }
 
 function toggleExpandedRow(rowKey) {
   state.expandedRowKey = state.expandedRowKey === rowKey ? null : rowKey;
   renderTable();
+}
+
+function setMoveSort(key) {
+  if (state.moveSort.includes(key)) {
+    state.moveSort = state.moveSort.filter((activeKey) => activeKey !== key);
+  } else {
+    state.moveSort = [...state.moveSort, key];
+  }
+
+  renderTable();
+}
+
+function getMoveSortPriority(key) {
+  const index = state.moveSort.indexOf(key);
+  return index === -1 ? "" : String(index + 1);
+}
+
+function parseMovePower(power) {
+  const value = Number.parseInt(String(power ?? "").replace(/[^\d-]/g, ""), 10);
+  return Number.isFinite(value) ? value : null;
+}
+
+function getMoveSortValue(move, key) {
+  if (key === "power") {
+    return parseMovePower(move.power);
+  }
+
+  if (key === "category") {
+    return String(move.category ?? "").toLowerCase();
+  }
+
+  return String(move.type ?? "").toLowerCase();
+}
+
+function compareMoveValues(alpha, beta, key) {
+  const alphaValue = getMoveSortValue(alpha, key);
+  const betaValue = getMoveSortValue(beta, key);
+
+  if (key === "power") {
+    if (alphaValue === null && betaValue === null) return 0;
+    if (alphaValue === null) return 1;
+    if (betaValue === null) return -1;
+    return betaValue - alphaValue;
+  }
+
+  return alphaValue.localeCompare(betaValue);
+}
+
+function applyMoveSort(moves) {
+  if (state.moveSort.length === 0) {
+    return moves;
+  }
+
+  return moves
+    .map((move, index) => ({ move, index }))
+    .sort((alpha, beta) => {
+      for (const key of state.moveSort) {
+        const comparison = compareMoveValues(alpha.move, beta.move, key);
+        if (comparison !== 0) {
+          return comparison;
+        }
+      }
+
+      return alpha.index - beta.index;
+    })
+    .map(({ move }) => move);
 }
 
 function renderPokemonRows(pokemon) {
@@ -422,6 +496,8 @@ function renderMovesPanel(pokemon) {
 }
 
 function renderMoveGroup(label, moves, key) {
+  const sortedMoves = applyMoveSort(moves);
+
   return `
     <section class="move-group">
       <h3>${label} <span>${moves.length}</span></h3>
@@ -436,20 +512,30 @@ function renderMoveGroup(label, moves, key) {
                     ${key === "levelUp" ? "<th>Lv.</th>" : ""}
                     ${key === "tm" ? "<th>TM</th>" : ""}
                     <th>Move</th>
-                    <th>Type</th>
-                    <th>Cat.</th>
-                    <th>Power</th>
+                    <th>${renderMoveSortButton("type", "Type")}</th>
+                    <th>${renderMoveSortButton("category", "Cat.")}</th>
+                    <th>${renderMoveSortButton("power", "Power")}</th>
                     <th>Acc.</th>
                   </tr>
                 </thead>
                 <tbody>
-                  ${moves.map((move) => renderMoveRow(move, key)).join("")}
+                  ${sortedMoves.map((move) => renderMoveRow(move, key)).join("")}
                 </tbody>
               </table>
             </div>
           `
       }
     </section>
+  `;
+}
+
+function renderMoveSortButton(key, label) {
+  const priority = getMoveSortPriority(key);
+
+  return `
+    <button type="button" class="move-sort-button ${priority ? "is-active" : ""}" data-move-sort-key="${key}">
+      ${label}<span class="move-sort-indicator">${priority}</span>
+    </button>
   `;
 }
 

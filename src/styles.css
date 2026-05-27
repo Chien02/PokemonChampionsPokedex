@@ -739,6 +739,43 @@ td {
   z-index: 1;
 }
 
+.move-sort-button {
+  display: inline-flex;
+  min-height: 22px;
+  align-items: center;
+  gap: 4px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  padding: 0;
+  text-transform: inherit;
+}
+
+.move-sort-button:hover,
+.move-sort-button.is-active {
+  color: var(--accent);
+  text-shadow: var(--accent-glow);
+}
+
+.move-sort-indicator {
+  display: inline-grid;
+  min-width: 15px;
+  height: 15px;
+  place-items: center;
+  border: 1px solid rgba(57, 213, 255, 0.42);
+  color: var(--accent);
+  font-size: 9px;
+  line-height: 1;
+  opacity: 0;
+}
+
+.move-sort-button.is-active .move-sort-indicator {
+  opacity: 1;
+}
+
 .move-table td {
   padding: 7px 8px;
   color: var(--text-soft);
