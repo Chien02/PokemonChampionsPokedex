@@ -221,6 +221,72 @@
             flex-wrap: wrap;
         }
 
+        .ability-cell {
+            min-width: 130px;
+        }
+
+        .ability-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .ability-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            background: #eef2ff;
+            color: #3730a3;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .empty-cell {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .stat-cell {
+            text-align: center;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            min-width: 58px;
+        }
+
+        .stat-total-cell {
+            color: var(--primary-color);
+        }
+
+        .group-header {
+            text-align: center;
+            background-color: #111827;
+        }
+
+        .stat-sort-button {
+            width: 100%;
+            border: 0;
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+            font: inherit;
+            text-transform: inherit;
+            letter-spacing: inherit;
+            padding: 0;
+        }
+
+        .stat-sort-button:hover {
+            color: #fca5a5;
+        }
+
+        .sort-indicator {
+            display: inline-block;
+            min-width: 12px;
+            color: #fca5a5;
+        }
+
         .type-tag {
             display: inline-block;
             padding: 6px 14px;
@@ -302,7 +368,7 @@
         </div>
         <div class="control-item">
             <label for="sortOrder">Sắp xếp Số National Dex:</label>
-            <select id="sortOrder" onchange="processEngineFilter()">
+            <select id="sortOrder" onchange="setDexSort()">
                 <option value="asc">Tăng dần (#0001 → ...)</option>
                 <option value="desc">Giảm dần (... → #0001)</option>
             </select>
@@ -314,10 +380,23 @@
         <table>
             <thead>
                 <tr>
-                    <th>Số NDex</th>
-                    <th style="text-align: center;">Hình Ảnh (Sprite)</th>
-                    <th>Tên Pokémon / Phân Dạng</th>
-                    <th>Hệ Đặc Tính</th>
+                    <th rowspan="2">Số NDex</th>
+                    <th rowspan="2" style="text-align: center;">Hình Ảnh (Sprite)</th>
+                    <th rowspan="2">Tên Pokémon / Phân Dạng</th>
+                    <th rowspan="2">Hệ Đặc Tính</th>
+                    <th colspan="2" class="group-header">Đặc tính</th>
+                    <th colspan="7" class="group-header">Stats</th>
+                </tr>
+                <tr>
+                    <th>Thường</th>
+                    <th>Ẩn</th>
+                    <th><button type="button" class="stat-sort-button" data-sort-key="hp" onclick="setStatSort('hp')">HP<span class="sort-indicator" data-sort-indicator="hp"></span></button></th>
+                    <th><button type="button" class="stat-sort-button" data-sort-key="atk" onclick="setStatSort('atk')">Atk<span class="sort-indicator" data-sort-indicator="atk"></span></button></th>
+                    <th><button type="button" class="stat-sort-button" data-sort-key="def" onclick="setStatSort('def')">Def<span class="sort-indicator" data-sort-indicator="def"></span></button></th>
+                    <th><button type="button" class="stat-sort-button" data-sort-key="spa" onclick="setStatSort('spa')">Sp.Atk<span class="sort-indicator" data-sort-indicator="spa"></span></button></th>
+                    <th><button type="button" class="stat-sort-button" data-sort-key="spd" onclick="setStatSort('spd')">Sp.Def<span class="sort-indicator" data-sort-indicator="spd"></span></button></th>
+                    <th><button type="button" class="stat-sort-button" data-sort-key="spe" onclick="setStatSort('spe')">Spe<span class="sort-indicator" data-sort-indicator="spe"></span></button></th>
+                    <th><button type="button" class="stat-sort-button" data-sort-key="total" onclick="setStatSort('total')">Tổng<span class="sort-indicator" data-sort-indicator="total"></span></button></th>
                 </tr>
             </thead>
             <tbody id="pokedexEngineBody">
@@ -329,274 +408,274 @@
 <script>
     // CORE APP ENGINE DATABANK - ĐÃ LÀM SẠCH DỮ LIỆU CHUẨN BULBAPEDIA
     const pokemonData = [
-        { id: 3, num: "#0003", name: "Venusaur", types: ["grass", "poison"], form: "", sprite: "3" },
-        { id: 3, num: "#0003", name: "Mega Venusaur", types: ["grass", "poison"], form: "Mega", sprite: "10033" },
-        { id: 6, num: "#0006", name: "Charizard", types: ["fire", "flying"], form: "", sprite: "6" },
-        { id: 6, num: "#0006", name: "Mega Charizard X", types: ["fire", "dragon"], form: "Mega X", sprite: "10034" },
-        { id: 6, num: "#0006", name: "Mega Charizard Y", types: ["fire", "flying"], form: "Mega Y", sprite: "10035" },
-        { id: 9, num: "#0009", name: "Blastoise", types: ["water"], form: "", sprite: "9" },
-        { id: 9, num: "#0009", name: "Mega Blastoise", types: ["water"], form: "Mega", sprite: "10036" },
-        { id: 15, num: "#0015", name: "Beedrill", types: ["bug", "poison"], form: "", sprite: "15" },
-        { id: 15, num: "#0015", name: "Mega Beedrill", types: ["bug", "poison"], form: "Mega", sprite: "10090" },
-        { id: 18, num: "#0018", name: "Pidgeot", types: ["normal", "flying"], form: "", sprite: "18" },
-        { id: 18, num: "#0018", name: "Mega Pidgeot", types: ["normal", "flying"], form: "Mega", sprite: "10073" },
-        { id: 24, num: "#0024", name: "Arbok", types: ["poison"], form: "", sprite: "24" },
-        { id: 25, num: "#0025", name: "Pikachu", types: ["electric"], form: "", sprite: "25" },
-        { id: 26, num: "#0026", name: "Raichu", types: ["electric"], form: "", sprite: "26" },
-        { id: 26, num: "#0026", name: "Raichu (Alolan Form)", types: ["electric", "psychic"], form: "Alolan Form", sprite: "10100" },
-        { id: 36, num: "#0036", name: "Clefable", types: ["fairy"], form: "", sprite: "36" },
-        { id: 36, num: "#0036", name: "Mega Clefable", types: ["fairy", "flying"], form: "Mega", sprite: "36" }, 
-        { id: 38, num: "#0038", name: "Ninetales", types: ["fire"], form: "", sprite: "38" },
-        { id: 38, num: "#0038", name: "Ninetales (Alolan Form)", types: ["ice", "fairy"], form: "Alolan Form", sprite: "10104" },
-        { id: 59, num: "#0059", name: "Arcanine", types: ["fire"], form: "", sprite: "59" },
-        { id: 59, num: "#0059", name: "Arcanine (Hisuian Form)", types: ["fire", "rock"], form: "Hisuian Form", sprite: "10230" },
-        { id: 65, num: "#0065", name: "Alakazam", types: ["psychic"], form: "", sprite: "65" },
-        { id: 65, num: "#0065", name: "Mega Alakazam", types: ["psychic"], form: "Mega", sprite: "10037" },
-        { id: 68, num: "#0068", name: "Machamp", types: ["fighting"], form: "", sprite: "68" },
-        { id: 71, num: "#0071", name: "Victreebel", types: ["grass", "poison"], form: "", sprite: "71" },
-        { id: 71, num: "#0071", name: "Mega Victreebel", types: ["grass", "poison"], form: "Mega", sprite: "71" }, 
-        { id: 80, num: "#0080", name: "Slowbro", types: ["water", "psychic"], form: "", sprite: "80" },
-        { id: 80, num: "#0080", name: "Slowbro (Galarian Form)", types: ["poison", "psychic"], form: "Galarian Form", sprite: "10165" },
-        { id: 80, num: "#0080", name: "Mega Slowbro", types: ["water", "psychic"], form: "Mega", sprite: "10071" },
-        { id: 94, num: "#0094", name: "Gengar", types: ["ghost", "poison"], form: "", sprite: "94" },
-        { id: 94, num: "#0094", name: "Mega Gengar", types: ["ghost", "poison"], form: "Mega", sprite: "10038" },
-        { id: 115, num: "#0115", name: "Kangaskhan", types: ["normal"], form: "", sprite: "115" },
-        { id: 115, num: "#0115", name: "Mega Kangaskhan", types: ["normal"], form: "Mega", sprite: "10039" },
-        { id: 121, num: "#0121", name: "Starmie", types: ["water", "psychic"], form: "", sprite: "121" },
-        { id: 121, num: "#0121", name: "Mega Starmie", types: ["water", "psychic"], form: "Mega", sprite: "121" },
-        { id: 127, num: "#0127", name: "Pinsir", types: ["bug"], form: "", sprite: "127" },
-        { id: 127, num: "#0127", name: "Mega Pinsir", types: ["bug", "flying"], form: "Mega", sprite: "10040" },
-        { id: 128, num: "#0128", name: "Tauros", types: ["normal"], form: "", sprite: "128" },
-        { id: 128, num: "#0128", name: "Tauros (Combat Breed)", types: ["fighting"], form: "Paldean Form", sprite: "10250" },
-        { id: 128, num: "#0128", name: "Tauros (Blaze Breed)", types: ["fighting", "fire"], form: "Paldean Form", sprite: "10251" },
-        { id: 128, num: "#0128", name: "Tauros (Aqua Breed)", types: ["fighting", "water"], form: "Paldean Form", sprite: "10252" },
-        { id: 130, num: "#0130", name: "Gyarados", types: ["water", "flying"], form: "", sprite: "130" },
-        { id: 130, num: "#0130", name: "Mega Gyarados", types: ["water", "dark"], form: "Mega", sprite: "10041" },
-        { id: 132, num: "#0132", name: "Ditto", types: ["normal"], form: "", sprite: "132" },
-        { id: 134, num: "#0134", name: "Vaporeon", types: ["water"], form: "", sprite: "134" },
-        { id: 135, num: "#0135", name: "Jolteon", types: ["electric"], form: "", sprite: "135" },
-        { id: 136, num: "#0136", name: "Flareon", types: ["fire"], form: "", sprite: "136" },
-        { id: 142, num: "#0142", name: "Aerodactyl", types: ["rock", "flying"], form: "", sprite: "142" },
-        { id: 142, num: "#0142", name: "Mega Aerodactyl", types: ["rock", "flying"], form: "Mega", sprite: "10042" },
-        { id: 143, num: "#0143", name: "Snorlax", types: ["normal"], form: "", sprite: "143" },
-        { id: 149, num: "#0149", name: "Dragonite", types: ["dragon", "flying"], form: "", sprite: "149" },
-        { id: 149, num: "#0149", name: "Mega Dragonite", types: ["dragon", "flying"], form: "Mega", sprite: "149" },
-        { id: 154, num: "#0154", name: "Meganium", types: ["grass"], form: "", sprite: "154" },
-        { id: 154, num: "#0154", name: "Mega Meganium", types: ["grass", "fairy"], form: "Mega", sprite: "154" }, 
-        { id: 157, num: "#0157", name: "Typhlosion", types: ["fire"], form: "", sprite: "157" },
-        { id: 157, num: "#0157", name: "Typhlosion (Hisuian Form)", types: ["fire", "ghost"], form: "Hisuian Form", sprite: "10233" },
-        { id: 160, num: "#0160", name: "Feraligatr", types: ["water"], form: "", sprite: "160" },
-        { id: 160, num: "#0160", name: "Mega Feraligatr", types: ["water", "dark"], form: "Mega", sprite: "160" }, 
-        { id: 168, num: "#0168", name: "Ariados", types: ["bug", "poison"], form: "", sprite: "168" },
-        { id: 181, num: "#0181", name: "Ampharos", types: ["electric"], form: "", sprite: "181" },
-        { id: 181, num: "#0181", name: "Mega Ampharos", types: ["electric", "dragon"], form: "Mega", sprite: "10045" },
-        { id: 184, num: "#0184", name: "Azumarill", types: ["water", "fairy"], form: "", sprite: "184" },
-        { id: 186, num: "#0186", name: "Politoed", types: ["water"], form: "", sprite: "186" },
-        { id: 196, num: "#0196", name: "Espeon", types: ["psychic"], form: "", sprite: "196" },
-        { id: 197, num: "#0197", name: "Umbreon", types: ["dark"], form: "", sprite: "197" },
-        { id: 199, num: "#0199", name: "Slowking", types: ["water", "psychic"], form: "", sprite: "199" },
-        { id: 199, num: "#0199", name: "Slowking (Galarian Form)", types: ["poison", "psychic"], form: "Galarian Form", sprite: "10172" },
-        { id: 205, num: "#0205", name: "Forretress", types: ["bug", "steel"], form: "", sprite: "205" },
-        { id: 208, num: "#0208", name: "Mega Steelix", types: ["steel", "ground"], form: "Mega", sprite: "10072" },
-        { id: 212, num: "#0212", name: "Scizor", types: ["bug", "steel"], form: "", sprite: "212" },
-        { id: 212, num: "#0212", name: "Mega Scizor", types: ["bug", "steel"], form: "Mega", sprite: "10046" },
-        { id: 214, num: "#0214", name: "Heracross", types: ["bug", "fighting"], form: "", sprite: "214" },
-        { id: 214, num: "#0214", name: "Mega Heracross", types: ["bug", "fighting"], form: "Mega", sprite: "10047" },
-        { id: 227, num: "#0227", name: "Skarmory", types: ["steel", "flying"], form: "", sprite: "227" },
-        { id: 227, num: "#0227", name: "Mega Skarmory", types: ["steel", "flying"], form: "Mega", sprite: "227" },
-        { id: 229, num: "#0229", name: "Houndoom", types: ["dark", "fire"], form: "", sprite: "229" },
-        { id: 229, num: "#0229", name: "Mega Houndoom", types: ["dark", "fire"], form: "Mega", sprite: "10048" },
-        { id: 248, num: "#0248", name: "Tyranitar", types: ["rock", "dark"], form: "", sprite: "248" },
-        { id: 248, num: "#0248", name: "Mega Tyranitar", types: ["rock", "dark"], form: "Mega", sprite: "10049" },
-{ id: 279, num: "#0279", name: "Pelipper", types: ["water", "flying"], form: "", sprite: "279" },
-        { id: 282, num: "#0282", name: "Gardevoir", types: ["psychic", "fairy"], form: "", sprite: "282" },
-        { id: 282, num: "#0282", name: "Mega Gardevoir", types: ["psychic", "fairy"], form: "Mega", sprite: "10051" },
-        { id: 302, num: "#0302", name: "Sableye", types: ["dark", "ghost"], form: "", sprite: "302" },
-        { id: 302, num: "#0302", name: "Mega Sableye", types: ["dark", "ghost"], form: "Mega", sprite: "10066" },
-        { id: 306, num: "#0306", name: "Aggron", types: ["steel", "rock"], form: "", sprite: "306" },
-        { id: 306, num: "#0306", name: "Mega Aggron", types: ["steel"], form: "Mega", sprite: "10053" },
-        { id: 308, num: "#0308", name: "Medicham", types: ["fighting", "psychic"], form: "", sprite: "308" },
-        { id: 308, num: "#0308", name: "Mega Medicham", types: ["fighting", "psychic"], form: "Mega", sprite: "10054" },
-        { id: 310, num: "#0310", name: "Manectric", types: ["electric"], form: "", sprite: "310" },
-        { id: 310, num: "#0310", name: "Mega Manectric", types: ["electric"], form: "Mega", sprite: "10055" },
-        { id: 319, num: "#0319", name: "Sharpedo", types: ["water", "dark"], form: "", sprite: "319" },
-        { id: 319, num: "#0319", name: "Mega Sharpedo", types: ["water", "dark"], form: "Mega", sprite: "10070" },
-        { id: 323, num: "#0323", name: "Camerupt", types: ["fire", "ground"], form: "", sprite: "323" },
-        { id: 323, num: "#0323", name: "Mega Camerupt", types: ["fire", "ground"], form: "Mega", sprite: "10087" },
-        { id: 324, num: "#0324", name: "Torkoal", types: ["fire"], form: "", sprite: "324" },
-        { id: 334, num: "#0334", name: "Altaria", types: ["dragon", "flying"], form: "", sprite: "334" },
-        { id: 334, num: "#0334", name: "Mega Altaria", types: ["dragon", "fairy"], form: "Mega", sprite: "10067" },
-        { id: 350, num: "#0350", name: "Milotic", types: ["water"], form: "", sprite: "350" },
-        { id: 351, num: "#0351", name: "Castform", types: ["normal"], form: "", sprite: "351" },
-        { id: 354, num: "#0354", name: "Banette", types: ["ghost"], form: "", sprite: "354" },
-        { id: 354, num: "#0354", name: "Mega Banette", types: ["ghost"], form: "Mega", sprite: "10056" },
-        { id: 358, num: "#0358", name: "Chimecho", types: ["psychic"], form: "", sprite: "358" },
-        { id: 358, num: "#0358", name: "Mega Chimecho", types: ["psychic", "steel"], form: "Mega", sprite: "358" },
-        { id: 359, num: "#0359", name: "Absol", types: ["dark"], form: "", sprite: "359" },
-        { id: 359, num: "#0359", name: "Mega Absol", types: ["dark"], form: "Mega", sprite: "10057" },
-        { id: 362, num: "#0362", name: "Glalie", types: ["ice"], form: "", sprite: "362" },
-        { id: 362, num: "#0362", name: "Mega Glalie", types: ["ice"], form: "Mega", sprite: "10074" },
-        { id: 389, num: "#0389", name: "Torterra", types: ["grass", "ground"], form: "", sprite: "389" },
-        { id: 392, num: "#0392", name: "Infernape", types: ["fire", "fighting"], form: "", sprite: "392" },
-        { id: 395, num: "#0395", name: "Empoleon", types: ["water", "steel"], form: "", sprite: "395" },
-        { id: 405, num: "#0405", name: "Luxray", types: ["electric"], form: "", sprite: "405" },
-        { id: 407, num: "#0407", name: "Roserade", types: ["grass", "poison"], form: "", sprite: "407" },
-        { id: 409, num: "#0409", name: "Rampardos", types: ["rock"], form: "", sprite: "409" },
-        { id: 411, num: "#0411", name: "Bastiodon", types: ["rock", "steel"], form: "", sprite: "411" },
-        { id: 428, num: "#0428", name: "Lopunny", types: ["normal"], form: "", sprite: "428" },
-        { id: 428, num: "#0428", name: "Mega Lopunny", types: ["normal", "fighting"], form: "Mega", sprite: "10088" },
-        { id: 442, num: "#0442", name: "Spiritomb", types: ["ghost", "dark"], form: "", sprite: "442" },
-        { id: 445, num: "#0445", name: "Garchomp", types: ["dragon", "ground"], form: "", sprite: "445" },
-        { id: 445, num: "#0445", name: "Mega Garchomp", types: ["dragon", "ground"], form: "Mega", sprite: "10058" },
-        { id: 448, num: "#0448", name: "Lucario", types: ["fighting", "steel"], form: "", sprite: "448" },
-        { id: 448, num: "#0448", name: "Mega Lucario", types: ["fighting", "steel"], form: "Mega", sprite: "10059" },
-        { id: 450, num: "#0450", name: "Hippowdon", types: ["ground"], form: "", sprite: "450" },
-        { id: 454, num: "#0454", name: "Toxicroak", types: ["poison", "fighting"], form: "", sprite: "454" },
-        { id: 460, num: "#0460", name: "Abomasnow", types: ["grass", "ice"], form: "", sprite: "460" },
-        { id: 460, num: "#0460", name: "Mega Abomasnow", types: ["grass", "ice"], form: "Mega", sprite: "10060" },
-        { id: 461, num: "#0461", name: "Weavile", types: ["dark", "ice"], form: "", sprite: "461" },
-        { id: 464, num: "#0464", name: "Rhyperior", types: ["ground", "rock"], form: "", sprite: "464" },
-        { id: 470, num: "#0470", name: "Leafeon", types: ["grass"], form: "", sprite: "470" },
-        { id: 471, num: "#0471", name: "Glaceon", types: ["ice"], form: "", sprite: "471" },
-        { id: 472, num: "#0472", name: "Gliscor", types: ["ground", "flying"], form: "", sprite: "472" },
-        { id: 473, num: "#0473", name: "Mamoswine", types: ["ice", "ground"], form: "", sprite: "473" },
-        { id: 475, num: "#0475", name: "Gallade", types: ["psychic", "fighting"], form: "", sprite: "475" },
-        { id: 475, num: "#0475", name: "Mega Gallade", types: ["psychic", "fighting"], form: "Mega", sprite: "10068" },
-        { id: 478, num: "#0478", name: "Froslass", types: ["ice", "ghost"], form: "", sprite: "478" },
-        { id: 478, num: "#0478", name: "Mega Froslass", types: ["ice", "ghost"], form: "Mega", sprite: "478" },
-        { id: 479, num: "#0479", name: "Rotom (Normal)", types: ["electric", "ghost"], form: "Rotom Form", sprite: "479" },
-        { id: 479, num: "#0479", name: "Rotom (Heat)", types: ["electric", "fire"], form: "Rotom Form", sprite: "10008" },
-        { id: 479, num: "#0479", name: "Rotom (Wash)", types: ["electric", "water"], form: "Rotom Form", sprite: "10009" },
-        { id: 479, num: "#0479", name: "Rotom (Frost)", types: ["electric", "ice"], form: "Rotom Form", sprite: "10010" },
-        { id: 479, num: "#0479", name: "Rotom (Fan)", types: ["electric", "flying"], form: "Rotom Form", sprite: "10011" },
-        { id: 479, num: "#0479", name: "Rotom (Mow)", types: ["electric", "grass"], form: "Rotom Form", sprite: "10012" },
-        { id: 497, num: "#0497", name: "Serperior", types: ["grass"], form: "", sprite: "497" },
-        { id: 500, num: "#0500", name: "Emboar", types: ["fire", "fighting"], form: "", sprite: "500" },
-        { id: 500, num: "#0500", name: "Mega Emboar", types: ["fire", "fighting"], form: "Mega", sprite: "500" },
-        { id: 503, num: "#0503", name: "Samurott", types: ["water"], form: "", sprite: "503" },
-        { id: 503, num: "#0503", name: "Samurott (Hisuian Form)", types: ["water", "dark"], form: "Hisuian Form", sprite: "10236" },
-        { id: 505, num: "#0505", name: "Watchog", types: ["normal"], form: "", sprite: "505" },
-        { id: 510, num: "#0510", name: "Liepard", types: ["dark"], form: "", sprite: "510" },
-        { id: 512, num: "#0512", name: "Simisage", types: ["grass"], form: "", sprite: "512" },
-        { id: 514, num: "#0514", name: "Simisear", types: ["fire"], form: "", sprite: "514" },
-        { id: 516, num: "#0516", name: "Simipour", types: ["water"], form: "", sprite: "516" },
-        { id: 530, num: "#0530", name: "Excadrill", types: ["ground", "steel"], form: "", sprite: "530" },
-        { id: 530, num: "#0530", name: "Mega Excadrill", types: ["ground", "steel"], form: "Mega", sprite: "530" },
-        { id: 531, num: "#0531", name: "Audino", types: ["normal"], form: "", sprite: "531" },
-        { id: 531, num: "#0531", name: "Mega Audino", types: ["normal", "fairy"], form: "Mega", sprite: "10069" },
-        { id: 534, num: "#0534", name: "Conkeldurr", types: ["fighting"], form: "", sprite: "534" },
-        { id: 547, num: "#0547", name: "Whimsicott", types: ["grass", "fairy"], form: "", sprite: "547" },
-        { id: 553, num: "#0553", name: "Krookodile", types: ["ground", "dark"], form: "", sprite: "553" },
-        { id: 563, num: "#0563", name: "Cofagrigus", types: ["ghost"], form: "", sprite: "563" },
-        { id: 569, num: "#0569", name: "Garbodor", types: ["poison"], form: "", sprite: "569" },
-        { id: 571, num: "#0571", name: "Zoroark", types: ["dark"], form: "", sprite: "571" },
-        { id: 571, num: "#0571", name: "Zoroark (Hisuian Form)", types: ["normal", "ghost"], form: "Hisuian Form", sprite: "10239" },
-        { id: 579, num: "#0579", name: "Reuniclus", types: ["psychic"], form: "", sprite: "579" },
-        { id: 584, num: "#0584", name: "Vanilluxe", types: ["ice"], form: "", sprite: "584" },
-        { id: 587, num: "#0587", name: "Emolga", types: ["electric", "flying"], form: "", sprite: "587" },
-        { id: 609, num: "#0609", name: "Chandelure", types: ["ghost", "fire"], form: "", sprite: "609" },
-        { id: 609, num: "#0609", name: "Mega Chandelure", types: ["ghost", "fire"], form: "Mega", sprite: "609" },
-        { id: 614, num: "#0614", name: "Beartic", types: ["ice"], form: "", sprite: "614" },
-        { id: 618, num: "#0618", name: "Stunfisk", types: ["ground", "electric"], form: "", sprite: "618" },
-        { id: 618, num: "#0618", name: "Stunfisk (Galarian Form)", types: ["ground", "steel"], form: "Galarian Form", sprite: "10180" },
-        { id: 623, num: "#0623", name: "Golurk", types: ["ground", "ghost"], form: "", sprite: "623" },
-        { id: 623, num: "#0623", name: "Mega Golurk", types: ["ground", "ghost"], form: "Mega", sprite: "623" },
-        { id: 635, num: "#0635", name: "Hydreigon", types: ["dark", "dragon"], form: "", sprite: "635" },
-        { id: 637, num: "#0637", name: "Volcarona", types: ["bug", "fire"], form: "", sprite: "637" },
-        { id: 652, num: "#0652", name: "Chesnaught", types: ["grass", "fighting"], form: "", sprite: "652" },
-        { id: 652, num: "#0652", name: "Mega Chesnaught", types: ["grass", "fighting"], form: "Mega", sprite: "652" }, 
-        { id: 655, num: "#0655", name: "Delphox", types: ["fire", "psychic"], form: "", sprite: "655" },
-        { id: 655, num: "#0655", name: "Mega Delphox", types: ["fire", "psychic"], form: "Mega", sprite: "655" }, 
-        { id: 658, num: "#0658", name: "Greninja", types: ["water", "dark"], form: "", sprite: "658" },
-        { id: 658, num: "#0658", name: "Mega Greninja", types: ["water", "dark"], form: "Mega", sprite: "658" }, 
-        { id: 660, num: "#0660", name: "Diggersby", types: ["normal", "ground"], form: "", sprite: "660" },
-        { id: 663, num: "#0663", name: "Talonflame", types: ["fire", "flying"], form: "", sprite: "663" },
-        { id: 666, num: "#0666", name: "Vivillon", types: ["bug", "flying"], form: "", sprite: "666" },
-        { id: 670, num: "#0670", name: "Floette (Eternal Flower)", types: ["fairy"], form: "Special Form", sprite: "10061" },
-        { id: 670, num: "#0670", name: "Mega Floette", types: ["fairy"], form: "Mega", sprite: "670" }, 
-        { id: 671, num: "#0671", name: "Florges", types: ["fairy"], form: "", sprite: "671" },
-        { id: 675, num: "#0675", name: "Pangoro", types: ["fighting", "dark"], form: "", sprite: "675" },
-        { id: 676, num: "#0676", name: "Furfrou", types: ["normal"], form: "", sprite: "676" },
-        { id: 678, num: "#0678", name: "Meowstic (Male)", types: ["psychic"], form: "", sprite: "678" },
-        { id: 678, num: "#0678", name: "Meowstic (Female)", types: ["psychic"], form: "Gender Form", sprite: "10025" },
-        { id: 678, num: "#0678", name: "Mega Meowstic", types: ["psychic"], form: "Mega", sprite: "678" },
-        { id: 681, num: "#0681", name: "Aegislash (Shield)", types: ["steel", "ghost"], form: "", sprite: "681" },
-        { id: 683, num: "#0683", name: "Aromatisse", types: ["fairy"], form: "", sprite: "683" },
-        { id: 685, num: "#0685", name: "Slurpuff", types: ["fairy"], form: "", sprite: "685" },
-        { id: 693, num: "#0693", name: "Clawitzer", types: ["water"], form: "", sprite: "693" },
-        { id: 695, num: "#0695", name: "Heliolisk", types: ["electric", "normal"], form: "", sprite: "695" },
-        { id: 697, num: "#0697", name: "Tyrantrum", types: ["rock", "dragon"], form: "", sprite: "697" },
-        { id: 699, num: "#0699", name: "Aurorus", types: ["rock", "ice"], form: "", sprite: "699" },
-        { id: 700, num: "#0700", name: "Sylveon", types: ["fairy"], form: "", sprite: "700" },
-        { id: 701, num: "#0701", name: "Hawlucha", types: ["fighting", "flying"], form: "", sprite: "701" },
-        { id: 701, num: "#0701", name: "Mega Hawlucha", types: ["fighting", "flying"], form: "Mega", sprite: "701" },
-        { id: 702, num: "#0702", name: "Dedenne", types: ["electric", "fairy"], form: "", sprite: "702" },
-        { id: 706, num: "#0706", name: "Goodra", types: ["dragon"], form: "", sprite: "706" },
-        { id: 706, num: "#0706", name: "Goodra (Hisuian Form)", types: ["steel", "dragon"], form: "Hisuian Form", sprite: "10242" },
-        { id: 707, num: "#0707", name: "Klefki", types: ["steel", "fairy"], form: "", sprite: "707" },
-        { id: 709, num: "#0709", name: "Trevenant", types: ["ghost", "grass"], form: "", sprite: "709" },
-        { id: 711, num: "#0711", name: "Gourgeist", types: ["ghost", "grass"], form: "", sprite: "711" },
-        { id: 713, num: "#0713", name: "Avalugg", types: ["ice"], form: "", sprite: "713" },
-        { id: 713, num: "#0713", name: "Avalugg (Hisuian Form)", types: ["ice", "rock"], form: "Hisuian Form", sprite: "10243" },
-        { id: 715, num: "#0715", name: "Noivern", types: ["flying", "dragon"], form: "", sprite: "715" },
-        { id: 724, num: "#0724", name: "Decidueye", types: ["grass", "ghost"], form: "", sprite: "724" },
-        { id: 724, num: "#0724", name: "Decidueye (Hisuian Form)", types: ["grass", "fighting"], form: "Hisuian Form", sprite: "10244" },
-        { id: 727, num: "#0727", name: "Incineroar", types: ["fire", "dark"], form: "", sprite: "727" },
-        { id: 730, num: "#0730", name: "Primarina", types: ["water", "fairy"], form: "", sprite: "730" },
-        { id: 733, num: "#0733", name: "Toucannon", types: ["normal", "flying"], form: "", sprite: "733" },
-        { id: 740, num: "#0740", name: "Crabominable", types: ["fighting", "ice"], form: "", sprite: "740" },
-        { id: 740, num: "#0740", name: "Mega Crabominable", types: ["fighting", "ice"], form: "Mega", sprite: "740" },
-        { id: 745, num: "#0745", name: "Lycanroc (Midday)", types: ["rock"], form: "", sprite: "745" },
-        { id: 745, num: "#0745", name: "Lycanroc (Midnight)", types: ["rock"], form: "Form Shift", sprite: "10126" },
-        { id: 745, num: "#0745", name: "Lycanroc (Dusk)", types: ["rock"], form: "Form Shift", sprite: "10152" },
-        { id: 748, num: "#0748", name: "Toxapex", types: ["poison", "water"], form: "", sprite: "748" },
-        { id: 750, num: "#0750", name: "Mudsdale", types: ["ground"], form: "", sprite: "750" },
-        { id: 752, num: "#0752", name: "Araquanid", types: ["water", "bug"], form: "", sprite: "752" },
-        { id: 758, num: "#0758", name: "Salazzle", types: ["poison", "fire"], form: "", sprite: "758" },
-        { id: 763, num: "#0763", name: "Tsareena", types: ["grass"], form: "", sprite: "763" },
-        { id: 765, num: "#0765", name: "Oranguru", types: ["normal", "psychic"], form: "", sprite: "765" },
-        { id: 766, num: "#0766", name: "Passimian", types: ["fighting"], form: "", sprite: "766" },
-        { id: 778, num: "#0778", name: "Mimikyu", types: ["ghost", "fairy"], form: "", sprite: "778" },
-        { id: 780, num: "#0780", name: "Drampa", types: ["normal", "dragon"], form: "", sprite: "780" },
-        { id: 780, num: "#0780", name: "Mega Drampa", types: ["normal", "dragon"], form: "Mega", sprite: "780" },
-        { id: 784, num: "#0784", name: "Kommo-o", types: ["dragon", "fighting"], form: "", sprite: "784" },
-        { id: 823, num: "#0823", name: "Corviknight", types: ["flying", "steel"], form: "", sprite: "823" },
-        { id: 841, num: "#0841", name: "Flapple", types: ["grass", "dragon"], form: "", sprite: "841" },
-        { id: 842, num: "#0842", name: "Appletun", types: ["grass", "dragon"], form: "", sprite: "842" },
-        { id: 844, num: "#0844", name: "Sandaconda", types: ["ground"], form: "", sprite: "844" },
-        { id: 855, num: "#0855", name: "Polteageist", types: ["ghost"], form: "", sprite: "855" },
-        { id: 858, num: "#0858", name: "Hatterene", types: ["psychic", "fairy"], form: "", sprite: "858" },
-        { id: 866, num: "#0866", name: "Mr. Rime", types: ["ice", "psychic"], form: "", sprite: "866" },
-        { id: 867, num: "#0867", name: "Runerigus", types: ["ground", "ghost"], form: "", sprite: "867" },
-        { id: 869, num: "#0869", name: "Alcremie", types: ["fairy"], form: "", sprite: "869" },
-        { id: 877, num: "#0877", name: "Morpeko", types: ["electric", "dark"], form: "", sprite: "877" },
-        { id: 887, num: "#0887", name: "Dragapult", types: ["dragon", "ghost"], form: "", sprite: "887" },
-        { id: 899, num: "#0899", name: "Wyrdeer", types: ["normal", "psychic"], form: "", sprite: "899" },
-        { id: 900, num: "#0900", name: "Kleavor", types: ["bug", "rock"], form: "", sprite: "900" },
-        { id: 902, num: "#0902", name: "Basculegion (Male)", types: ["water", "ghost"], form: "", sprite: "902" },
-        { id: 902, num: "#0902", name: "Basculegion (Female)", types: ["water", "ghost"], form: "Gender Form", sprite: "10248" },
-        { id: 903, num: "#0903", name: "Sneasler", types: ["fighting", "poison"], form: "", sprite: "903" },
-        { id: 908, num: "#0908", name: "Meowscarada", types: ["grass", "dark"], form: "", sprite: "908" },
-        { id: 911, num: "#0911", name: "Skeledirge", types: ["fire", "ghost"], form: "", sprite: "911" },
-        { id: 914, num: "#0914", name: "Quaquaval", types: ["water", "fighting"], form: "", sprite: "914" },
-        { id: 925, num: "#0925", name: "Maushold", types: ["normal"], form: "", sprite: "925" },
-        { id: 934, num: "#0934", name: "Garganacl", types: ["rock"], form: "", sprite: "934" },
-        { id: 936, num: "#0936", name: "Armarouge", types: ["fire", "psychic"], form: "", sprite: "936" },
-        { id: 937, num: "#0937", name: "Ceruledge", types: ["fire", "ghost"], form: "", sprite: "937" },
-        { id: 939, num: "#0939", name: "Bellibolt", types: ["electric"], form: "", sprite: "939" },
-        { id: 952, num: "#0952", name: "Scovillain", types: ["grass", "fire"], form: "", sprite: "952" },
-        { id: 952, num: "#0952", name: "Mega Scovillain", types: ["grass", "fire"], form: "Mega", sprite: "952" },
-        { id: 956, num: "#0956", name: "Espathra", types: ["psychic"], form: "", sprite: "956" },
-        { id: 959, num: "#0959", name: "Tinkaton", types: ["fairy", "steel"], form: "", sprite: "959" },
-        { id: 964, num: "#0964", name: "Palafin", types: ["water"], form: "", sprite: "964" },
-        { id: 968, num: "#0968", name: "Orthworm", types: ["steel"], form: "", sprite: "968" },
-        { id: 970, num: "#0970", name: "Glimmora", types: ["rock", "poison"], form: "", sprite: "970" },
-        { id: 970, num: "#0970", name: "Mega Glimmora", types: ["rock", "poison"], form: "Mega", sprite: "970" },
-        { id: 982, num: "#0982", name: "Farigiraf", types: ["normal", "psychic"], form: "", sprite: "982" },
-        { id: 983, num: "#0983", name: "Kingambit", types: ["dark", "steel"], form: "", sprite: "983" },
-        { id: 1013, num: "#1013", name: "Sinistcha", types: ["grass", "ghost"], form: "", sprite: "1013" },
-        { id: 1018, num: "#1018", name: "Archaludon", types: ["steel", "dragon"], form: "", sprite: "1018" },
-        { id: 1019, num: "#1019", name: "Hydrapple", types: ["grass", "dragon"], form: "", sprite: "1019" }
+        { id: 3, num: "#0003", name: "Venusaur", types: ["grass", "poison"], form: "", sprite: "3", abilities: { normal: ["Overgrow"], hidden: ["Chlorophyll"] }, stats: { hp: 80, atk: 82, def: 83, spa: 100, spd: 100, spe: 80, total: 525 } },
+        { id: 3, num: "#0003", name: "Mega Venusaur", types: ["grass", "poison"], form: "Mega", sprite: "10033", abilities: { normal: ["Thick Fat"], hidden: [] }, stats: { hp: 80, atk: 100, def: 123, spa: 122, spd: 120, spe: 80, total: 625 } },
+        { id: 6, num: "#0006", name: "Charizard", types: ["fire", "flying"], form: "", sprite: "6", abilities: { normal: ["Blaze"], hidden: ["Solar Power"] }, stats: { hp: 78, atk: 84, def: 78, spa: 109, spd: 85, spe: 100, total: 534 } },
+        { id: 6, num: "#0006", name: "Mega Charizard X", types: ["fire", "dragon"], form: "Mega X", sprite: "10034", abilities: { normal: ["Tough Claws"], hidden: [] }, stats: { hp: 78, atk: 130, def: 111, spa: 130, spd: 85, spe: 100, total: 634 } },
+        { id: 6, num: "#0006", name: "Mega Charizard Y", types: ["fire", "flying"], form: "Mega Y", sprite: "10035", abilities: { normal: ["Drought"], hidden: [] }, stats: { hp: 78, atk: 104, def: 78, spa: 159, spd: 115, spe: 100, total: 634 } },
+        { id: 9, num: "#0009", name: "Blastoise", types: ["water"], form: "", sprite: "9", abilities: { normal: ["Torrent"], hidden: ["Rain Dish"] }, stats: { hp: 79, atk: 83, def: 100, spa: 85, spd: 105, spe: 78, total: 530 } },
+        { id: 9, num: "#0009", name: "Mega Blastoise", types: ["water"], form: "Mega", sprite: "10036", abilities: { normal: ["Mega Launcher"], hidden: [] }, stats: { hp: 79, atk: 103, def: 120, spa: 135, spd: 115, spe: 78, total: 630 } },
+        { id: 15, num: "#0015", name: "Beedrill", types: ["bug", "poison"], form: "", sprite: "15", abilities: { normal: ["Swarm"], hidden: ["Sniper"] }, stats: { hp: 65, atk: 90, def: 40, spa: 45, spd: 80, spe: 75, total: 395 } },
+        { id: 15, num: "#0015", name: "Mega Beedrill", types: ["bug", "poison"], form: "Mega", sprite: "10090", abilities: { normal: ["Adaptability"], hidden: [] }, stats: { hp: 65, atk: 150, def: 40, spa: 15, spd: 80, spe: 145, total: 495 } },
+        { id: 18, num: "#0018", name: "Pidgeot", types: ["normal", "flying"], form: "", sprite: "18", abilities: { normal: ["Keen Eye", "Tangled Feet"], hidden: ["Big Pecks"] }, stats: { hp: 83, atk: 80, def: 75, spa: 70, spd: 70, spe: 101, total: 479 } },
+        { id: 18, num: "#0018", name: "Mega Pidgeot", types: ["normal", "flying"], form: "Mega", sprite: "10073", abilities: { normal: ["No Guard"], hidden: [] }, stats: { hp: 83, atk: 80, def: 80, spa: 135, spd: 80, spe: 121, total: 579 } },
+        { id: 24, num: "#0024", name: "Arbok", types: ["poison"], form: "", sprite: "24", abilities: { normal: ["Intimidate", "Shed Skin"], hidden: ["Unnerve"] }, stats: { hp: 60, atk: 95, def: 69, spa: 65, spd: 79, spe: 80, total: 448 } },
+        { id: 25, num: "#0025", name: "Pikachu", types: ["electric"], form: "", sprite: "25", abilities: { normal: ["Static"], hidden: ["Lightning Rod"] }, stats: { hp: 35, atk: 55, def: 40, spa: 50, spd: 50, spe: 90, total: 320 } },
+        { id: 26, num: "#0026", name: "Raichu", types: ["electric"], form: "", sprite: "26", abilities: { normal: ["Static"], hidden: ["Lightning Rod"] }, stats: { hp: 60, atk: 90, def: 55, spa: 90, spd: 80, spe: 110, total: 485 } },
+        { id: 26, num: "#0026", name: "Raichu (Alolan Form)", types: ["electric", "psychic"], form: "Alolan Form", sprite: "10100", abilities: { normal: ["Surge Surfer"], hidden: [] }, stats: { hp: 60, atk: 85, def: 50, spa: 95, spd: 85, spe: 110, total: 485 } },
+        { id: 36, num: "#0036", name: "Clefable", types: ["fairy"], form: "", sprite: "36", abilities: { normal: ["Cute Charm", "Magic Guard"], hidden: ["Unaware"] }, stats: { hp: 95, atk: 70, def: 73, spa: 95, spd: 90, spe: 60, total: 483 } },
+        { id: 36, num: "#0036", name: "Mega Clefable", types: ["fairy", "flying"], form: "Mega", sprite: "36", abilities: { normal: ["Magic Bounce"], hidden: [] }, stats: { hp: 95, atk: 80, def: 93, spa: 135, spd: 110, spe: 70, total: 583 } },
+        { id: 38, num: "#0038", name: "Ninetales", types: ["fire"], form: "", sprite: "38", abilities: { normal: ["Flash Fire"], hidden: ["Drought"] }, stats: { hp: 73, atk: 76, def: 75, spa: 81, spd: 100, spe: 100, total: 505 } },
+        { id: 38, num: "#0038", name: "Ninetales (Alolan Form)", types: ["ice", "fairy"], form: "Alolan Form", sprite: "10104", abilities: { normal: ["Snow Cloak"], hidden: ["Snow Warning"] }, stats: { hp: 73, atk: 67, def: 75, spa: 81, spd: 100, spe: 109, total: 505 } },
+        { id: 59, num: "#0059", name: "Arcanine", types: ["fire"], form: "", sprite: "59", abilities: { normal: ["Intimidate", "Flash Fire"], hidden: ["Justified"] }, stats: { hp: 90, atk: 110, def: 80, spa: 100, spd: 80, spe: 95, total: 555 } },
+        { id: 59, num: "#0059", name: "Arcanine (Hisuian Form)", types: ["fire", "rock"], form: "Hisuian Form", sprite: "10230", abilities: { normal: ["Intimidate", "Flash Fire"], hidden: ["Rock Head"] }, stats: { hp: 95, atk: 115, def: 80, spa: 95, spd: 80, spe: 90, total: 555 } },
+        { id: 65, num: "#0065", name: "Alakazam", types: ["psychic"], form: "", sprite: "65", abilities: { normal: ["Synchronize", "Inner Focus"], hidden: ["Magic Guard"] }, stats: { hp: 55, atk: 50, def: 45, spa: 135, spd: 95, spe: 120, total: 500 } },
+        { id: 65, num: "#0065", name: "Mega Alakazam", types: ["psychic"], form: "Mega", sprite: "10037", abilities: { normal: ["Trace"], hidden: [] }, stats: { hp: 55, atk: 50, def: 65, spa: 175, spd: 105, spe: 150, total: 600 } },
+        { id: 68, num: "#0068", name: "Machamp", types: ["fighting"], form: "", sprite: "68", abilities: { normal: ["Guts", "No Guard"], hidden: ["Steadfast"] }, stats: { hp: 90, atk: 130, def: 80, spa: 65, spd: 85, spe: 55, total: 505 } },
+        { id: 71, num: "#0071", name: "Victreebel", types: ["grass", "poison"], form: "", sprite: "71", abilities: { normal: ["Chlorophyll"], hidden: ["Gluttony"] }, stats: { hp: 80, atk: 105, def: 65, spa: 100, spd: 70, spe: 70, total: 490 } },
+        { id: 71, num: "#0071", name: "Mega Victreebel", types: ["grass", "poison"], form: "Mega", sprite: "71", abilities: { normal: ["Innards Out"], hidden: [] }, stats: { hp: 80, atk: 125, def: 85, spa: 135, spd: 95, spe: 70, total: 590 } },
+        { id: 80, num: "#0080", name: "Slowbro", types: ["water", "psychic"], form: "", sprite: "80", abilities: { normal: ["Oblivious", "Own Tempo"], hidden: ["Regenerator"] }, stats: { hp: 95, atk: 75, def: 110, spa: 100, spd: 80, spe: 30, total: 490 } },
+        { id: 80, num: "#0080", name: "Slowbro (Galarian Form)", types: ["poison", "psychic"], form: "Galarian Form", sprite: "10165", abilities: { normal: ["Quick Draw", "Own Tempo"], hidden: ["Regenerator"] }, stats: { hp: 95, atk: 100, def: 95, spa: 100, spd: 70, spe: 30, total: 490 } },
+        { id: 80, num: "#0080", name: "Mega Slowbro", types: ["water", "psychic"], form: "Mega", sprite: "10071", abilities: { normal: ["Shell Armor"], hidden: [] }, stats: { hp: 95, atk: 75, def: 180, spa: 130, spd: 80, spe: 30, total: 590 } },
+        { id: 94, num: "#0094", name: "Gengar", types: ["ghost", "poison"], form: "", sprite: "94", abilities: { normal: ["Cursed Body"], hidden: [] }, stats: { hp: 60, atk: 65, def: 60, spa: 130, spd: 75, spe: 110, total: 500 } },
+        { id: 94, num: "#0094", name: "Mega Gengar", types: ["ghost", "poison"], form: "Mega", sprite: "10038", abilities: { normal: ["Shadow Tag"], hidden: [] }, stats: { hp: 60, atk: 65, def: 80, spa: 170, spd: 95, spe: 130, total: 600 } },
+        { id: 115, num: "#0115", name: "Kangaskhan", types: ["normal"], form: "", sprite: "115", abilities: { normal: ["Early Bird", "Scrappy"], hidden: ["Inner Focus"] }, stats: { hp: 105, atk: 95, def: 80, spa: 40, spd: 80, spe: 90, total: 490 } },
+        { id: 115, num: "#0115", name: "Mega Kangaskhan", types: ["normal"], form: "Mega", sprite: "10039", abilities: { normal: ["Parental Bond"], hidden: [] }, stats: { hp: 105, atk: 125, def: 100, spa: 60, spd: 100, spe: 100, total: 590 } },
+        { id: 121, num: "#0121", name: "Starmie", types: ["water", "psychic"], form: "", sprite: "121", abilities: { normal: ["Illuminate", "Natural Cure"], hidden: ["Analytic"] }, stats: { hp: 60, atk: 75, def: 85, spa: 100, spd: 85, spe: 115, total: 520 } },
+        { id: 121, num: "#0121", name: "Mega Starmie", types: ["water", "psychic"], form: "Mega", sprite: "121", abilities: { normal: ["Huge Power"], hidden: [] }, stats: { hp: 60, atk: 100, def: 105, spa: 130, spd: 105, spe: 120, total: 620 } },
+        { id: 127, num: "#0127", name: "Pinsir", types: ["bug"], form: "", sprite: "127", abilities: { normal: ["Hyper Cutter", "Mold Breaker"], hidden: ["Moxie"] }, stats: { hp: 65, atk: 125, def: 100, spa: 55, spd: 70, spe: 85, total: 500 } },
+        { id: 127, num: "#0127", name: "Mega Pinsir", types: ["bug", "flying"], form: "Mega", sprite: "10040", abilities: { normal: ["Aerilate"], hidden: [] }, stats: { hp: 65, atk: 155, def: 120, spa: 65, spd: 90, spe: 105, total: 600 } },
+        { id: 128, num: "#0128", name: "Tauros", types: ["normal"], form: "", sprite: "128", abilities: { normal: ["Intimidate", "Anger Point"], hidden: ["Sheer Force"] }, stats: { hp: 75, atk: 100, def: 95, spa: 40, spd: 70, spe: 110, total: 490 } },
+        { id: 128, num: "#0128", name: "Tauros (Combat Breed)", types: ["fighting"], form: "Paldean Form", sprite: "10250", abilities: { normal: ["Intimidate", "Anger Point"], hidden: ["Cud Chew"] }, stats: { hp: 75, atk: 110, def: 105, spa: 30, spd: 70, spe: 100, total: 490 } },
+        { id: 128, num: "#0128", name: "Tauros (Blaze Breed)", types: ["fighting", "fire"], form: "Paldean Form", sprite: "10251", abilities: { normal: ["Intimidate", "Anger Point"], hidden: ["Cud Chew"] }, stats: { hp: 75, atk: 110, def: 105, spa: 30, spd: 70, spe: 100, total: 490 } },
+        { id: 128, num: "#0128", name: "Tauros (Aqua Breed)", types: ["fighting", "water"], form: "Paldean Form", sprite: "10252", abilities: { normal: ["Intimidate", "Anger Point"], hidden: ["Cud Chew"] }, stats: { hp: 75, atk: 110, def: 105, spa: 30, spd: 70, spe: 100, total: 490 } },
+        { id: 130, num: "#0130", name: "Gyarados", types: ["water", "flying"], form: "", sprite: "130", abilities: { normal: ["Intimidate"], hidden: ["Moxie"] }, stats: { hp: 95, atk: 125, def: 79, spa: 60, spd: 100, spe: 81, total: 540 } },
+        { id: 130, num: "#0130", name: "Mega Gyarados", types: ["water", "dark"], form: "Mega", sprite: "10041", abilities: { normal: ["Mold Breaker"], hidden: [] }, stats: { hp: 95, atk: 155, def: 109, spa: 70, spd: 130, spe: 81, total: 640 } },
+        { id: 132, num: "#0132", name: "Ditto", types: ["normal"], form: "", sprite: "132", abilities: { normal: ["Limber"], hidden: ["Imposter"] }, stats: { hp: 48, atk: 48, def: 48, spa: 48, spd: 48, spe: 48, total: 288 } },
+        { id: 134, num: "#0134", name: "Vaporeon", types: ["water"], form: "", sprite: "134", abilities: { normal: ["Water Absorb"], hidden: ["Hydration"] }, stats: { hp: 130, atk: 65, def: 60, spa: 110, spd: 95, spe: 65, total: 525 } },
+        { id: 135, num: "#0135", name: "Jolteon", types: ["electric"], form: "", sprite: "135", abilities: { normal: ["Volt Absorb"], hidden: ["Quick Feet"] }, stats: { hp: 65, atk: 65, def: 60, spa: 110, spd: 95, spe: 130, total: 525 } },
+        { id: 136, num: "#0136", name: "Flareon", types: ["fire"], form: "", sprite: "136", abilities: { normal: ["Flash Fire"], hidden: ["Guts"] }, stats: { hp: 65, atk: 130, def: 60, spa: 95, spd: 110, spe: 65, total: 525 } },
+        { id: 142, num: "#0142", name: "Aerodactyl", types: ["rock", "flying"], form: "", sprite: "142", abilities: { normal: ["Rock Head", "Pressure"], hidden: ["Unnerve"] }, stats: { hp: 80, atk: 105, def: 65, spa: 60, spd: 75, spe: 130, total: 515 } },
+        { id: 142, num: "#0142", name: "Mega Aerodactyl", types: ["rock", "flying"], form: "Mega", sprite: "10042", abilities: { normal: ["Tough Claws"], hidden: [] }, stats: { hp: 80, atk: 135, def: 85, spa: 70, spd: 95, spe: 150, total: 615 } },
+        { id: 143, num: "#0143", name: "Snorlax", types: ["normal"], form: "", sprite: "143", abilities: { normal: ["Immunity", "Thick Fat"], hidden: ["Gluttony"] }, stats: { hp: 160, atk: 110, def: 65, spa: 65, spd: 110, spe: 30, total: 540 } },
+        { id: 149, num: "#0149", name: "Dragonite", types: ["dragon", "flying"], form: "", sprite: "149", abilities: { normal: ["Inner Focus"], hidden: ["Multiscale"] }, stats: { hp: 91, atk: 134, def: 95, spa: 100, spd: 100, spe: 80, total: 600 } },
+        { id: 149, num: "#0149", name: "Mega Dragonite", types: ["dragon", "flying"], form: "Mega", sprite: "149", abilities: { normal: ["Multiscale"], hidden: [] }, stats: { hp: 91, atk: 124, def: 115, spa: 145, spd: 125, spe: 100, total: 700 } },
+        { id: 154, num: "#0154", name: "Meganium", types: ["grass"], form: "", sprite: "154", abilities: { normal: ["Overgrow"], hidden: ["Leaf Guard"] }, stats: { hp: 80, atk: 82, def: 100, spa: 83, spd: 100, spe: 80, total: 525 } },
+        { id: 154, num: "#0154", name: "Mega Meganium", types: ["grass", "fairy"], form: "Mega", sprite: "154", abilities: { normal: ["Mega Sol"], hidden: [] }, stats: { hp: 80, atk: 92, def: 115, spa: 143, spd: 115, spe: 80, total: 625 } },
+        { id: 157, num: "#0157", name: "Typhlosion", types: ["fire"], form: "", sprite: "157", abilities: { normal: ["Blaze"], hidden: ["Flash Fire"] }, stats: { hp: 78, atk: 84, def: 78, spa: 109, spd: 85, spe: 100, total: 534 } },
+        { id: 157, num: "#0157", name: "Typhlosion (Hisuian Form)", types: ["fire", "ghost"], form: "Hisuian Form", sprite: "10233", abilities: { normal: ["Blaze"], hidden: ["Frisk"] }, stats: { hp: 73, atk: 84, def: 78, spa: 119, spd: 85, spe: 95, total: 534 } },
+        { id: 160, num: "#0160", name: "Feraligatr", types: ["water"], form: "", sprite: "160", abilities: { normal: ["Torrent"], hidden: ["Sheer Force"] }, stats: { hp: 85, atk: 105, def: 100, spa: 79, spd: 83, spe: 78, total: 530 } },
+        { id: 160, num: "#0160", name: "Mega Feraligatr", types: ["water", "dark"], form: "Mega", sprite: "160", abilities: { normal: ["Dragonize"], hidden: [] }, stats: { hp: 85, atk: 160, def: 125, spa: 89, spd: 93, spe: 78, total: 630 } },
+        { id: 168, num: "#0168", name: "Ariados", types: ["bug", "poison"], form: "", sprite: "168", abilities: { normal: ["Swarm", "Insomnia"], hidden: ["Sniper"] }, stats: { hp: 70, atk: 90, def: 70, spa: 60, spd: 70, spe: 40, total: 400 } },
+        { id: 181, num: "#0181", name: "Ampharos", types: ["electric"], form: "", sprite: "181", abilities: { normal: ["Static"], hidden: ["Plus"] }, stats: { hp: 90, atk: 75, def: 85, spa: 115, spd: 90, spe: 55, total: 510 } },
+        { id: 181, num: "#0181", name: "Mega Ampharos", types: ["electric", "dragon"], form: "Mega", sprite: "10045", abilities: { normal: ["Mold Breaker"], hidden: [] }, stats: { hp: 90, atk: 95, def: 105, spa: 165, spd: 110, spe: 45, total: 610 } },
+        { id: 184, num: "#0184", name: "Azumarill", types: ["water", "fairy"], form: "", sprite: "184", abilities: { normal: ["Thick Fat", "Huge Power"], hidden: ["Sap Sipper"] }, stats: { hp: 100, atk: 50, def: 80, spa: 60, spd: 80, spe: 50, total: 420 } },
+        { id: 186, num: "#0186", name: "Politoed", types: ["water"], form: "", sprite: "186", abilities: { normal: ["Water Absorb", "Damp"], hidden: ["Drizzle"] }, stats: { hp: 90, atk: 75, def: 75, spa: 90, spd: 100, spe: 70, total: 500 } },
+        { id: 196, num: "#0196", name: "Espeon", types: ["psychic"], form: "", sprite: "196", abilities: { normal: ["Synchronize"], hidden: ["Magic Bounce"] }, stats: { hp: 65, atk: 65, def: 60, spa: 130, spd: 95, spe: 110, total: 525 } },
+        { id: 197, num: "#0197", name: "Umbreon", types: ["dark"], form: "", sprite: "197", abilities: { normal: ["Synchronize"], hidden: ["Inner Focus"] }, stats: { hp: 95, atk: 65, def: 110, spa: 60, spd: 130, spe: 65, total: 525 } },
+        { id: 199, num: "#0199", name: "Slowking", types: ["water", "psychic"], form: "", sprite: "199", abilities: { normal: ["Oblivious", "Own Tempo"], hidden: ["Regenerator"] }, stats: { hp: 95, atk: 75, def: 80, spa: 100, spd: 110, spe: 30, total: 490 } },
+        { id: 199, num: "#0199", name: "Slowking (Galarian Form)", types: ["poison", "psychic"], form: "Galarian Form", sprite: "10172", abilities: { normal: ["Curious Medicine", "Own Tempo"], hidden: ["Regenerator"] }, stats: { hp: 95, atk: 65, def: 80, spa: 110, spd: 110, spe: 30, total: 490 } },
+        { id: 205, num: "#0205", name: "Forretress", types: ["bug", "steel"], form: "", sprite: "205", abilities: { normal: ["Sturdy"], hidden: ["Overcoat"] }, stats: { hp: 75, atk: 90, def: 140, spa: 60, spd: 60, spe: 40, total: 465 } },
+        { id: 208, num: "#0208", name: "Mega Steelix", types: ["steel", "ground"], form: "Mega", sprite: "10072", abilities: { normal: ["Sand Force"], hidden: [] }, stats: { hp: 75, atk: 125, def: 230, spa: 55, spd: 95, spe: 30, total: 610 } },
+        { id: 212, num: "#0212", name: "Scizor", types: ["bug", "steel"], form: "", sprite: "212", abilities: { normal: ["Swarm", "Technician"], hidden: ["Light Metal"] }, stats: { hp: 70, atk: 130, def: 100, spa: 55, spd: 80, spe: 65, total: 500 } },
+        { id: 212, num: "#0212", name: "Mega Scizor", types: ["bug", "steel"], form: "Mega", sprite: "10046", abilities: { normal: ["Technician"], hidden: [] }, stats: { hp: 70, atk: 150, def: 140, spa: 65, spd: 100, spe: 75, total: 600 } },
+        { id: 214, num: "#0214", name: "Heracross", types: ["bug", "fighting"], form: "", sprite: "214", abilities: { normal: ["Swarm", "Guts"], hidden: ["Moxie"] }, stats: { hp: 80, atk: 125, def: 75, spa: 40, spd: 95, spe: 85, total: 500 } },
+        { id: 214, num: "#0214", name: "Mega Heracross", types: ["bug", "fighting"], form: "Mega", sprite: "10047", abilities: { normal: ["Skill Link"], hidden: [] }, stats: { hp: 80, atk: 185, def: 115, spa: 40, spd: 105, spe: 75, total: 600 } },
+        { id: 227, num: "#0227", name: "Skarmory", types: ["steel", "flying"], form: "", sprite: "227", abilities: { normal: ["Keen Eye", "Sturdy"], hidden: ["Weak Armor"] }, stats: { hp: 65, atk: 80, def: 140, spa: 40, spd: 70, spe: 70, total: 465 } },
+        { id: 227, num: "#0227", name: "Mega Skarmory", types: ["steel", "flying"], form: "Mega", sprite: "227", abilities: { normal: ["Stalwart"], hidden: [] }, stats: { hp: 65, atk: 140, def: 110, spa: 40, spd: 100, spe: 110, total: 565 } },
+        { id: 229, num: "#0229", name: "Houndoom", types: ["dark", "fire"], form: "", sprite: "229", abilities: { normal: ["Early Bird", "Flash Fire"], hidden: ["Unnerve"] }, stats: { hp: 75, atk: 90, def: 50, spa: 110, spd: 80, spe: 95, total: 500 } },
+        { id: 229, num: "#0229", name: "Mega Houndoom", types: ["dark", "fire"], form: "Mega", sprite: "10048", abilities: { normal: ["Solar Power"], hidden: [] }, stats: { hp: 75, atk: 90, def: 90, spa: 140, spd: 90, spe: 115, total: 600 } },
+        { id: 248, num: "#0248", name: "Tyranitar", types: ["rock", "dark"], form: "", sprite: "248", abilities: { normal: ["Sand Stream"], hidden: ["Unnerve"] }, stats: { hp: 100, atk: 134, def: 110, spa: 95, spd: 100, spe: 61, total: 600 } },
+        { id: 248, num: "#0248", name: "Mega Tyranitar", types: ["rock", "dark"], form: "Mega", sprite: "10049", abilities: { normal: ["Sand Stream"], hidden: [] }, stats: { hp: 100, atk: 164, def: 150, spa: 95, spd: 120, spe: 71, total: 700 } },
+        { id: 279, num: "#0279", name: "Pelipper", types: ["water", "flying"], form: "", sprite: "279", abilities: { normal: ["Keen Eye", "Drizzle"], hidden: ["Rain Dish"] }, stats: { hp: 60, atk: 50, def: 100, spa: 95, spd: 70, spe: 65, total: 440 } },
+        { id: 282, num: "#0282", name: "Gardevoir", types: ["psychic", "fairy"], form: "", sprite: "282", abilities: { normal: ["Synchronize", "Trace"], hidden: ["Telepathy"] }, stats: { hp: 68, atk: 65, def: 65, spa: 125, spd: 115, spe: 80, total: 518 } },
+        { id: 282, num: "#0282", name: "Mega Gardevoir", types: ["psychic", "fairy"], form: "Mega", sprite: "10051", abilities: { normal: ["Pixilate"], hidden: [] }, stats: { hp: 68, atk: 85, def: 65, spa: 165, spd: 135, spe: 100, total: 618 } },
+        { id: 302, num: "#0302", name: "Sableye", types: ["dark", "ghost"], form: "", sprite: "302", abilities: { normal: ["Keen Eye", "Stall"], hidden: ["Prankster"] }, stats: { hp: 50, atk: 75, def: 75, spa: 65, spd: 65, spe: 50, total: 380 } },
+        { id: 302, num: "#0302", name: "Mega Sableye", types: ["dark", "ghost"], form: "Mega", sprite: "10066", abilities: { normal: ["Magic Bounce"], hidden: [] }, stats: { hp: 50, atk: 85, def: 125, spa: 85, spd: 115, spe: 20, total: 480 } },
+        { id: 306, num: "#0306", name: "Aggron", types: ["steel", "rock"], form: "", sprite: "306", abilities: { normal: ["Sturdy", "Rock Head"], hidden: ["Heavy Metal"] }, stats: { hp: 70, atk: 110, def: 180, spa: 60, spd: 60, spe: 50, total: 530 } },
+        { id: 306, num: "#0306", name: "Mega Aggron", types: ["steel"], form: "Mega", sprite: "10053", abilities: { normal: ["Filter"], hidden: [] }, stats: { hp: 70, atk: 140, def: 230, spa: 60, spd: 80, spe: 50, total: 630 } },
+        { id: 308, num: "#0308", name: "Medicham", types: ["fighting", "psychic"], form: "", sprite: "308", abilities: { normal: ["Pure Power"], hidden: ["Telepathy"] }, stats: { hp: 60, atk: 60, def: 75, spa: 60, spd: 75, spe: 80, total: 410 } },
+        { id: 308, num: "#0308", name: "Mega Medicham", types: ["fighting", "psychic"], form: "Mega", sprite: "10054", abilities: { normal: ["Pure Power"], hidden: [] }, stats: { hp: 60, atk: 100, def: 85, spa: 80, spd: 85, spe: 100, total: 510 } },
+        { id: 310, num: "#0310", name: "Manectric", types: ["electric"], form: "", sprite: "310", abilities: { normal: ["Static", "Lightning Rod"], hidden: ["Minus"] }, stats: { hp: 70, atk: 75, def: 60, spa: 105, spd: 60, spe: 105, total: 475 } },
+        { id: 310, num: "#0310", name: "Mega Manectric", types: ["electric"], form: "Mega", sprite: "10055", abilities: { normal: ["Intimidate"], hidden: [] }, stats: { hp: 70, atk: 75, def: 80, spa: 135, spd: 80, spe: 135, total: 575 } },
+        { id: 319, num: "#0319", name: "Sharpedo", types: ["water", "dark"], form: "", sprite: "319", abilities: { normal: ["Rough Skin"], hidden: ["Speed Boost"] }, stats: { hp: 70, atk: 120, def: 40, spa: 95, spd: 40, spe: 95, total: 460 } },
+        { id: 319, num: "#0319", name: "Mega Sharpedo", types: ["water", "dark"], form: "Mega", sprite: "10070", abilities: { normal: ["Strong Jaw"], hidden: [] }, stats: { hp: 70, atk: 140, def: 70, spa: 110, spd: 65, spe: 105, total: 560 } },
+        { id: 323, num: "#0323", name: "Camerupt", types: ["fire", "ground"], form: "", sprite: "323", abilities: { normal: ["Magma Armor", "Solid Rock"], hidden: ["Anger Point"] }, stats: { hp: 70, atk: 100, def: 70, spa: 105, spd: 75, spe: 40, total: 460 } },
+        { id: 323, num: "#0323", name: "Mega Camerupt", types: ["fire", "ground"], form: "Mega", sprite: "10087", abilities: { normal: ["Sheer Force"], hidden: [] }, stats: { hp: 70, atk: 120, def: 100, spa: 145, spd: 105, spe: 20, total: 560 } },
+        { id: 324, num: "#0324", name: "Torkoal", types: ["fire"], form: "", sprite: "324", abilities: { normal: ["White Smoke", "Drought"], hidden: ["Shell Armor"] }, stats: { hp: 70, atk: 85, def: 140, spa: 85, spd: 70, spe: 20, total: 470 } },
+        { id: 334, num: "#0334", name: "Altaria", types: ["dragon", "flying"], form: "", sprite: "334", abilities: { normal: ["Natural Cure"], hidden: ["Cloud Nine"] }, stats: { hp: 75, atk: 70, def: 90, spa: 70, spd: 105, spe: 80, total: 490 } },
+        { id: 334, num: "#0334", name: "Mega Altaria", types: ["dragon", "fairy"], form: "Mega", sprite: "10067", abilities: { normal: ["Pixilate"], hidden: [] }, stats: { hp: 75, atk: 110, def: 110, spa: 110, spd: 105, spe: 80, total: 590 } },
+        { id: 350, num: "#0350", name: "Milotic", types: ["water"], form: "", sprite: "350", abilities: { normal: ["Marvel Scale", "Competitive"], hidden: ["Cute Charm"] }, stats: { hp: 95, atk: 60, def: 79, spa: 100, spd: 125, spe: 81, total: 540 } },
+        { id: 351, num: "#0351", name: "Castform", types: ["normal"], form: "", sprite: "351", abilities: { normal: ["Forecast"], hidden: [] }, stats: { hp: 70, atk: 70, def: 70, spa: 70, spd: 70, spe: 70, total: 420 } },
+        { id: 354, num: "#0354", name: "Banette", types: ["ghost"], form: "", sprite: "354", abilities: { normal: ["Insomnia", "Frisk"], hidden: ["Cursed Body"] }, stats: { hp: 64, atk: 115, def: 65, spa: 83, spd: 63, spe: 65, total: 455 } },
+        { id: 354, num: "#0354", name: "Mega Banette", types: ["ghost"], form: "Mega", sprite: "10056", abilities: { normal: ["Prankster"], hidden: [] }, stats: { hp: 64, atk: 165, def: 75, spa: 93, spd: 83, spe: 75, total: 555 } },
+        { id: 358, num: "#0358", name: "Chimecho", types: ["psychic"], form: "", sprite: "358", abilities: { normal: ["Levitate"], hidden: [] }, stats: { hp: 75, atk: 50, def: 80, spa: 95, spd: 90, spe: 65, total: 455 } },
+        { id: 358, num: "#0358", name: "Mega Chimecho", types: ["psychic", "steel"], form: "Mega", sprite: "358", abilities: { normal: ["Levitate"], hidden: [] }, stats: { hp: 75, atk: 50, def: 110, spa: 135, spd: 120, spe: 65, total: 555 } },
+        { id: 359, num: "#0359", name: "Absol", types: ["dark"], form: "", sprite: "359", abilities: { normal: ["Pressure", "Super Luck"], hidden: ["Justified"] }, stats: { hp: 65, atk: 130, def: 60, spa: 75, spd: 60, spe: 75, total: 465 } },
+        { id: 359, num: "#0359", name: "Mega Absol", types: ["dark"], form: "Mega", sprite: "10057", abilities: { normal: ["Magic Bounce"], hidden: [] }, stats: { hp: 65, atk: 150, def: 60, spa: 115, spd: 60, spe: 115, total: 565 } },
+        { id: 362, num: "#0362", name: "Glalie", types: ["ice"], form: "", sprite: "362", abilities: { normal: ["Inner Focus", "Ice Body"], hidden: ["Moody"] }, stats: { hp: 80, atk: 80, def: 80, spa: 80, spd: 80, spe: 80, total: 480 } },
+        { id: 362, num: "#0362", name: "Mega Glalie", types: ["ice"], form: "Mega", sprite: "10074", abilities: { normal: ["Refrigerate"], hidden: [] }, stats: { hp: 80, atk: 120, def: 80, spa: 120, spd: 80, spe: 100, total: 580 } },
+        { id: 389, num: "#0389", name: "Torterra", types: ["grass", "ground"], form: "", sprite: "389", abilities: { normal: ["Overgrow"], hidden: ["Shell Armor"] }, stats: { hp: 95, atk: 109, def: 105, spa: 75, spd: 85, spe: 56, total: 525 } },
+        { id: 392, num: "#0392", name: "Infernape", types: ["fire", "fighting"], form: "", sprite: "392", abilities: { normal: ["Blaze"], hidden: ["Iron Fist"] }, stats: { hp: 76, atk: 104, def: 71, spa: 104, spd: 71, spe: 108, total: 534 } },
+        { id: 395, num: "#0395", name: "Empoleon", types: ["water", "steel"], form: "", sprite: "395", abilities: { normal: ["Torrent"], hidden: ["Competitive"] }, stats: { hp: 84, atk: 86, def: 88, spa: 111, spd: 101, spe: 60, total: 530 } },
+        { id: 405, num: "#0405", name: "Luxray", types: ["electric"], form: "", sprite: "405", abilities: { normal: ["Rivalry", "Intimidate"], hidden: ["Guts"] }, stats: { hp: 80, atk: 120, def: 79, spa: 95, spd: 79, spe: 70, total: 523 } },
+        { id: 407, num: "#0407", name: "Roserade", types: ["grass", "poison"], form: "", sprite: "407", abilities: { normal: ["Natural Cure", "Poison Point"], hidden: ["Technician"] }, stats: { hp: 60, atk: 70, def: 65, spa: 125, spd: 105, spe: 90, total: 515 } },
+        { id: 409, num: "#0409", name: "Rampardos", types: ["rock"], form: "", sprite: "409", abilities: { normal: ["Mold Breaker"], hidden: ["Sheer Force"] }, stats: { hp: 97, atk: 165, def: 60, spa: 65, spd: 50, spe: 58, total: 495 } },
+        { id: 411, num: "#0411", name: "Bastiodon", types: ["rock", "steel"], form: "", sprite: "411", abilities: { normal: ["Sturdy"], hidden: ["Soundproof"] }, stats: { hp: 60, atk: 52, def: 168, spa: 47, spd: 138, spe: 30, total: 495 } },
+        { id: 428, num: "#0428", name: "Lopunny", types: ["normal"], form: "", sprite: "428", abilities: { normal: ["Cute Charm", "Klutz"], hidden: ["Limber"] }, stats: { hp: 65, atk: 76, def: 84, spa: 54, spd: 96, spe: 105, total: 480 } },
+        { id: 428, num: "#0428", name: "Mega Lopunny", types: ["normal", "fighting"], form: "Mega", sprite: "10088", abilities: { normal: ["Scrappy"], hidden: [] }, stats: { hp: 65, atk: 136, def: 94, spa: 54, spd: 96, spe: 135, total: 580 } },
+        { id: 442, num: "#0442", name: "Spiritomb", types: ["ghost", "dark"], form: "", sprite: "442", abilities: { normal: ["Pressure"], hidden: ["Infiltrator"] }, stats: { hp: 50, atk: 92, def: 108, spa: 92, spd: 108, spe: 35, total: 485 } },
+        { id: 445, num: "#0445", name: "Garchomp", types: ["dragon", "ground"], form: "", sprite: "445", abilities: { normal: ["Sand Veil"], hidden: ["Rough Skin"] }, stats: { hp: 108, atk: 130, def: 95, spa: 80, spd: 85, spe: 102, total: 600 } },
+        { id: 445, num: "#0445", name: "Mega Garchomp", types: ["dragon", "ground"], form: "Mega", sprite: "10058", abilities: { normal: ["Sand Force"], hidden: [] }, stats: { hp: 108, atk: 170, def: 115, spa: 120, spd: 95, spe: 92, total: 700 } },
+        { id: 448, num: "#0448", name: "Lucario", types: ["fighting", "steel"], form: "", sprite: "448", abilities: { normal: ["Steadfast", "Inner Focus"], hidden: ["Justified"] }, stats: { hp: 70, atk: 110, def: 70, spa: 115, spd: 70, spe: 90, total: 525 } },
+        { id: 448, num: "#0448", name: "Mega Lucario", types: ["fighting", "steel"], form: "Mega", sprite: "10059", abilities: { normal: ["Adaptability"], hidden: [] }, stats: { hp: 70, atk: 145, def: 88, spa: 140, spd: 70, spe: 112, total: 625 } },
+        { id: 450, num: "#0450", name: "Hippowdon", types: ["ground"], form: "", sprite: "450", abilities: { normal: ["Sand Stream"], hidden: ["Sand Force"] }, stats: { hp: 108, atk: 112, def: 118, spa: 68, spd: 72, spe: 47, total: 525 } },
+        { id: 454, num: "#0454", name: "Toxicroak", types: ["poison", "fighting"], form: "", sprite: "454", abilities: { normal: ["Anticipation", "Dry Skin"], hidden: ["Poison Touch"] }, stats: { hp: 83, atk: 106, def: 65, spa: 86, spd: 65, spe: 85, total: 490 } },
+        { id: 460, num: "#0460", name: "Abomasnow", types: ["grass", "ice"], form: "", sprite: "460", abilities: { normal: ["Snow Warning"], hidden: ["Soundproof"] }, stats: { hp: 90, atk: 92, def: 75, spa: 92, spd: 85, spe: 60, total: 494 } },
+        { id: 460, num: "#0460", name: "Mega Abomasnow", types: ["grass", "ice"], form: "Mega", sprite: "10060", abilities: { normal: ["Snow Warning"], hidden: [] }, stats: { hp: 90, atk: 132, def: 105, spa: 132, spd: 105, spe: 30, total: 594 } },
+        { id: 461, num: "#0461", name: "Weavile", types: ["dark", "ice"], form: "", sprite: "461", abilities: { normal: ["Pressure"], hidden: ["Pickpocket"] }, stats: { hp: 70, atk: 120, def: 65, spa: 45, spd: 85, spe: 125, total: 510 } },
+        { id: 464, num: "#0464", name: "Rhyperior", types: ["ground", "rock"], form: "", sprite: "464", abilities: { normal: ["Lightning Rod", "Solid Rock"], hidden: ["Reckless"] }, stats: { hp: 115, atk: 140, def: 130, spa: 55, spd: 55, spe: 40, total: 535 } },
+        { id: 470, num: "#0470", name: "Leafeon", types: ["grass"], form: "", sprite: "470", abilities: { normal: ["Leaf Guard"], hidden: ["Chlorophyll"] }, stats: { hp: 65, atk: 110, def: 130, spa: 60, spd: 65, spe: 95, total: 525 } },
+        { id: 471, num: "#0471", name: "Glaceon", types: ["ice"], form: "", sprite: "471", abilities: { normal: ["Snow Cloak"], hidden: ["Ice Body"] }, stats: { hp: 65, atk: 60, def: 110, spa: 130, spd: 95, spe: 65, total: 525 } },
+        { id: 472, num: "#0472", name: "Gliscor", types: ["ground", "flying"], form: "", sprite: "472", abilities: { normal: ["Hyper Cutter", "Sand Veil"], hidden: ["Poison Heal"] }, stats: { hp: 75, atk: 95, def: 125, spa: 45, spd: 75, spe: 95, total: 510 } },
+        { id: 473, num: "#0473", name: "Mamoswine", types: ["ice", "ground"], form: "", sprite: "473", abilities: { normal: ["Oblivious", "Snow Cloak"], hidden: ["Thick Fat"] }, stats: { hp: 110, atk: 130, def: 80, spa: 70, spd: 60, spe: 80, total: 530 } },
+        { id: 475, num: "#0475", name: "Gallade", types: ["psychic", "fighting"], form: "", sprite: "475", abilities: { normal: ["Steadfast", "Sharpness"], hidden: ["Justified"] }, stats: { hp: 68, atk: 125, def: 65, spa: 65, spd: 115, spe: 80, total: 518 } },
+        { id: 475, num: "#0475", name: "Mega Gallade", types: ["psychic", "fighting"], form: "Mega", sprite: "10068", abilities: { normal: ["Inner Focus"], hidden: [] }, stats: { hp: 68, atk: 165, def: 95, spa: 65, spd: 115, spe: 110, total: 618 } },
+        { id: 478, num: "#0478", name: "Froslass", types: ["ice", "ghost"], form: "", sprite: "478", abilities: { normal: ["Snow Cloak"], hidden: ["Cursed Body"] }, stats: { hp: 70, atk: 80, def: 70, spa: 80, spd: 70, spe: 110, total: 480 } },
+        { id: 478, num: "#0478", name: "Mega Froslass", types: ["ice", "ghost"], form: "Mega", sprite: "478", abilities: { normal: ["Snow Warning"], hidden: [] }, stats: { hp: 70, atk: 80, def: 70, spa: 140, spd: 100, spe: 120, total: 580 } },
+        { id: 479, num: "#0479", name: "Rotom (Normal)", types: ["electric", "ghost"], form: "Rotom Form", sprite: "479", abilities: { normal: ["Levitate"], hidden: [] }, stats: { hp: 50, atk: 50, def: 77, spa: 95, spd: 77, spe: 91, total: 440 } },
+        { id: 479, num: "#0479", name: "Rotom (Heat)", types: ["electric", "fire"], form: "Rotom Form", sprite: "10008", abilities: { normal: ["Levitate"], hidden: [] }, stats: { hp: 50, atk: 65, def: 107, spa: 105, spd: 107, spe: 86, total: 520 } },
+        { id: 479, num: "#0479", name: "Rotom (Wash)", types: ["electric", "water"], form: "Rotom Form", sprite: "10009", abilities: { normal: ["Levitate"], hidden: [] }, stats: { hp: 50, atk: 65, def: 107, spa: 105, spd: 107, spe: 86, total: 520 } },
+        { id: 479, num: "#0479", name: "Rotom (Frost)", types: ["electric", "ice"], form: "Rotom Form", sprite: "10010", abilities: { normal: ["Levitate"], hidden: [] }, stats: { hp: 50, atk: 65, def: 107, spa: 105, spd: 107, spe: 86, total: 520 } },
+        { id: 479, num: "#0479", name: "Rotom (Fan)", types: ["electric", "flying"], form: "Rotom Form", sprite: "10011", abilities: { normal: ["Levitate"], hidden: [] }, stats: { hp: 50, atk: 65, def: 107, spa: 105, spd: 107, spe: 86, total: 520 } },
+        { id: 479, num: "#0479", name: "Rotom (Mow)", types: ["electric", "grass"], form: "Rotom Form", sprite: "10012", abilities: { normal: ["Levitate"], hidden: [] }, stats: { hp: 50, atk: 65, def: 107, spa: 105, spd: 107, spe: 86, total: 520 } },
+        { id: 497, num: "#0497", name: "Serperior", types: ["grass"], form: "", sprite: "497", abilities: { normal: ["Overgrow"], hidden: ["Contrary"] }, stats: { hp: 75, atk: 75, def: 95, spa: 75, spd: 95, spe: 113, total: 528 } },
+        { id: 500, num: "#0500", name: "Emboar", types: ["fire", "fighting"], form: "", sprite: "500", abilities: { normal: ["Blaze"], hidden: ["Reckless"] }, stats: { hp: 110, atk: 123, def: 65, spa: 100, spd: 65, spe: 65, total: 528 } },
+        { id: 500, num: "#0500", name: "Mega Emboar", types: ["fire", "fighting"], form: "Mega", sprite: "500", abilities: { normal: ["Mold Breaker"], hidden: [] }, stats: { hp: 110, atk: 148, def: 75, spa: 110, spd: 110, spe: 75, total: 628 } },
+        { id: 503, num: "#0503", name: "Samurott", types: ["water"], form: "", sprite: "503", abilities: { normal: ["Torrent"], hidden: ["Shell Armor"] }, stats: { hp: 95, atk: 100, def: 85, spa: 108, spd: 70, spe: 70, total: 528 } },
+        { id: 503, num: "#0503", name: "Samurott (Hisuian Form)", types: ["water", "dark"], form: "Hisuian Form", sprite: "10236", abilities: { normal: ["Torrent"], hidden: ["Sharpness"] }, stats: { hp: 90, atk: 108, def: 80, spa: 100, spd: 65, spe: 85, total: 528 } },
+        { id: 505, num: "#0505", name: "Watchog", types: ["normal"], form: "", sprite: "505", abilities: { normal: ["Illuminate", "Keen Eye"], hidden: ["Analytic"] }, stats: { hp: 60, atk: 85, def: 69, spa: 60, spd: 69, spe: 77, total: 420 } },
+        { id: 510, num: "#0510", name: "Liepard", types: ["dark"], form: "", sprite: "510", abilities: { normal: ["Limber", "Unburden"], hidden: ["Prankster"] }, stats: { hp: 64, atk: 88, def: 50, spa: 88, spd: 50, spe: 106, total: 446 } },
+        { id: 512, num: "#0512", name: "Simisage", types: ["grass"], form: "", sprite: "512", abilities: { normal: ["Gluttony"], hidden: ["Overgrow"] }, stats: { hp: 75, atk: 98, def: 63, spa: 98, spd: 63, spe: 101, total: 498 } },
+        { id: 514, num: "#0514", name: "Simisear", types: ["fire"], form: "", sprite: "514", abilities: { normal: ["Gluttony"], hidden: ["Blaze"] }, stats: { hp: 75, atk: 98, def: 63, spa: 98, spd: 63, spe: 101, total: 498 } },
+        { id: 516, num: "#0516", name: "Simipour", types: ["water"], form: "", sprite: "516", abilities: { normal: ["Gluttony"], hidden: ["Torrent"] }, stats: { hp: 75, atk: 98, def: 63, spa: 98, spd: 63, spe: 101, total: 498 } },
+        { id: 530, num: "#0530", name: "Excadrill", types: ["ground", "steel"], form: "", sprite: "530", abilities: { normal: ["Sand Rush", "Sand Force"], hidden: ["Mold Breaker"] }, stats: { hp: 110, atk: 135, def: 60, spa: 50, spd: 65, spe: 88, total: 508 } },
+        { id: 530, num: "#0530", name: "Mega Excadrill", types: ["ground", "steel"], form: "Mega", sprite: "530", abilities: { normal: ["Piercing Drill"], hidden: [] }, stats: { hp: 110, atk: 165, def: 100, spa: 65, spd: 65, spe: 103, total: 608 } },
+        { id: 531, num: "#0531", name: "Audino", types: ["normal"], form: "", sprite: "531", abilities: { normal: ["Healer", "Regenerator"], hidden: ["Klutz"] }, stats: { hp: 103, atk: 60, def: 86, spa: 60, spd: 86, spe: 50, total: 445 } },
+        { id: 531, num: "#0531", name: "Mega Audino", types: ["normal", "fairy"], form: "Mega", sprite: "10069", abilities: { normal: ["Healer"], hidden: [] }, stats: { hp: 103, atk: 60, def: 126, spa: 80, spd: 126, spe: 50, total: 545 } },
+        { id: 534, num: "#0534", name: "Conkeldurr", types: ["fighting"], form: "", sprite: "534", abilities: { normal: ["Guts", "Sheer Force"], hidden: ["Iron Fist"] }, stats: { hp: 105, atk: 140, def: 95, spa: 55, spd: 65, spe: 45, total: 505 } },
+        { id: 547, num: "#0547", name: "Whimsicott", types: ["grass", "fairy"], form: "", sprite: "547", abilities: { normal: ["Prankster", "Infiltrator"], hidden: ["Chlorophyll"] }, stats: { hp: 60, atk: 67, def: 85, spa: 77, spd: 75, spe: 116, total: 480 } },
+        { id: 553, num: "#0553", name: "Krookodile", types: ["ground", "dark"], form: "", sprite: "553", abilities: { normal: ["Intimidate", "Moxie"], hidden: ["Anger Point"] }, stats: { hp: 95, atk: 117, def: 80, spa: 65, spd: 70, spe: 92, total: 519 } },
+        { id: 563, num: "#0563", name: "Cofagrigus", types: ["ghost"], form: "", sprite: "563", abilities: { normal: ["Mummy"], hidden: [] }, stats: { hp: 58, atk: 50, def: 145, spa: 95, spd: 105, spe: 30, total: 483 } },
+        { id: 569, num: "#0569", name: "Garbodor", types: ["poison"], form: "", sprite: "569", abilities: { normal: ["Stench", "Weak Armor"], hidden: ["Aftermath"] }, stats: { hp: 80, atk: 95, def: 82, spa: 60, spd: 82, spe: 75, total: 474 } },
+        { id: 571, num: "#0571", name: "Zoroark", types: ["dark"], form: "", sprite: "571", abilities: { normal: ["Illusion"], hidden: [] }, stats: { hp: 60, atk: 105, def: 60, spa: 120, spd: 60, spe: 105, total: 510 } },
+        { id: 571, num: "#0571", name: "Zoroark (Hisuian Form)", types: ["normal", "ghost"], form: "Hisuian Form", sprite: "10239", abilities: { normal: ["Illusion"], hidden: [] }, stats: { hp: 55, atk: 100, def: 60, spa: 125, spd: 60, spe: 110, total: 510 } },
+        { id: 579, num: "#0579", name: "Reuniclus", types: ["psychic"], form: "", sprite: "579", abilities: { normal: ["Overcoat", "Magic Guard"], hidden: ["Regenerator"] }, stats: { hp: 110, atk: 65, def: 75, spa: 125, spd: 85, spe: 30, total: 490 } },
+        { id: 584, num: "#0584", name: "Vanilluxe", types: ["ice"], form: "", sprite: "584", abilities: { normal: ["Ice Body", "Snow Warning"], hidden: ["Weak Armor"] }, stats: { hp: 71, atk: 95, def: 85, spa: 110, spd: 95, spe: 79, total: 535 } },
+        { id: 587, num: "#0587", name: "Emolga", types: ["electric", "flying"], form: "", sprite: "587", abilities: { normal: ["Static"], hidden: ["Motor Drive"] }, stats: { hp: 55, atk: 75, def: 60, spa: 75, spd: 60, spe: 103, total: 428 } },
+        { id: 609, num: "#0609", name: "Chandelure", types: ["ghost", "fire"], form: "", sprite: "609", abilities: { normal: ["Flash Fire", "Flame Body"], hidden: ["Infiltrator"] }, stats: { hp: 60, atk: 55, def: 90, spa: 145, spd: 90, spe: 80, total: 520 } },
+        { id: 609, num: "#0609", name: "Mega Chandelure", types: ["ghost", "fire"], form: "Mega", sprite: "609", abilities: { normal: ["Infiltrator"], hidden: [] }, stats: { hp: 60, atk: 75, def: 110, spa: 175, spd: 110, spe: 90, total: 620 } },
+        { id: 614, num: "#0614", name: "Beartic", types: ["ice"], form: "", sprite: "614", abilities: { normal: ["Snow Cloak", "Slush Rush"], hidden: ["Swift Swim"] }, stats: { hp: 95, atk: 130, def: 80, spa: 70, spd: 80, spe: 50, total: 505 } },
+        { id: 618, num: "#0618", name: "Stunfisk", types: ["ground", "electric"], form: "", sprite: "618", abilities: { normal: ["Static", "Limber"], hidden: ["Sand Veil"] }, stats: { hp: 109, atk: 66, def: 84, spa: 81, spd: 99, spe: 32, total: 471 } },
+        { id: 618, num: "#0618", name: "Stunfisk (Galarian Form)", types: ["ground", "steel"], form: "Galarian Form", sprite: "10180", abilities: { normal: ["Mimicry"], hidden: [] }, stats: { hp: 109, atk: 81, def: 99, spa: 66, spd: 84, spe: 32, total: 471 } },
+        { id: 623, num: "#0623", name: "Golurk", types: ["ground", "ghost"], form: "", sprite: "623", abilities: { normal: ["Iron Fist", "Klutz"], hidden: ["No Guard"] }, stats: { hp: 89, atk: 124, def: 80, spa: 55, spd: 80, spe: 55, total: 483 } },
+        { id: 623, num: "#0623", name: "Mega Golurk", types: ["ground", "ghost"], form: "Mega", sprite: "623", abilities: { normal: ["Unseen Fist"], hidden: [] }, stats: { hp: 89, atk: 159, def: 105, spa: 70, spd: 105, spe: 55, total: 583 } },
+        { id: 635, num: "#0635", name: "Hydreigon", types: ["dark", "dragon"], form: "", sprite: "635", abilities: { normal: ["Levitate"], hidden: [] }, stats: { hp: 92, atk: 105, def: 90, spa: 125, spd: 90, spe: 98, total: 600 } },
+        { id: 637, num: "#0637", name: "Volcarona", types: ["bug", "fire"], form: "", sprite: "637", abilities: { normal: ["Flame Body"], hidden: ["Swarm"] }, stats: { hp: 85, atk: 60, def: 65, spa: 135, spd: 105, spe: 100, total: 550 } },
+        { id: 652, num: "#0652", name: "Chesnaught", types: ["grass", "fighting"], form: "", sprite: "652", abilities: { normal: ["Overgrow"], hidden: ["Bulletproof"] }, stats: { hp: 88, atk: 107, def: 122, spa: 74, spd: 75, spe: 64, total: 530 } },
+        { id: 652, num: "#0652", name: "Mega Chesnaught", types: ["grass", "fighting"], form: "Mega", sprite: "652", abilities: { normal: ["Bulletproof"], hidden: [] }, stats: { hp: 88, atk: 137, def: 172, spa: 74, spd: 115, spe: 44, total: 630 } },
+        { id: 655, num: "#0655", name: "Delphox", types: ["fire", "psychic"], form: "", sprite: "655", abilities: { normal: ["Blaze"], hidden: ["Magician"] }, stats: { hp: 75, atk: 69, def: 72, spa: 114, spd: 100, spe: 104, total: 534 } },
+        { id: 655, num: "#0655", name: "Mega Delphox", types: ["fire", "psychic"], form: "Mega", sprite: "655", abilities: { normal: ["Levitate"], hidden: [] }, stats: { hp: 75, atk: 69, def: 72, spa: 159, spd: 125, spe: 134, total: 634 } },
+        { id: 658, num: "#0658", name: "Greninja", types: ["water", "dark"], form: "", sprite: "658", abilities: { normal: ["Torrent"], hidden: ["Protean"] }, stats: { hp: 72, atk: 95, def: 67, spa: 103, spd: 71, spe: 122, total: 530 } },
+        { id: 658, num: "#0658", name: "Mega Greninja", types: ["water", "dark"], form: "Mega", sprite: "658", abilities: { normal: ["Protean"], hidden: [] }, stats: { hp: 72, atk: 125, def: 77, spa: 133, spd: 81, spe: 142, total: 630 } },
+        { id: 660, num: "#0660", name: "Diggersby", types: ["normal", "ground"], form: "", sprite: "660", abilities: { normal: ["Pickup", "Cheek Pouch"], hidden: ["Huge Power"] }, stats: { hp: 85, atk: 56, def: 77, spa: 50, spd: 77, spe: 78, total: 423 } },
+        { id: 663, num: "#0663", name: "Talonflame", types: ["fire", "flying"], form: "", sprite: "663", abilities: { normal: ["Flame Body"], hidden: ["Gale Wings"] }, stats: { hp: 78, atk: 81, def: 71, spa: 74, spd: 69, spe: 126, total: 499 } },
+        { id: 666, num: "#0666", name: "Vivillon", types: ["bug", "flying"], form: "", sprite: "666", abilities: { normal: ["Shield Dust", "Compoundeyes"], hidden: ["Friend Guard"] }, stats: { hp: 80, atk: 52, def: 50, spa: 90, spd: 50, spe: 89, total: 411 } },
+        { id: 670, num: "#0670", name: "Floette (Eternal Flower)", types: ["fairy"], form: "Special Form", sprite: "10061", abilities: { normal: ["Flower Veil"], hidden: ["Symbiosis"] }, stats: { hp: 54, atk: 45, def: 47, spa: 75, spd: 98, spe: 52, total: 371 } },
+        { id: 670, num: "#0670", name: "Mega Floette", types: ["fairy"], form: "Mega", sprite: "670", abilities: { normal: ["Fairy Aura"], hidden: [] }, stats: { hp: 74, atk: 85, def: 87, spa: 155, spd: 148, spe: 102, total: 651 } },
+        { id: 671, num: "#0671", name: "Florges", types: ["fairy"], form: "", sprite: "671", abilities: { normal: ["Flower Veil"], hidden: ["Symbiosis"] }, stats: { hp: 78, atk: 65, def: 68, spa: 112, spd: 154, spe: 75, total: 552 } },
+        { id: 675, num: "#0675", name: "Pangoro", types: ["fighting", "dark"], form: "", sprite: "675", abilities: { normal: ["Iron Fist", "Mold Breaker"], hidden: ["Scrappy"] }, stats: { hp: 95, atk: 124, def: 78, spa: 69, spd: 71, spe: 58, total: 495 } },
+        { id: 676, num: "#0676", name: "Furfrou", types: ["normal"], form: "", sprite: "676", abilities: { normal: ["Fur Coat"], hidden: [] }, stats: { hp: 75, atk: 80, def: 60, spa: 65, spd: 90, spe: 102, total: 472 } },
+        { id: 678, num: "#0678", name: "Meowstic (Male)", types: ["psychic"], form: "", sprite: "678", abilities: { normal: ["Keen Eye", "Infiltrator"], hidden: ["Prankster"] }, stats: { hp: 74, atk: 48, def: 76, spa: 83, spd: 81, spe: 104, total: 466 } },
+        { id: 678, num: "#0678", name: "Meowstic (Female)", types: ["psychic"], form: "Gender Form", sprite: "10025", abilities: { normal: ["Keen Eye", "Infiltrator"], hidden: ["Competitive"] }, stats: { hp: 74, atk: 48, def: 76, spa: 83, spd: 81, spe: 104, total: 466 } },
+        { id: 678, num: "#0678", name: "Mega Meowstic", types: ["psychic"], form: "Mega", sprite: "678", abilities: { normal: ["Trace"], hidden: [] }, stats: { hp: 74, atk: 48, def: 76, spa: 143, spd: 101, spe: 124, total: 566 } },
+        { id: 681, num: "#0681", name: "Aegislash (Shield)", types: ["steel", "ghost"], form: "", sprite: "681", abilities: { normal: ["Stance Change"], hidden: [] }, stats: { hp: 60, atk: 50, def: 140, spa: 50, spd: 140, spe: 60, total: 500 } },
+        { id: 683, num: "#0683", name: "Aromatisse", types: ["fairy"], form: "", sprite: "683", abilities: { normal: ["Healer"], hidden: ["Aroma Veil"] }, stats: { hp: 101, atk: 72, def: 72, spa: 99, spd: 89, spe: 29, total: 462 } },
+        { id: 685, num: "#0685", name: "Slurpuff", types: ["fairy"], form: "", sprite: "685", abilities: { normal: ["Sweet Veil"], hidden: ["Unburden"] }, stats: { hp: 82, atk: 80, def: 86, spa: 85, spd: 75, spe: 72, total: 480 } },
+        { id: 693, num: "#0693", name: "Clawitzer", types: ["water"], form: "", sprite: "693", abilities: { normal: ["Mega Launcher"], hidden: [] }, stats: { hp: 71, atk: 73, def: 88, spa: 120, spd: 89, spe: 59, total: 500 } },
+        { id: 695, num: "#0695", name: "Heliolisk", types: ["electric", "normal"], form: "", sprite: "695", abilities: { normal: ["Dry Skin", "Sand Veil"], hidden: ["Solar Power"] }, stats: { hp: 62, atk: 55, def: 52, spa: 109, spd: 94, spe: 109, total: 481 } },
+        { id: 697, num: "#0697", name: "Tyrantrum", types: ["rock", "dragon"], form: "", sprite: "697", abilities: { normal: ["Strong Jaw"], hidden: ["Rock Head"] }, stats: { hp: 82, atk: 121, def: 119, spa: 69, spd: 59, spe: 71, total: 521 } },
+        { id: 699, num: "#0699", name: "Aurorus", types: ["rock", "ice"], form: "", sprite: "699", abilities: { normal: ["Refrigerate"], hidden: ["Snow Warning"] }, stats: { hp: 123, atk: 77, def: 72, spa: 99, spd: 92, spe: 58, total: 521 } },
+        { id: 700, num: "#0700", name: "Sylveon", types: ["fairy"], form: "", sprite: "700", abilities: { normal: ["Cute Charm"], hidden: ["Pixilate"] }, stats: { hp: 95, atk: 65, def: 65, spa: 110, spd: 130, spe: 60, total: 525 } },
+        { id: 701, num: "#0701", name: "Hawlucha", types: ["fighting", "flying"], form: "", sprite: "701", abilities: { normal: ["Limber", "Unburden"], hidden: ["Mold Breaker"] }, stats: { hp: 78, atk: 92, def: 75, spa: 74, spd: 63, spe: 118, total: 500 } },
+        { id: 701, num: "#0701", name: "Mega Hawlucha", types: ["fighting", "flying"], form: "Mega", sprite: "701", abilities: { normal: ["No Guard"], hidden: [] }, stats: { hp: 78, atk: 137, def: 100, spa: 74, spd: 93, spe: 118, total: 600 } },
+        { id: 702, num: "#0702", name: "Dedenne", types: ["electric", "fairy"], form: "", sprite: "702", abilities: { normal: ["Cheek Pouch", "Pickup"], hidden: ["Plus"] }, stats: { hp: 67, atk: 58, def: 57, spa: 81, spd: 67, spe: 101, total: 431 } },
+        { id: 706, num: "#0706", name: "Goodra", types: ["dragon"], form: "", sprite: "706", abilities: { normal: ["Sap Sipper", "Hydration"], hidden: ["Gooey"] }, stats: { hp: 90, atk: 100, def: 70, spa: 110, spd: 150, spe: 80, total: 600 } },
+        { id: 706, num: "#0706", name: "Goodra (Hisuian Form)", types: ["steel", "dragon"], form: "Hisuian Form", sprite: "10242", abilities: { normal: ["Sap Sipper", "Shell Armor"], hidden: ["Gooey"] }, stats: { hp: 80, atk: 100, def: 100, spa: 110, spd: 150, spe: 60, total: 600 } },
+        { id: 707, num: "#0707", name: "Klefki", types: ["steel", "fairy"], form: "", sprite: "707", abilities: { normal: ["Prankster"], hidden: ["Magician"] }, stats: { hp: 57, atk: 80, def: 91, spa: 80, spd: 87, spe: 75, total: 470 } },
+        { id: 709, num: "#0709", name: "Trevenant", types: ["ghost", "grass"], form: "", sprite: "709", abilities: { normal: ["Natural Cure", "Frisk"], hidden: ["Harvest"] }, stats: { hp: 85, atk: 110, def: 76, spa: 65, spd: 82, spe: 56, total: 474 } },
+        { id: 711, num: "#0711", name: "Gourgeist", types: ["ghost", "grass"], form: "", sprite: "711", abilities: { normal: ["Pickup", "Frisk"], hidden: ["Insomnia"] }, stats: { hp: 65, atk: 90, def: 122, spa: 58, spd: 75, spe: 84, total: 494 } },
+        { id: 713, num: "#0713", name: "Avalugg", types: ["ice"], form: "", sprite: "713", abilities: { normal: ["Own Tempo", "Ice Body"], hidden: ["Sturdy"] }, stats: { hp: 95, atk: 117, def: 184, spa: 44, spd: 46, spe: 28, total: 514 } },
+        { id: 713, num: "#0713", name: "Avalugg (Hisuian Form)", types: ["ice", "rock"], form: "Hisuian Form", sprite: "10243", abilities: { normal: ["Strong Jaw", "Ice Body"], hidden: ["Sturdy"] }, stats: { hp: 95, atk: 127, def: 184, spa: 34, spd: 36, spe: 38, total: 514 } },
+        { id: 715, num: "#0715", name: "Noivern", types: ["flying", "dragon"], form: "", sprite: "715", abilities: { normal: ["Frisk", "Infiltrator"], hidden: ["Telepathy"] }, stats: { hp: 85, atk: 70, def: 80, spa: 97, spd: 80, spe: 123, total: 535 } },
+        { id: 724, num: "#0724", name: "Decidueye", types: ["grass", "ghost"], form: "", sprite: "724", abilities: { normal: ["Overgrow"], hidden: ["Long Reach"] }, stats: { hp: 78, atk: 107, def: 75, spa: 100, spd: 100, spe: 70, total: 530 } },
+        { id: 724, num: "#0724", name: "Decidueye (Hisuian Form)", types: ["grass", "fighting"], form: "Hisuian Form", sprite: "10244", abilities: { normal: ["Overgrow"], hidden: ["Scrappy"] }, stats: { hp: 88, atk: 112, def: 80, spa: 95, spd: 95, spe: 60, total: 530 } },
+        { id: 727, num: "#0727", name: "Incineroar", types: ["fire", "dark"], form: "", sprite: "727", abilities: { normal: ["Blaze"], hidden: ["Intimidate"] }, stats: { hp: 95, atk: 115, def: 90, spa: 80, spd: 90, spe: 60, total: 530 } },
+        { id: 730, num: "#0730", name: "Primarina", types: ["water", "fairy"], form: "", sprite: "730", abilities: { normal: ["Torrent"], hidden: ["Liquid Voice"] }, stats: { hp: 80, atk: 74, def: 74, spa: 126, spd: 116, spe: 60, total: 530 } },
+        { id: 733, num: "#0733", name: "Toucannon", types: ["normal", "flying"], form: "", sprite: "733", abilities: { normal: ["Keen Eye", "Skill Link"], hidden: ["Sheer Force"] }, stats: { hp: 80, atk: 120, def: 75, spa: 75, spd: 75, spe: 60, total: 485 } },
+        { id: 740, num: "#0740", name: "Crabominable", types: ["fighting", "ice"], form: "", sprite: "740", abilities: { normal: ["Hyper Cutter", "Iron Fist"], hidden: ["Anger Point"] }, stats: { hp: 97, atk: 132, def: 77, spa: 62, spd: 67, spe: 43, total: 478 } },
+        { id: 740, num: "#0740", name: "Mega Crabominable", types: ["fighting", "ice"], form: "Mega", sprite: "740", abilities: { normal: ["Iron Fist"], hidden: [] }, stats: { hp: 97, atk: 157, def: 122, spa: 62, spd: 107, spe: 33, total: 578 } },
+        { id: 745, num: "#0745", name: "Lycanroc (Midday)", types: ["rock"], form: "", sprite: "745", abilities: { normal: ["Keen Eye", "Sand Rush"], hidden: ["Steadfast"] }, stats: { hp: 75, atk: 115, def: 65, spa: 55, spd: 65, spe: 112, total: 487 } },
+        { id: 745, num: "#0745", name: "Lycanroc (Midnight)", types: ["rock"], form: "Form Shift", sprite: "10126", abilities: { normal: ["Keen Eye", "Vital Spirit"], hidden: ["No Guard"] }, stats: { hp: 85, atk: 115, def: 75, spa: 55, spd: 75, spe: 82, total: 487 } },
+        { id: 745, num: "#0745", name: "Lycanroc (Dusk)", types: ["rock"], form: "Form Shift", sprite: "10152", abilities: { normal: ["Tough Claws"], hidden: [] }, stats: { hp: 75, atk: 117, def: 65, spa: 55, spd: 65, spe: 110, total: 487 } },
+        { id: 748, num: "#0748", name: "Toxapex", types: ["poison", "water"], form: "", sprite: "748", abilities: { normal: ["Merciless", "Limber"], hidden: ["Regenerator"] }, stats: { hp: 50, atk: 63, def: 152, spa: 53, spd: 142, spe: 35, total: 495 } },
+        { id: 750, num: "#0750", name: "Mudsdale", types: ["ground"], form: "", sprite: "750", abilities: { normal: ["Own Tempo", "Stamina"], hidden: ["Inner Focus"] }, stats: { hp: 100, atk: 125, def: 100, spa: 55, spd: 85, spe: 35, total: 500 } },
+        { id: 752, num: "#0752", name: "Araquanid", types: ["water", "bug"], form: "", sprite: "752", abilities: { normal: ["Water Bubble"], hidden: ["Water Absorb"] }, stats: { hp: 68, atk: 70, def: 92, spa: 50, spd: 132, spe: 42, total: 454 } },
+        { id: 758, num: "#0758", name: "Salazzle", types: ["poison", "fire"], form: "", sprite: "758", abilities: { normal: ["Corrosion"], hidden: ["Oblivious"] }, stats: { hp: 68, atk: 64, def: 60, spa: 111, spd: 60, spe: 117, total: 480 } },
+        { id: 763, num: "#0763", name: "Tsareena", types: ["grass"], form: "", sprite: "763", abilities: { normal: ["Leaf Guard", "Queenly Majesty"], hidden: ["Sweet Veil"] }, stats: { hp: 72, atk: 120, def: 98, spa: 50, spd: 98, spe: 72, total: 510 } },
+        { id: 765, num: "#0765", name: "Oranguru", types: ["normal", "psychic"], form: "", sprite: "765", abilities: { normal: ["Inner Focus", "Telepathy"], hidden: ["Symbiosis"] }, stats: { hp: 90, atk: 60, def: 80, spa: 90, spd: 110, spe: 60, total: 490 } },
+        { id: 766, num: "#0766", name: "Passimian", types: ["fighting"], form: "", sprite: "766", abilities: { normal: ["Receiver"], hidden: ["Defiant"] }, stats: { hp: 100, atk: 120, def: 90, spa: 40, spd: 60, spe: 80, total: 490 } },
+        { id: 778, num: "#0778", name: "Mimikyu", types: ["ghost", "fairy"], form: "", sprite: "778", abilities: { normal: ["Disguise"], hidden: [] }, stats: { hp: 55, atk: 90, def: 80, spa: 50, spd: 105, spe: 96, total: 476 } },
+        { id: 780, num: "#0780", name: "Drampa", types: ["normal", "dragon"], form: "", sprite: "780", abilities: { normal: ["Berserk", "Sap Sipper"], hidden: ["Cloud Nine"] }, stats: { hp: 78, atk: 60, def: 85, spa: 135, spd: 91, spe: 36, total: 485 } },
+        { id: 780, num: "#0780", name: "Mega Drampa", types: ["normal", "dragon"], form: "Mega", sprite: "780", abilities: { normal: ["Berserk"], hidden: [] }, stats: { hp: 78, atk: 85, def: 110, spa: 160, spd: 116, spe: 36, total: 585 } },
+        { id: 784, num: "#0784", name: "Kommo-o", types: ["dragon", "fighting"], form: "", sprite: "784", abilities: { normal: ["Bulletproof", "Soundproof"], hidden: ["Overcoat"] }, stats: { hp: 75, atk: 110, def: 125, spa: 100, spd: 105, spe: 85, total: 600 } },
+        { id: 823, num: "#0823", name: "Corviknight", types: ["flying", "steel"], form: "", sprite: "823", abilities: { normal: ["Pressure", "Unnerve"], hidden: ["Mirror Armor"] }, stats: { hp: 98, atk: 87, def: 105, spa: 53, spd: 85, spe: 67, total: 495 } },
+        { id: 841, num: "#0841", name: "Flapple", types: ["grass", "dragon"], form: "", sprite: "841", abilities: { normal: ["Ripen", "Gluttony"], hidden: ["Hustle"] }, stats: { hp: 70, atk: 110, def: 80, spa: 95, spd: 60, spe: 70, total: 485 } },
+        { id: 842, num: "#0842", name: "Appletun", types: ["grass", "dragon"], form: "", sprite: "842", abilities: { normal: ["Ripen", "Gluttony"], hidden: ["Thick Fat"] }, stats: { hp: 110, atk: 85, def: 80, spa: 100, spd: 80, spe: 30, total: 485 } },
+        { id: 844, num: "#0844", name: "Sandaconda", types: ["ground"], form: "", sprite: "844", abilities: { normal: ["Sand Spit", "Shed Skin"], hidden: ["Sand Veil"] }, stats: { hp: 72, atk: 107, def: 125, spa: 65, spd: 70, spe: 71, total: 510 } },
+        { id: 855, num: "#0855", name: "Polteageist", types: ["ghost"], form: "", sprite: "855", abilities: { normal: ["Weak Armor"], hidden: ["Cursed Body"] }, stats: { hp: 60, atk: 65, def: 65, spa: 134, spd: 114, spe: 70, total: 508 } },
+        { id: 858, num: "#0858", name: "Hatterene", types: ["psychic", "fairy"], form: "", sprite: "858", abilities: { normal: ["Healer", "Anticipation"], hidden: ["Magic Bounce"] }, stats: { hp: 57, atk: 90, def: 95, spa: 136, spd: 103, spe: 29, total: 510 } },
+        { id: 866, num: "#0866", name: "Mr. Rime", types: ["ice", "psychic"], form: "", sprite: "866", abilities: { normal: ["Tangled Feet", "Screen Cleaner"], hidden: ["Ice Body"] }, stats: { hp: 80, atk: 85, def: 75, spa: 110, spd: 100, spe: 70, total: 520 } },
+        { id: 867, num: "#0867", name: "Runerigus", types: ["ground", "ghost"], form: "", sprite: "867", abilities: { normal: ["Wandering Spirit"], hidden: [] }, stats: { hp: 58, atk: 95, def: 145, spa: 50, spd: 105, spe: 30, total: 483 } },
+        { id: 869, num: "#0869", name: "Alcremie", types: ["fairy"], form: "", sprite: "869", abilities: { normal: ["Sweet Veil"], hidden: ["Aroma Veil"] }, stats: { hp: 65, atk: 60, def: 75, spa: 110, spd: 121, spe: 64, total: 495 } },
+        { id: 877, num: "#0877", name: "Morpeko", types: ["electric", "dark"], form: "", sprite: "877", abilities: { normal: ["Hunger Switch"], hidden: [] }, stats: { hp: 58, atk: 95, def: 58, spa: 70, spd: 58, spe: 97, total: 436 } },
+        { id: 887, num: "#0887", name: "Dragapult", types: ["dragon", "ghost"], form: "", sprite: "887", abilities: { normal: ["Clear Body", "Infiltrator"], hidden: ["Cursed Body"] }, stats: { hp: 88, atk: 120, def: 75, spa: 100, spd: 75, spe: 142, total: 600 } },
+        { id: 899, num: "#0899", name: "Wyrdeer", types: ["normal", "psychic"], form: "", sprite: "899", abilities: { normal: ["Intimidate", "Frisk"], hidden: ["Sap Sipper"] }, stats: { hp: 103, atk: 105, def: 72, spa: 105, spd: 75, spe: 65, total: 525 } },
+        { id: 900, num: "#0900", name: "Kleavor", types: ["bug", "rock"], form: "", sprite: "900", abilities: { normal: ["Swarm", "Sheer Force"], hidden: ["Sharpness"] }, stats: { hp: 70, atk: 135, def: 95, spa: 45, spd: 70, spe: 85, total: 500 } },
+        { id: 902, num: "#0902", name: "Basculegion (Male)", types: ["water", "ghost"], form: "", sprite: "902", abilities: { normal: ["Swift Swim", "Adaptability"], hidden: ["Mold Breaker"] }, stats: { hp: 120, atk: 112, def: 65, spa: 80, spd: 75, spe: 78, total: 530 } },
+        { id: 902, num: "#0902", name: "Basculegion (Female)", types: ["water", "ghost"], form: "Gender Form", sprite: "10248", abilities: { normal: ["Swift Swim", "Adaptability"], hidden: ["Mold Breaker"] }, stats: { hp: 120, atk: 92, def: 65, spa: 100, spd: 75, spe: 78, total: 530 } },
+        { id: 903, num: "#0903", name: "Sneasler", types: ["fighting", "poison"], form: "", sprite: "903", abilities: { normal: ["Pressure", "Unburden"], hidden: ["Poison Touch"] }, stats: { hp: 80, atk: 130, def: 60, spa: 40, spd: 80, spe: 120, total: 510 } },
+        { id: 908, num: "#0908", name: "Meowscarada", types: ["grass", "dark"], form: "", sprite: "908", abilities: { normal: ["Overgrow"], hidden: ["Protean"] }, stats: { hp: 76, atk: 110, def: 70, spa: 81, spd: 70, spe: 123, total: 530 } },
+        { id: 911, num: "#0911", name: "Skeledirge", types: ["fire", "ghost"], form: "", sprite: "911", abilities: { normal: ["Blaze"], hidden: ["Unaware"] }, stats: { hp: 104, atk: 75, def: 100, spa: 110, spd: 75, spe: 66, total: 530 } },
+        { id: 914, num: "#0914", name: "Quaquaval", types: ["water", "fighting"], form: "", sprite: "914", abilities: { normal: ["Torrent"], hidden: ["Moxie"] }, stats: { hp: 85, atk: 120, def: 80, spa: 85, spd: 75, spe: 85, total: 530 } },
+        { id: 925, num: "#0925", name: "Maushold", types: ["normal"], form: "", sprite: "925", abilities: { normal: ["Friend Guard", "Cheek Pouch"], hidden: ["Technician"] }, stats: { hp: 74, atk: 75, def: 70, spa: 65, spd: 75, spe: 111, total: 470 } },
+        { id: 934, num: "#0934", name: "Garganacl", types: ["rock"], form: "", sprite: "934", abilities: { normal: ["Purifying Salt", "Sturdy"], hidden: ["Clear Body"] }, stats: { hp: 100, atk: 100, def: 130, spa: 45, spd: 90, spe: 35, total: 500 } },
+        { id: 936, num: "#0936", name: "Armarouge", types: ["fire", "psychic"], form: "", sprite: "936", abilities: { normal: ["Flash Fire"], hidden: ["Weak Armor"] }, stats: { hp: 85, atk: 60, def: 100, spa: 125, spd: 80, spe: 75, total: 525 } },
+        { id: 937, num: "#0937", name: "Ceruledge", types: ["fire", "ghost"], form: "", sprite: "937", abilities: { normal: ["Flash Fire"], hidden: ["Weak Armor"] }, stats: { hp: 75, atk: 125, def: 80, spa: 60, spd: 100, spe: 85, total: 525 } },
+        { id: 939, num: "#0939", name: "Bellibolt", types: ["electric"], form: "", sprite: "939", abilities: { normal: ["Electromorphosis", "Static"], hidden: ["Damp"] }, stats: { hp: 109, atk: 64, def: 91, spa: 103, spd: 83, spe: 45, total: 495 } },
+        { id: 952, num: "#0952", name: "Scovillain", types: ["grass", "fire"], form: "", sprite: "952", abilities: { normal: ["Chlorophyll", "Insomnia"], hidden: ["Moody"] }, stats: { hp: 65, atk: 108, def: 65, spa: 108, spd: 65, spe: 75, total: 486 } },
+        { id: 952, num: "#0952", name: "Mega Scovillain", types: ["grass", "fire"], form: "Mega", sprite: "952", abilities: { normal: ["Spicy Spray"], hidden: [] }, stats: { hp: 65, atk: 138, def: 85, spa: 138, spd: 85, spe: 75, total: 586 } },
+        { id: 956, num: "#0956", name: "Espathra", types: ["psychic"], form: "", sprite: "956", abilities: { normal: ["Opportunist", "Frisk"], hidden: ["Speed Boost"] }, stats: { hp: 95, atk: 60, def: 60, spa: 101, spd: 60, spe: 105, total: 481 } },
+        { id: 959, num: "#0959", name: "Tinkaton", types: ["fairy", "steel"], form: "", sprite: "959", abilities: { normal: ["Mold Breaker", "Own Tempo"], hidden: ["Pickpocket"] }, stats: { hp: 85, atk: 75, def: 77, spa: 70, spd: 105, spe: 94, total: 506 } },
+        { id: 964, num: "#0964", name: "Palafin", types: ["water"], form: "", sprite: "964", abilities: { normal: ["Zero to Hero"], hidden: [] }, stats: { hp: 100, atk: 70, def: 72, spa: 53, spd: 62, spe: 100, total: 457 } },
+        { id: 968, num: "#0968", name: "Orthworm", types: ["steel"], form: "", sprite: "968", abilities: { normal: ["Earth Eater"], hidden: ["Sand Veil"] }, stats: { hp: 70, atk: 85, def: 145, spa: 60, spd: 55, spe: 65, total: 480 } },
+        { id: 970, num: "#0970", name: "Glimmora", types: ["rock", "poison"], form: "", sprite: "970", abilities: { normal: ["Toxic Debris"], hidden: ["Corrosion"] }, stats: { hp: 83, atk: 55, def: 90, spa: 130, spd: 81, spe: 86, total: 525 } },
+        { id: 970, num: "#0970", name: "Mega Glimmora", types: ["rock", "poison"], form: "Mega", sprite: "970", abilities: { normal: ["Adaptability"], hidden: [] }, stats: { hp: 83, atk: 90, def: 105, spa: 150, spd: 96, spe: 101, total: 625 } },
+        { id: 981, num: "#0981", name: "Farigiraf", types: ["normal", "psychic"], form: "", sprite: "981", abilities: { normal: ["Cud Chew", "Armor Tail"], hidden: ["Sap Sipper"] }, stats: { hp: 120, atk: 90, def: 70, spa: 110, spd: 70, spe: 60, total: 520 } },
+        { id: 983, num: "#0983", name: "Kingambit", types: ["dark", "steel"], form: "", sprite: "983", abilities: { normal: ["Defiant", "Supreme Overlord"], hidden: ["Pressure"] }, stats: { hp: 100, atk: 135, def: 120, spa: 60, spd: 85, spe: 50, total: 550 } },
+        { id: 1013, num: "#1013", name: "Sinistcha", types: ["grass", "ghost"], form: "", sprite: "1013", abilities: { normal: ["Hospitality"], hidden: ["Heatproof"] }, stats: { hp: 71, atk: 60, def: 106, spa: 121, spd: 80, spe: 70, total: 508 } },
+        { id: 1018, num: "#1018", name: "Archaludon", types: ["steel", "dragon"], form: "", sprite: "1018", abilities: { normal: ["Stamina", "Sturdy"], hidden: ["Stalwart"] }, stats: { hp: 90, atk: 105, def: 130, spa: 125, spd: 65, spe: 85, total: 600 } },
+        { id: 1019, num: "#1019", name: "Hydrapple", types: ["grass", "dragon"], form: "", sprite: "1019", abilities: { normal: ["Supersweet Syrup", "Regenerator"], hidden: ["Sticky Hold"] }, stats: { hp: 106, atk: 80, def: 110, spa: 120, spd: 80, spe: 44, total: 540 } }
     ];
 
     // POKEAPI OFFICIAL ARTWORK RESOLUTION ENGINE
@@ -604,10 +683,70 @@
         return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${spriteValue}.png`;
     }
 
+    const activeSort = {
+        key: "id",
+        direction: "asc"
+    };
+
+    function escapeHtml(value) {
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    function renderAbilityList(abilities) {
+        if (!abilities || abilities.length === 0) {
+            return `<span class="empty-cell">-</span>`;
+        }
+        return `<div class="ability-list">${abilities.map(a => `<span class="ability-chip">${escapeHtml(a)}</span>`).join("")}</div>`;
+    }
+
+    function setDexSort() {
+        activeSort.key = "id";
+        activeSort.direction = document.getElementById("sortOrder").value;
+        processEngineFilter();
+    }
+
+    function setStatSort(key) {
+        if (activeSort.key === key) {
+            activeSort.direction = activeSort.direction === "asc" ? "desc" : "asc";
+        } else {
+            activeSort.key = key;
+            activeSort.direction = "asc";
+        }
+        processEngineFilter();
+    }
+
+    function getSortValue(pkmn, key) {
+        if (key === "id") return pkmn.id;
+        return pkmn.stats[key];
+    }
+
+    function applyCurrentSort(targetData) {
+        const directionFactor = activeSort.direction === "asc" ? 1 : -1;
+
+        targetData.sort((alpha, beta) => {
+            const primary = getSortValue(alpha, activeSort.key) - getSortValue(beta, activeSort.key);
+            if (primary !== 0) return primary * directionFactor;
+            if (alpha.id !== beta.id) return alpha.id - beta.id;
+            return alpha.name.localeCompare(beta.name);
+        });
+    }
+
+    function updateSortIndicators() {
+        document.querySelectorAll("[data-sort-indicator]").forEach(el => {
+            el.innerText = activeSort.key === el.dataset.sortIndicator ? (activeSort.direction === "asc" ? " ▲" : " ▼") : "";
+        });
+    }
+
     // CORE RENDERING ENGINE (Vẽ bảng UI trên client)
     function executeRenderEngine(targetData) {
         const tbody = document.getElementById("pokedexEngineBody");
         tbody.innerHTML = "";
+        updateSortIndicators();
 
         targetData.forEach(pkmn => {
             const row = document.createElement("tr");
@@ -633,6 +772,15 @@
                 <td>
                     <div class="type-tags-container">${typeBadgesHtml}</div>
                 </td>
+                <td class="ability-cell">${renderAbilityList(pkmn.abilities.normal)}</td>
+                <td class="ability-cell">${renderAbilityList(pkmn.abilities.hidden)}</td>
+                <td class="stat-cell">${pkmn.stats.hp}</td>
+                <td class="stat-cell">${pkmn.stats.atk}</td>
+                <td class="stat-cell">${pkmn.stats.def}</td>
+                <td class="stat-cell">${pkmn.stats.spa}</td>
+                <td class="stat-cell">${pkmn.stats.spd}</td>
+                <td class="stat-cell">${pkmn.stats.spe}</td>
+                <td class="stat-cell stat-total-cell">${pkmn.stats.total}</td>
             `;
             tbody.appendChild(row);
         });
@@ -645,7 +793,6 @@
         const queryText = document.getElementById("searchBar").value.toLowerCase().trim();
         const selectedType = document.getElementById("filterType").value;
         const selectedMegaMode = document.getElementById("filterMega").value;
-        const currentSort = document.getElementById("sortOrder").value;
 
         let processedData = pokemonData.filter(pkmn => {
             const isNameMatched = pkmn.name.toLowerCase().includes(queryText);
@@ -655,9 +802,7 @@
             return isNameMatched && isTypeMatched && isMegaMatched;
         });
 
-        processedData.sort((alpha, beta) => {
-            return currentSort === "asc" ? alpha.id - beta.id : beta.id - alpha.id;
-        });
+        applyCurrentSort(processedData);
 
         executeRenderEngine(processedData);
     }
